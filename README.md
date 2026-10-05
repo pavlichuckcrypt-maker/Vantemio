@@ -27,6 +27,8 @@ The planning target is a **70–80% reduction in cloud AI inference spending for
 
 Station owns queues, memory, registries and production authority. Book, MacBook and additional registered compute nodes act as bounded executors. The registry supports expansion beyond the three currently known machines.
 
+The listed models are an initial hardware-dependent baseline. Deployments can replace them with compatible alternatives, including larger models on stronger equipment. New models may need adapter work and validation of task schemas, resource requirements and output quality. The engine is designed to support model substitution, with no claim of universal plug-and-play compatibility. Actual savings depend on the selected models and hardware.
+
 See [model roles, evidence and cost assumptions](docs/pitch/LOCAL_AI_INFRASTRUCTURE.md). The proprietary production engine and internal runtime data remain private.
 
 ## Blockchain commerce
