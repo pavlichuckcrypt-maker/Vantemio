@@ -1,13 +1,13 @@
-VANTEMIO — проверка публичного Base/Boson-модуля
+VANTEMIO — reviewing the public Base/Boson module
 
-Этот репозиторий содержит блокчейн-модуль и интерфейс marketplace, а не закрытый AI-монтажный движок. Исторические названия VidRa/AIMmontag сохранены в исходниках.
+This repository contains the blockchain module and marketplace interface. The proprietary AI video-production engine remains private. Historical VidRa/AIMmontag identifiers are retained in the source.
 
-В корне репозитория: README.md — описание проекта; docs/DEMO_EVIDENCE.md — механизм и реальные testnet-транзакции; docs/VERIFICATION.json — результаты тестов; demo/ — запись MetaMask/Boson.
+Repository overview: README.md describes the project; docs/DEMO_EVIDENCE.md explains the workflow and actual testnet transactions; docs/VERIFICATION.json records engineering checks; demo/ contains the MetaMask/Boson recording.
 
-Проверка: Node.js 24.19 или новее, Python 3. В каталоге blockchain-demo выполнить npm ci, npm test, npm run test:site. Проверки используют временное локальное состояние; они не запускают производство фильма и не отправляют транзакции в сеть.
+Source verification requires Node.js 24.19 or newer and Python 3. Inside blockchain-demo, run npm ci, npm test and npm run test:site. Tests use isolated temporary state and do not launch film production or send network transactions.
 
-Просмотр интерфейса: из blockchain-demo выполнить npm run site. Сервер слушает только 127.0.0.1:18340. VIDRA_SITE_PORT позволяет выбрать другой свободный порт. VIDRA_MEDIA_HOME задаёт собственный каталог демо-медиа. При первом запуске создаётся собственная локальная база аккаунтов.
+To inspect the interface, run npm run site from blockchain-demo. The server listens on 127.0.0.1:18340. VIDRA_SITE_PORT selects another available port. VIDRA_MEDIA_HOME selects a local demo-media directory. The first launch creates a new local account database.
 
-Приватные ключи, кошельки, базы пользователей и локальные медиаресурсы исходной машины не поставляются. Поэтому копия репозитория не подключается автоматически к прежним кошелькам или историческим заказам. Запись и отчёты доступны независимо от этих runtime-данных. Полный сценарий с новыми onchain-операциями требует отдельной настройки собственных тестовых кошельков и Base Sepolia; npm run demo:all не является командой проверки исходников.
+Private keys, wallet vaults, user databases and original-machine media are excluded. A checkout therefore does not automatically connect to historical wallets or orders. The recording and reports can be reviewed independently of runtime state. New onchain operations require separately configured test wallets and Base Sepolia infrastructure; npm run demo:all is not a source-verification command.
 
-Исходный код AI-студии закрыт. Контролируемый доступ для технической проверки можно запросить у команды.
+Reviewers may request controlled access to the private AI studio from the team. Legacy document filenames are retained for interface compatibility; documentation is written in English.

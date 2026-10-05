@@ -1,14 +1,14 @@
-VANTEMIO — состав публичной публикации
+VANTEMIO — public publication scope
 
-Публичный репозиторий: https://github.com/pavlichuckcrypt-maker/Vantemio
+Repository: https://github.com/pavlichuckcrypt-maker/Vantemio
 
-blockchain-demo/contracts — NFT-паспорт и тестовые кредиты.
-blockchain-demo/src — Base/Boson-операции, токенизация, проверки безопасности, восстановление покупки и защищённая выдача.
-blockchain-demo/auditor-site — интерфейс marketplace, аккаунты, инвентарь продавцов, загрузка активов и рабочее пространство заказов.
-blockchain-demo/test и auditor-site/*.test.mjs — проверяемые тесты.
-blockchain-demo/scripts — сценарии запуска и инженерных проверок. Некоторые сценарии выполняют onchain-действия после настройки; для проверки исходников используются npm test и npm run test:site.
-blockchain-demo/evidence — исторические очищенные testnet/fork-отчёты.
-tools — три адаптера валидации принятого материала и callback публикации. AI-редактирование, рендеринг и оркестрация производства не включены.
-docs и demo — описание процесса, техническая верификация и запись MetaMask/Boson.
+blockchain-demo/contracts: NFT passport and test credits.
+blockchain-demo/src: Base/Boson operations, tokenization, security checks, purchase recovery and protected delivery.
+blockchain-demo/auditor-site: marketplace interface, accounts, seller inventory, asset uploads and order workspace.
+blockchain-demo/test and auditor-site/*.test.mjs: executable engineering tests.
+blockchain-demo/scripts: launch and verification workflows. Some configured workflows perform onchain actions; use npm test and npm run test:site for source verification.
+blockchain-demo/evidence: historical sanitized testnet/fork reports.
+tools: three adapters for validating accepted media and publication callbacks. AI editing, rendering and production orchestration are excluded.
+docs and demo: workflow description, technical verification and MetaMask/Boson recording.
 
-Исключены AI-монтажный движок, его приватная история, кошельки, базы пользователей, локальные операционные данные, привязанные к машине упаковочные утилиты и внутренние черновики заявок. Встроенные документы заменены публичными техническими пояснениями; интерфейс больше не предлагает исключённые черновики.
+Excluded material includes the private AI engine and its history, wallet vaults, user databases, local operational state, machine-specific packaging utilities and internal application drafts. Public technical documents replace excluded drafts in the interface. Legacy document filenames remain unchanged for compatibility; their contents are in English.

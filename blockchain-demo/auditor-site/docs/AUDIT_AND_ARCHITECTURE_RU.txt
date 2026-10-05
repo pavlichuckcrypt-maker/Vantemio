@@ -1,11 +1,11 @@
-VANTEMIO — архитектура и границы технической проверки
+VANTEMIO — architecture and scope of technical review
 
-Принятый видеофайл связывается с release ID, SHA-256, получателем, метаданными и условиями. Python-адаптер проверяет актуальную приёмку; факт завершения рендера сам по себе не разрешает токенизацию. NFT-паспорт фиксирует принятую версию, а Boson redeemable NFT относится к отдельному коммерческому обмену.
+An accepted video is bound to its release ID, SHA-256, recipient, metadata and terms. The Python adapter checks current explicit acceptance; completing a render alone does not authorize tokenization. The NFT passport records an accepted version. The Boson redeemable NFT represents a separate commercial exchange.
 
-В модуле реализованы проверки реализации Boson, Safe и состава владельцев, порога подписи, точных байтов транзакции, nonce, срока действия и сети. Повторы операций используют фиксированную идентичность запроса; восстановление неопределённой транзакции не выполняет слепую повторную отправку. Проверка квитанций сопоставляет два RPC-представления и подтверждения.
+The module checks the Boson implementation, Safe owner set and signature threshold, exact transaction bytes, nonce, expiry and chain. Retries retain request identity. Recovery from an uncertain transaction does not blindly resubmit it. Receipt validation compares two RPC views and confirmation counts.
 
-Выдача цифрового результата проверяет покупателя, состояние обмена, связывание оффера и точные байты файла. Предусмотрены отдельные состояния отмены, возврата и спора. Аутентификация аккаунтов, изоляция доступа, ограничения запросов, Origin/Host/CSRF и одноразовые доказательства проверяются тестами.
+Digital delivery checks the buyer, exchange state, offer binding and exact file bytes. Cancellation, refund and dispute states are handled separately. Tests cover account authentication, access isolation, rate limits, Origin/Host/CSRF controls and single-use proofs.
 
-105 модульных и 71 интерфейсный/аккаунтный тест прошли на публичной копии. Это инженерные проверки, а не независимый аудит. Отчёты evidence/ сохраняют исходные даты. Base Sepolia и тестовые активы не подтверждают mainnet-готовность. Исторические Safe-подписанты находились на одном Mac; независимое хранение ключей не подтверждено. Публичный snapshot не содержит действующих ключей или базы аккаунтов.
+The downloaded public source passed 105 module tests and 71 interface/account tests. These are engineering checks, not an independent audit. Evidence reports retain their original dates. Base Sepolia and test assets do not establish mainnet readiness. Historical Safe signers shared one Mac; independent key custody was not demonstrated. The public snapshot excludes active keys and account databases.
 
-Ссылки на подтверждения: docs/DEMO_EVIDENCE.md и blockchain-demo/evidence/ в корне GitHub-репозитория.
+Supporting evidence: docs/DEMO_EVIDENCE.md and blockchain-demo/evidence/ in the repository root.

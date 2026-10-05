@@ -1,11 +1,7 @@
 VANTEMIO — separate accounts and concurrent sessions
 
-Русский
-Площадка хранит отдельные пользовательские аккаунты и сессии. Подписанное доказательство кошелька связывается с origin, адресом, сетью, сроком действия и одноразовым challenge. Аккаунтный контекст задаётся явно. Доступ к инвентарю, активам и заказам ограничен владельцем; смена кошелька или выход во время ожидания делает отложенную операцию недействительной.
+Accounts and sessions are separate. Wallet proof binds origin, address, chain, expiry and a single-use challenge. Account context is explicit. Inventory, asset and order access is owner-scoped. Logout or wallet changes invalidate queued work rather than silently switching actors.
 
-Реализованы persistent user/account storage, PostgreSQL/SQLite-адаптеры, параллельные сессии, очереди admission, ограничения запросов и восстановление фиксированных транзакционных намерений. SQLite по умолчанию создаёт новую локальную базу; пользовательские базы исходной машины в GitHub не опубликованы. Наличие PostgreSQL-адаптера не означает, что внешний production PostgreSQL был настроен этим репозиторием.
+The source includes persistent user/account storage, PostgreSQL and SQLite adapters, concurrent-session controls, admission queues, request limits and recovery of fixed transaction intents. SQLite creates a new local database by default; original-machine user databases are excluded from GitHub. The presence of a PostgreSQL adapter does not mean an external production database has been configured.
 
-English
-Accounts and sessions are separate. Wallet proof binds origin, address, chain, expiry and a single-use challenge. Owner-scoped inventory, asset and order access is checked explicitly. Logout or wallet changes invalidate queued work rather than silently switching actors.
-
-The source includes persistent user/account storage, PostgreSQL and SQLite adapters, concurrent-session controls, admission queues, request limits and transaction-intent recovery. Fresh local tests use disposable data and simulated identities. They do not supply real credentials, prove public production capacity or configure an external production database.
+Fresh local tests use disposable data and simulated identities. They do not supply real credentials or establish public production capacity. Legacy filenames are retained for interface compatibility; this document is in English.
