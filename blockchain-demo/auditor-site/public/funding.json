@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Base Creator Grant Program",
+    "category": "cash",
+    "type": "Денежный грант для авторов",
+    "support": "До $4,000 · по решению программы",
+    "fit": "Независимые видеоавторы, стримеры, ведущие шоу и преподаватели, уже создающие контент о Base. Нужны публичные примеры работ и собственный авторский канал.",
+    "status": "Официальная страница предлагает application для следующей когорты. Сумма не гарантирована; текущий дедлайн и доступность Google Form не подтверждены. Локальное демо ещё не является публичным портфолио.",
+    "url": "https://docs.base.org/get-started/creators",
+    "en": {
+      "type": "Cash grant for creators",
+      "support": "Up to $4,000 · subject to program decision",
+      "fit": "Independent video creators, streamers, show hosts and educators already producing content about Base. Public work samples and an established creator channel are needed.",
+      "status": "The official page invites applications for the next cohort. Funding is not guaranteed; the current deadline and Google Form availability are unconfirmed. A local demo is not yet a public portfolio."
+    }
+  },
+  {
+    "name": "Base Ecosystem Fund",
+    "category": "cash",
+    "type": "Инвестиции",
+    "support": "Pre-seed / seed · сумма по решению фонда",
+    "fit": "Подходит для onchain-бизнеса на Base. Нужны команда, модель дохода и план привлечения пользователей.",
+    "status": "Форма доступна. Это венчурные инвестиции, условия и право участия ещё не согласованы.",
+    "url": "https://www.base.org/ecosystem-fund/apply",
+    "en": {
+      "type": "Investment",
+      "support": "Pre-seed / seed · amount decided by the fund",
+      "fit": "A possible fit for an onchain business on Base. A team, revenue model and user acquisition plan are needed.",
+      "status": "An application form is available. This is venture investment; terms and eligibility have not been agreed."
+    }
+  },
+  {
+    "name": "Base Batches",
+    "category": "cash",
+    "type": "Акселератор / инвестиции",
+    "support": "$100,000 investment · 8 недель",
+    "fit": "Base как основная сеть; ранняя команда без формального seed-раунда. Проверить соответствие commerce / asset issuance.",
+    "status": "Наборы дважды в год; даты текущего набора нужно подтвердить на странице программы.",
+    "url": "https://docs.base.org/get-started/base-batches",
+    "en": {
+      "type": "Accelerator / investment",
+      "support": "$100,000 investment · 8 weeks",
+      "fit": "Base must be the primary chain; intended for early teams without a formal seed round. Confirm fit for commerce and asset issuance.",
+      "status": "Two cohorts per year; current application dates must be confirmed on the program page."
+    }
+  },
+  {
+    "name": "Google for Startups · Start",
+    "category": "credits",
+    "type": "Облачные кредиты",
+    "support": "$2,000 Cloud credits · 12 месяцев",
+    "fit": "Технологический продукт с MVP, основан менее 24 месяцев назад; предыдущие кредиты и планы venture funding проверяются.",
+    "status": "Публичная страница и application доступны. Нужны бизнес-данные и billing ID. Монтажное агентство не соответствует продуктовым критериям.",
+    "url": "https://cloud.google.com/startup/pre-funded",
+    "en": {
+      "type": "Cloud credits",
+      "support": "$2,000 Cloud credits · 12 months",
+      "fit": "A technology product with an MVP, founded less than 24 months ago. Previous credits and venture funding plans are checked.",
+      "status": "The public page and application are available. Business information and a billing ID are needed. An editing agency does not meet the product criteria."
+    }
+  },
+  {
+    "name": "AWS Activate · Founders",
+    "category": "credits",
+    "type": "Облачные кредиты",
+    "support": "Старт $1,000 · отдельным участникам до $5,000",
+    "fit": "Self-funded / bootstrapped, до Series B, компания моложе 10 лет. AWS account Paid Tier и предыдущие кредиты проверяются.",
+    "status": "Прямой application. Не деньги на оборудование; Portfolio до $200k требует Org ID провайдера.",
+    "url": "https://aws.amazon.com/startups/credits/",
+    "en": {
+      "type": "Cloud credits",
+      "support": "Starts at $1,000 · select participants up to $5,000",
+      "fit": "Self-funded or bootstrapped, before Series B, company younger than 10 years. AWS Paid Tier and previous credits are checked.",
+      "status": "Direct application. These are not equipment funds; Portfolio credits up to $200k require a provider Org ID."
+    }
+  },
+  {
+    "name": "Microsoft for Startups",
+    "category": "credits",
+    "type": "Облачные кредиты / инструменты",
+    "support": "До $150,000 · зависит от eligibility",
+    "fit": "Снижение расходов сервиса на Azure и разработку. Максимальная сумма не гарантирована и не считается cash funding.",
+    "status": "Get started доступен; конкретный tier, юридические и региональные требования проверить после данных владельца.",
+    "url": "https://www.microsoft.com/en-us/startups",
+    "en": {
+      "type": "Cloud credits / tools",
+      "support": "Up to $150,000 · subject to eligibility",
+      "fit": "May reduce Azure service and development costs. The maximum is not guaranteed and is not cash funding.",
+      "status": "Get started is available; confirm the tier, legal and regional requirements after the owner supplies business details."
+    }
+  },
+  {
+    "name": "NVIDIA Inception",
+    "category": "conditional",
+    "type": "Партнёрские преимущества · риск несоответствия",
+    "support": "Hardware pricing · cloud offers · investor access",
+    "fit": "Требуются зарегистрированная компания моложе 10 лет, хотя бы один разработчик и работающий сайт. Это партнёрские преимущества, не денежный грант.",
+    "status": "FAQ исключает компании, связанные с криптовалютами. NFT/Boson создаёт риск несоответствия VidRa AI; участие не подтверждено. Не включать поддержку в бюджет без разъяснения программы и не скрывать блокчейн-направление.",
+    "url": "https://www.nvidia.com/en-us/startups/",
+    "en": {
+      "type": "Partner benefits · eligibility risk",
+      "support": "Hardware pricing · cloud offers · investor access",
+      "fit": "Requires an incorporated company younger than 10 years, at least one developer and a working website. These are partner benefits, not a cash grant.",
+      "status": "The FAQ excludes cryptocurrency-associated companies. NFT/Boson creates an eligibility risk for VidRa AI; participation is unconfirmed. Do not budget this support without program clarification or conceal the blockchain scope."
+    }
+  },
+  {
+    "name": "Boson Protocol",
+    "category": "conditional",
+    "type": "Ecosystem support · уточнить",
+    "support": "Размер и действующий набор не подтверждены",
+    "fit": "Самая прямая интеграция: контент, digital delivery и Boson commerce. Подготовлен технический pitch.",
+    "status": "Историческая grants-страница не подтверждает действующий набор. Нельзя учитывать как доступный денежный грант.",
+    "url": "https://www.bosonprotocol.io/grants/",
+    "en": {
+      "type": "Ecosystem support · to confirm",
+      "support": "Amount and active intake are unconfirmed",
+      "fit": "The closest technical fit: content, digital delivery and Boson commerce. A technical pitch is prepared.",
+      "status": "The historical grants page does not confirm an active intake. Do not count this as an available cash grant."
+    }
+  },
+  {
+    "name": "Ethereum Foundation ESP",
+    "category": "conditional",
+    "type": "Грант для public goods",
+    "support": "Бюджет зависит от конкретного Wishlist / RFP",
+    "fit": "Возможен отдельный открытый модуль безопасной tokenization/delivery. Коммерческий магазин целиком не отвечает non-commercial scope.",
+    "status": "Нужен подходящий Wishlist / RFP, открытая лицензия и измеримые public-good результаты. Общий грант для магазина не подтверждён.",
+    "url": "https://esp.ethereum.foundation/applicants",
+    "en": {
+      "type": "Public goods grant",
+      "support": "Budget depends on a specific Wishlist / RFP",
+      "fit": "A separate open module for secure tokenization and delivery may fit. An entire commercial store does not meet the non-commercial scope.",
+      "status": "A matching Wishlist / RFP, open license and measurable public-good outcomes are needed. A general store grant is unconfirmed."
+    }
+  },
+  {
+    "name": "NLnet · Restack / CodeSupply",
+    "category": "conditional",
+    "type": "Грант · строгая проверка соответствия",
+    "support": "Первый запрос €5,000–€50,000",
+    "fit": "Техническая разработка под открытой лицензией и European dimension. AI-generated projects/proposals имеют ограничения.",
+    "status": "Следующий дедлайн 3 ноября 2026, 12:00 CET. Нужна проверка GenAI policy и человеческая авторская заявка; Commons Fund закрыт.",
+    "url": "https://nlnet.nl/propose/",
+    "en": {
+      "type": "Grant · strict eligibility review",
+      "support": "Initial request €5,000–€50,000",
+      "fit": "Technical work under an open license with a European dimension. AI-generated projects and proposals are restricted.",
+      "status": "Next deadline: November 3, 2026, 12:00 CET. Review the GenAI policy and prepare a human-authored application; the Commons Fund is closed."
+    }
+  },
+  {
+    "name": "Alberta Innovates · Micro Voucher",
+    "category": "conditional",
+    "type": "Региональный денежный грант",
+    "support": "До CAD 10,000 · cash contribution от 25%",
+    "fit": "Только зарегистрированная Alberta-компания с реальными местными операциями. Часовой пояс Mac не подтверждает eligibility.",
+    "status": "Intake CLOSED на дату проверки. Сохранён как резерв; сейчас не подавать.",
+    "url": "https://albertainnovates.ca/funding/micro-voucher-program/",
+    "en": {
+      "type": "Regional cash grant",
+      "support": "Up to CAD 10,000 · cash contribution from 25%",
+      "fit": "Only for a registered Alberta company with actual local operations. The Mac timezone does not establish eligibility.",
+      "status": "Intake CLOSED on the review date. Kept as a future option; do not apply now."
+    }
+  }
+]
