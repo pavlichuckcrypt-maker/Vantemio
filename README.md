@@ -16,6 +16,8 @@ Tasks, requests and results are recorded to support recovery and reuse. Competit
 - [Module setup and tests](blockchain-demo/README.md)
 - [Demo workflow, marketplace and actual transactions](docs/DEMO_EVIDENCE.md)
 - [Engineering verification](docs/VERIFICATION.json)
+- [Studio infrastructure excerpts: memory graph, response integrity and editor interface](studio-infrastructure/)
+- [Pitch presentation](docs/pitch/Vantemio_Presentation_2026-10-05.pdf)
 
 ## Blockchain commerce
 
@@ -43,6 +45,7 @@ The longer-term goal is a service cycle that connects Boson Protocol orders to p
 - [Vantemio on X](https://x.com/vantemio)
 - [Founder on X](https://x.com/Vitalii_RWA)
 
-This repository publishes the Base/Boson blockchain integration module and the Boson marketplace demo in `blockchain-demo/`. The AI editing and production engine remains in a private repository to protect proprietary implementation and research. Reviewers can request controlled access from the team for due diligence; the studio source will not be published here. The small Python files under `tools/` validate accepted-media receipts and connect them to the blockchain module; they do not include AI editing, rendering or production orchestration. Runtime databases, wallet vaults, credentials and local operational data are excluded. Historical VidRa/AIMmontag identifiers are retained in the module source.
+This repository publishes the Base/Boson blockchain integration module and the Boson marketplace demo in `blockchain-demo/`, plus selected supporting infrastructure excerpts in `studio-infrastructure/`. The AI editing and production engine remains in a private repository to protect proprietary implementation and research. Reviewers can request controlled access from the team for due diligence; the complete studio engine will not be published here. The infrastructure excerpts expose generic memory storage, dependency graph edges, response validation and selected VidRa client parsing, with Kdenlive-derived native editor automation source patch in the downloadable source package, without production policies or internal data. The small Python files under `tools/` validate accepted-media receipts and connect them to the blockchain module; they do not include AI editing, rendering or production orchestration. Runtime databases, wallet vaults, credentials and local operational data are excluded. Historical VidRa/AIMmontag identifiers are retained in the module source.
 
-Status reviewed: 4 October 2026.
+Infrastructure publication reviewed: 5 October 2026. Its 17 isolated checks concern the selected excerpts and do not establish readiness of the complete studio.
+
