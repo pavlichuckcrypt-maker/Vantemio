@@ -15,6 +15,14 @@ Vantemio is developing local inference capacity to reduce recurring cloud-model 
 
 Model availability, resource budgets and outstanding work govern scheduling. Models do not all need to remain resident simultaneously. Cloud models remain available for work that exceeds local capacity or fails the required quality checks.
 
+## Replaceable model configuration
+
+The listed models form an initial baseline selected for the currently available hardware and workloads. Vantemio is designed to separate task orchestration from model-provider adapters rather than permanently bind each role to one model.
+
+A deployment can substitute compatible models according to the customer's hardware, preferred providers and task requirements. More RAM, GPU memory and compute capacity can support larger or more capable models. A replacement must fit the resource budget, expose a supported interface, return the required structured outputs and pass task-specific quality and safety checks. New model families may require adapter implementation and validation. Universal plug-and-play support for arbitrary models has not been established.
+
+The 70–80% cloud inference reduction remains a planning target. Actual savings depend on the model mix, hardware, workload, accepted quality and cloud fallback usage.
+
 ## Recorded local substitution
 
 A recorded scheduled-owner step on 5 October 2026 accepted a Qwen 27B response containing 4,916 local tokens. The workflow preserved 14 creative fields, applied code-owned timing constraints and carried 16 scenes into the next recorded request without a new cloud call for that step. This is evidence of a specific local substitution, not a complete production benchmark or a claim that every studio task already runs locally.
