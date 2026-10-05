@@ -1,0 +1,14 @@
+{
+  "artifact": "VIDRA_METAMASK_BOSON_DEMO_EN.mp4",
+  "sha256": "d0705b3190916ad0fb99418ef1bb5294082f3ec2efa69af8e7bb097ca702cd7f",
+  "bytes": 1141660,
+  "duration_seconds": 35,
+  "video": "H264, 1920x1080",
+  "audio": "AAC",
+  "chain": "Base Sepolia",
+  "offer_id": "138",
+  "exchange_id": "261",
+  "scope": "Edited UI capture of the actual MetaMask/Boson demo; includes completed order and downloaded asset. Not a continuous capture of every transaction or the private editing engine.",
+  "review": "Full decode passed. Sampled frames at 4-second intervals visually checked for publication.",
+  "related_evidence": "../blockchain-demo/evidence/VIDRA_METAMASK_FLOW_VERIFICATION.json"
+}
