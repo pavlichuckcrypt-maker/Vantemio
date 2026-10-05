@@ -1,0 +1,10 @@
+**/node_modules/
+**/runtime*/
+**/.env
+**/.env.*
+!**/.env.example
+**/*.sqlite*
+**/*.db
+**/*.log
+**/__pycache__/
+.DS_Store
