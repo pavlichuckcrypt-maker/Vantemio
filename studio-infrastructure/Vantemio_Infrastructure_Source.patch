@@ -1,0 +1,425 @@
+diff --git a/studio-infrastructure/tests/test_public_infrastructure.py b/studio-infrastructure/tests/test_public_infrastructure.py
+new file mode 100644
+--- /dev/null
++++ b/studio-infrastructure/tests/test_public_infrastructure.py
+@@ -0,0 +1,99 @@
++import base64
++import hashlib
++import json
++from pathlib import Path
++import sqlite3
++import tempfile
++import unittest
++from vantemio_infrastructure.memory import Memory, encoded, digest
++from vantemio_infrastructure.wire import assembled_response, OutcomeUnknown, WIRE_CHUNK_BYTES
++from vantemio_infrastructure.vidra_reply import GatewayReplyReader, VidRAGatewayError
++
++class MemoryTests(unittest.TestCase):
++    def setUp(self):
++        self.tmp = tempfile.TemporaryDirectory()
++        self.addCleanup(self.tmp.cleanup)
++        self.project = str(Path(self.tmp.name) / 'synthetic-project')
++        self.memory = Memory(Path(self.tmp.name) / 'test.sqlite')
++    def observe(self, status='ready', **kwargs):
++        return self.memory.observe(self.project, 'test-stage', {'status': status}, **kwargs)
++    def test_polling_does_not_duplicate_history(self):
++        self.assertEqual(self.observe(), self.observe())
++        self.assertEqual(len(self.memory.recall(self.project, 'test-stage')), 1)
++    def test_return_to_prior_state_preserves_transition(self):
++        a=self.observe(); b=self.observe('failed'); c=self.observe()
++        self.assertEqual(len({a,b,c}),3)
++        self.assertEqual(len(self.memory.recall(self.project,'test-stage')),3)
++    def test_changed_inputs_create_a_new_observation(self):
++        self.assertNotEqual(self.observe(inputs={'version':1}),self.observe(inputs={'version':2}))
++    def test_history_cannot_be_updated_or_deleted(self):
++        self.observe()
++        for sql in ['UPDATE memory_events SET stage="changed"','DELETE FROM memory_events']:
++            with self.assertRaises(sqlite3.IntegrityError):
++                with self.memory.connection() as db: db.execute(sql)
++    def test_graph_preserves_dependencies_without_dangling_nodes(self):
++        self.observe(dependencies=['input-stage'],inputs={'asset':'synthetic'})
++        graph=self.memory.graph(); ids={n['id'] for n in graph['nodes']}
++        self.assertTrue(any(e['relation']=='depends_on' for e in graph['edges']))
++        self.assertTrue(all(e['source'] in ids and e['target'] in ids for e in graph['edges']))
++    def test_registry_retains_previous_revisions(self):
++        a=self.memory.register('test','synthetic',{'version':1})
++        b=self.memory.register('test','synthetic',{'version':2})
++        self.assertNotEqual(a,b); self.assertTrue({a,b} <= {n['id'] for n in self.memory.graph()['nodes']})
++    def test_observation_is_not_a_quality_approval(self):
++        self.observe(); self.assertFalse(self.memory.recall(self.project,'test-stage')[0]['quality_approval'])
++
++class WireTests(unittest.TestCase):
++    def setUp(self):
++        self.request={'op':'synthetic_read','queue':'example','request_id':'example-request'}
++        self.raw=encoded({'status':'example','data':'a'*(WIRE_CHUNK_BYTES+50)}).encode()
++        self.response_hash=hashlib.sha256(self.raw).hexdigest()
++    def runner(self, request):
++        offset=request.get('offset',0);part=self.raw[offset:offset+WIRE_CHUNK_BYTES]
++        return {'_queue_rpc_wire':{'schema':'aim.queue.rpc_chunks/v1','bytes':len(self.raw),
++            'response_sha256':self.response_hash,'request_sha256':digest(self.request),
++            'offset':offset,'next':offset+len(part),'data':base64.b64encode(part).decode()}}
++    def test_exact_multipart_response_round_trip(self):
++        self.assertEqual(assembled_response(self.request,runner=self.runner),json.loads(self.raw))
++    def test_rejects_other_request_identity(self):
++        def runner(r):
++            p=self.runner(r);p['_queue_rpc_wire']['request_sha256']='0'*64;return p
++        with self.assertRaises(OutcomeUnknown):assembled_response(self.request,runner=runner)
++    def test_rejects_changed_offset(self):
++        def runner(r):
++            p=self.runner(r);p['_queue_rpc_wire']['offset']+=1;return p
++        with self.assertRaises(OutcomeUnknown):assembled_response(self.request,runner=runner)
++    def test_rejects_modified_bytes(self):
++        def runner(r):
++            p=self.runner(r);wire=p['_queue_rpc_wire'];raw=base64.b64decode(wire['data']);wire['data']=base64.b64encode(b'X'+raw[1:]).decode();return p
++        with self.assertRaises(OutcomeUnknown):assembled_response(self.request,runner=runner)
++    def test_rejects_changed_response_identity_between_chunks(self):
++        def runner(r):
++            p=self.runner(r)
++            if r.get('offset',0):p['_queue_rpc_wire']['response_sha256']='0'*64
++            return p
++        with self.assertRaises(OutcomeUnknown):assembled_response(self.request,runner=runner)
++    def test_rejects_unframed_response(self):
++        with self.assertRaises(OutcomeUnknown):assembled_response(self.request,runner=lambda r:{'status':'ok'})
++
++class FakeSocket:
++    def __init__(self,chunks):self.chunks=list(chunks)
++    def settimeout(self,value):pass
++    def recv(self,size):return self.chunks.pop(0) if self.chunks else b''
++
++class GatewayTests(unittest.TestCase):
++    def reader(self,chunks,**kwargs):return GatewayReplyReader(FakeSocket(chunks),**kwargs)
++    def test_split_frames_and_events_do_not_steal_the_matching_reply(self):
++        event=encoded({'kind':'event','event':'example'}).encode()+b'\n'
++        reply=encoded({'request_id':'example-request','status':'ok'}).encode()+b'\n'
++        reader=self.reader([event+reply[:5],reply[5:]])
++        self.assertEqual(json.loads(reader._read_reply('example-request',__import__('time').monotonic()+2))['status'],'ok')
++        self.assertEqual(len(reader.events),1)
++    def test_rejects_truncated_frame(self):
++        with self.assertRaises(VidRAGatewayError):self.reader([b'{"status":'])._readline()
++    def test_rejects_oversized_frame(self):
++        with self.assertRaises(VidRAGatewayError):self.reader([b'x'*9+b'\n'],max_frame_bytes=8)._readline()
++    def test_rejects_non_object_reply(self):
++        with self.assertRaises(VidRAGatewayError):self.reader([b'[]\n'])._read_reply('example-request',__import__('time').monotonic()+2)
++
++if __name__=='__main__':unittest.main()
+diff --git a/studio-infrastructure/vantemio_infrastructure/__init__.py b/studio-infrastructure/vantemio_infrastructure/__init__.py
+new file mode 100644
+--- /dev/null
++++ b/studio-infrastructure/vantemio_infrastructure/__init__.py
+@@ -0,0 +1 @@
++"""Selected Vantemio infrastructure excerpts for technical review."""
+diff --git a/studio-infrastructure/vantemio_infrastructure/memory.py b/studio-infrastructure/vantemio_infrastructure/memory.py
+new file mode 100644
+--- /dev/null
++++ b/studio-infrastructure/vantemio_infrastructure/memory.py
+@@ -0,0 +1,132 @@
++"""Selected storage primitives. No production policy or existing memory data."""
++from contextlib import contextmanager
++import hashlib
++import json
++from pathlib import Path
++import sqlite3
++import time
++
++def encoded(value):
++    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)
++
++def digest(value):
++    return hashlib.sha256(encoded(value).encode('utf-8')).hexdigest()
++
++class Memory:
++    def __init__(self, path):
++        self.path = Path(path)
++        self.path.parent.mkdir(parents=True, exist_ok=True)
++        with self.connection() as db:
++            db.executescript('''
++                CREATE TABLE IF NOT EXISTS memory_events (
++                    seq INTEGER PRIMARY KEY AUTOINCREMENT,
++                    id TEXT NOT NULL UNIQUE, project TEXT NOT NULL,
++                    stage TEXT NOT NULL, phase TEXT NOT NULL,
++                    fingerprint TEXT NOT NULL, body TEXT NOT NULL,
++                    recorded_at REAL NOT NULL);
++                CREATE INDEX IF NOT EXISTS memory_stage
++                    ON memory_events(project, stage, seq);
++                CREATE TABLE IF NOT EXISTS memory_registry (
++                    id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT NOT NULL,
++                    body TEXT NOT NULL, recorded_at REAL NOT NULL);
++                CREATE TABLE IF NOT EXISTS memory_edges (
++                    source TEXT NOT NULL, relation TEXT NOT NULL, target TEXT NOT NULL,
++                    PRIMARY KEY(source, relation, target));
++            ''')
++            # Accidental UPDATE/DELETE must not erase a historical observation.
++            for table in ('memory_events', 'memory_registry', 'memory_edges'):
++                for operation in ('UPDATE', 'DELETE'):
++                    db.execute(f'''CREATE TRIGGER IF NOT EXISTS {table}_{operation.lower()}
++                        BEFORE {operation} ON {table}
++                        BEGIN SELECT RAISE(ABORT, 'studio memory is append-only'); END''')
++
++    @contextmanager
++    def connection(self):
++        db = sqlite3.connect(self.path, timeout=10)
++        db.row_factory = sqlite3.Row
++        db.execute('PRAGMA synchronous=FULL')
++        try:
++            with db:
++                yield db
++        finally:
++            db.close()
++
++    @staticmethod
++    def _register(db, kind, name, body):
++        revision = digest({'kind': kind, 'name': name, 'body': body})
++        db.execute('INSERT OR IGNORE INTO memory_registry VALUES (?, ?, ?, ?, ?)',
++                   (revision, kind, name, encoded(body), time.time()))
++        return revision
++
++    def register(self, kind, name, body):
++        """Register a version, retaining all previous versions under the same name."""
++        if not kind or not name or not isinstance(body, dict):
++            raise ValueError('registry requires kind, name and object body')
++        with self.connection() as db:
++            return self._register(db, kind, name, body)
++
++    def observe(self, project, stage, result, *, phase='result', inputs=None,
++                code=None, dependencies=(), source=None):
++        """Append a state transition. Repeated unchanged polling is idempotent.
++
++        A -> B -> A is three observations; A -> A is one. Input/code changes
++        produce new observations. Missing provenance remains explicitly missing.
++        """
++        if phase not in ('start', 'result', 'snapshot'):
++            raise ValueError('invalid observation phase')
++        if not stage or not isinstance(result, dict) or not isinstance(result.get('status'), str):
++            raise ValueError('stage and status are required')
++        project = str(Path(project).resolve())
++        # Only controller timestamps are volatile; retain nested provider evidence.
++        result = {k: v for k, v in result.items()
++                  if k not in ('started_at', 'updated_at', 'memory')}
++        body = {'schema': 'aim.studio.observation/v1', 'project': project,
++                'stage': stage, 'phase': phase, 'result': result,
++                'inputs': inputs or {}, 'code': code or {},
++                'dependencies': sorted(set(dependencies)), 'source': source,
++                'quality_approval': False}
++        fingerprint = digest(body)
++        with self.connection() as db:
++            db.execute('BEGIN IMMEDIATE')
++            previous = db.execute('''SELECT id, fingerprint FROM memory_events
++                WHERE project=? AND stage=? AND phase=? ORDER BY seq DESC LIMIT 1''',
++                (project, stage, phase)).fetchone()
++            if previous and previous['fingerprint'] == fingerprint:
++                return previous['id']
++            event_id = digest({'body': body, 'previous': previous['id'] if previous else None})
++            project_id = self._register(db, 'project', project, {'path': project})
++            stage_id = self._register(db, 'stage', stage, {'project': project, 'stage': stage})
++            edges = [(stage_id, 'belongs_to', project_id), (event_id, 'observes', stage_id)]
++            if previous:
++                edges.append((event_id, 'follows', previous['id']))
++            for dependency in body['dependencies']:
++                dep_id = self._register(db, 'stage', dependency, {'project': project, 'stage': dependency})
++                edges.append((event_id, 'depends_on', dep_id))
++            for kind, values in (('input_manifest', body['inputs']), ('code_manifest', body['code'])):
++                if values:
++                    ref = self._register(db, kind, stage, values)
++                    edges.append((event_id, 'uses', ref))
++            db.execute('INSERT INTO memory_events(id,project,stage,phase,fingerprint,body,recorded_at) VALUES(?,?,?,?,?,?,?)',
++                       (event_id, project, stage, phase, fingerprint, encoded(body), time.time()))
++            db.executemany('INSERT OR IGNORE INTO memory_edges VALUES(?,?,?)', edges)
++            return event_id
++
++    def recall(self, project, stage, limit=5):
++        """Bounded factual context, suitable for code or a local model's prompt."""
++        if not 1 <= limit <= 100:
++            raise ValueError('limit must be between 1 and 100')
++        with self.connection() as db:
++            rows = db.execute('''SELECT id, body, recorded_at FROM memory_events
++                WHERE project=? AND stage=? AND phase IN ('result','snapshot')
++                ORDER BY seq DESC LIMIT ?''', (str(Path(project).resolve()), stage, limit)).fetchall()
++        return [{'id': row['id'], 'recorded_at': row['recorded_at'], **json.loads(row['body'])} for row in rows]
++
++    def graph(self):
++        with self.connection() as db:
++            nodes = [dict(row) for row in db.execute('SELECT id,kind,name,body FROM memory_registry ORDER BY id')]
++            nodes.extend({'id': row['id'], 'kind': 'observation', 'name': row['stage'], 'body': row['body']}
++                         for row in db.execute('SELECT id,stage,body FROM memory_events ORDER BY seq'))
++            edges = [dict(row) for row in db.execute('SELECT * FROM memory_edges ORDER BY source,relation,target')]
++        for node in nodes:
++            node['body'] = json.loads(node['body'])
++        return {'schema': 'aim.studio.memory_graph/v1', 'nodes': nodes, 'edges': edges}
+diff --git a/studio-infrastructure/vantemio_infrastructure/vidra_reply.py b/studio-infrastructure/vantemio_infrastructure/vidra_reply.py
+new file mode 100644
+--- /dev/null
++++ b/studio-infrastructure/vantemio_infrastructure/vidra_reply.py
+@@ -0,0 +1,65 @@
++"""Selected VidRa gateway reply parsing, using a caller-supplied socket.
++
++This exposes the client parser, not the editor fork, bridge credentials or commands.
++"""
++import json
++import math
++import time
++
++class VidRAGatewayError(RuntimeError):
++    pass
++
++class GatewayReplyReader:
++    def __init__(self, sock, *, timeout_sec=15, max_frame_bytes=1024 * 1024):
++        if not math.isfinite(timeout_sec) or timeout_sec <= 0:
++            raise ValueError('timeout must be finite and positive')
++        if type(max_frame_bytes) is not int or max_frame_bytes < 1:
++            raise ValueError('frame bound must be a positive integer')
++        self.sock = sock
++        self.timeout_sec = float(timeout_sec)
++        self.max_frame_bytes = max_frame_bytes
++        self._recv_buffer = bytearray()
++        self.events = []
++        self._event_bytes = 0
++
++    def _read_reply(self, request_id, deadline):
++        while True:
++            line = self._readline(deadline)
++            if not line:
++                return line
++            value = json.loads(line)
++            if not isinstance(value, dict):
++                raise VidRAGatewayError("gateway_response_not_object")
++            if "bad_token" in (value.get("errors") or []):
++                return line  # Preserve the existing authentication error explanation.
++            if (value.get("request_id") == request_id and value.get("status") in ("ok", "error")
++                    and value.get("kind") != "event"):
++                return line
++            size = len(line.encode("utf-8"))
++            if self._event_bytes + size > self.max_frame_bytes or len(self.events) >= 4096:
++                raise VidRAGatewayError("unsolicited_gateway_message_limit; drain_events required")
++            self.events.append(value)
++            self._event_bytes += size
++
++    def _readline(self, deadline=None) -> str:
++        deadline = time.monotonic() + self.timeout_sec if deadline is None else deadline
++        while True:
++            remaining = deadline - time.monotonic()
++            if remaining <= 0:
++                raise VidRAGatewayError("gateway_call_deadline")
++            newline = self._recv_buffer.find(b"\n")
++            if newline >= 0:
++                if newline > self.max_frame_bytes:
++                    raise VidRAGatewayError("gateway_frame_too_large")
++                raw = bytes(self._recv_buffer[:newline])
++                del self._recv_buffer[:newline + 1]
++                return raw.decode("utf-8", errors="strict")
++            if len(self._recv_buffer) > self.max_frame_bytes:
++                raise VidRAGatewayError("gateway_frame_too_large")
++            self.sock.settimeout(remaining)
++            chunk = self.sock.recv(65536)
++            if not chunk:
++                if self._recv_buffer:
++                    raise VidRAGatewayError("truncated_gateway_frame")
++                return ""
++            self._recv_buffer.extend(chunk)
+diff --git a/studio-infrastructure/vantemio_infrastructure/wire.py b/studio-infrastructure/vantemio_infrastructure/wire.py
+new file mode 100644
+--- /dev/null
++++ b/studio-infrastructure/vantemio_infrastructure/wire.py
+@@ -0,0 +1,103 @@
++"""Read-only packet assembly excerpt with an injected transport callback.
++
++Hash checks bind bytes to a request; they do not authenticate a remote peer.
++No SSH commands, worker execution, queue changes or production paths are included.
++"""
++import base64
++import hashlib
++import json
++import re
++from .memory import digest
++
++MAX_BYTES = 8 * 1024 * 1024
++WIRE_CHUNK_BYTES = 64 * 1024
++MAX_WIRE_BYTES = 128 * 1024
++SHA256 = re.compile(r"[0-9a-f]{64}")
++
++class OutcomeUnknown(RuntimeError):
++    """Retain the request when the response cannot be verified."""
++
++
++def exchange(request, *, runner, command=None):
++    if command is not None:
++        raise ValueError('deployment commands are excluded')
++    return runner(request)
++
++
++def response_packet(request, *, runner, command=None):
++    if request.get('op') != 'response_chunk':
++        raise ValueError('only response packet reads are allowed')
++    return exchange(request, runner=runner, command=command)
++
++
++def observed_packet(cache, request, sha, offset, command):
++    if cache is not None:
++        raise ValueError('production cache is excluded')
++    return None
++
++
++def observation_packet_path(cache, request, sha, offset, command):
++    if cache is not None:
++        raise ValueError('production cache is excluded')
++    return None
++
++def assembled_response(request, *, runner, command=None, observation_sha256=None, packet_cache=None):
++    """Validate every byte and identity before handing a claim to execution."""
++    if len(json.dumps(request,ensure_ascii=False).encode())>MAX_BYTES:
++        raise ValueError('oversized original request')
++    if packet_cache is not None and request.get('op') != 'cutover_observation':
++        raise ValueError('packet cache is only for immutable archive observations')
++    if observation_sha256 is not None:
++        if request.get('op') != 'cutover_observation' or not SHA256.fullmatch(str(observation_sha256)):
++            raise ValueError('pinned packet recovery requires an immutable observation SHA')
++        answer=observed_packet(packet_cache,request,observation_sha256,0,command)
++        if answer is None:
++            answer=response_packet({'op':'response_chunk','queue':request['queue'],'request':request,
++                'request_sha256':digest(request),'response_sha256':observation_sha256,'offset':0},
++                runner=runner,command=command)
++        if '_queue_rpc_wire' not in answer:raise OutcomeUnknown('pinned observation packet missing')
++    else:
++        answer=exchange(request,runner=runner,command=command)
++        if not isinstance(answer, dict) or '_queue_rpc_wire' not in answer:
++            raise OutcomeUnknown('unframed response excluded from public chunk validator')
++    parts=[];offset=0;expected=None
++    for _ in range((MAX_BYTES+WIRE_CHUNK_BYTES-1)//WIRE_CHUNK_BYTES):
++        wire=answer.get('_queue_rpc_wire')
++        if not isinstance(wire,dict) or wire.get('schema')!='aim.queue.rpc_chunks/v1':
++            raise OutcomeUnknown('invalid chunk response')
++        total=wire.get('bytes');sha=wire.get('response_sha256')
++        if observation_sha256 is not None and sha!=observation_sha256:
++            raise OutcomeUnknown('pinned observation response SHA changed')
++        if (type(total) is not int or not 0<total<=MAX_BYTES or not SHA256.fullmatch(str(sha))
++                or wire.get('request_sha256')!=digest(request)
++                or type(wire.get('offset')) is not int or wire['offset']!=offset):
++            raise OutcomeUnknown('chunk request or offset binding changed')
++        binding=(total,sha)
++        if expected is not None and binding!=expected:
++            raise OutcomeUnknown('chunk response binding changed; original operation retained')
++        expected=binding
++        try:part=base64.b64decode(wire['data'],validate=True)
++        except (ValueError,KeyError,TypeError) as exc:
++            raise OutcomeUnknown('invalid chunk bytes') from exc
++        if len(part)!=min(WIRE_CHUNK_BYTES,total-offset) or wire.get('next')!=offset+len(part):
++            raise OutcomeUnknown('chunk length or next offset changed')
++        cache_path=observation_packet_path(packet_cache,request,sha,offset,command)
++        if cache_path is not None:
++            raw_packet=json.dumps(answer,sort_keys=True,separators=(',',':')).encode()
++            if len(raw_packet)>MAX_WIRE_BYTES:raise OutcomeUnknown('observation cache packet exceeds wire bound')
++            raise ValueError('disk packet cache is excluded from this public excerpt')
++        parts.append(part);offset+=len(part)
++        if offset==total:
++            raw=b''.join(parts)
++            if hashlib.sha256(raw).hexdigest()!=sha:
++                raise OutcomeUnknown('assembled response hash changed')
++            try:value=json.loads(raw)
++            except (ValueError,UnicodeError) as exc:raise OutcomeUnknown('invalid assembled response') from exc
++            if not isinstance(value,dict):raise OutcomeUnknown('assembled response is not an object')
++            return value
++        answer=observed_packet(packet_cache,request,sha,offset,command)
++        if answer is None:
++            answer=response_packet({'op':'response_chunk','queue':request['queue'],'request':request,
++                            'request_sha256':digest(request),'response_sha256':sha,'offset':offset},
++                            runner=runner,command=command)
++    raise OutcomeUnknown('response exceeds bounded chunk budget')

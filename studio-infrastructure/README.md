@@ -2,6 +2,10 @@
 
 Selected Python implementation from the developing Vantemio studio, prepared for technical review. This package exposes supporting storage and message-validation primitives around the proprietary production engine. It does not contain the editing engine or a runnable distributed studio.
 
+Download the [reviewed source package](Vantemio_Infrastructure_Source_2026-10-05.zip). It contains the Python modules and tests below, plus the native automation gateway and editor integration source patch from the Kdenlive fork under their separate GPL notice.
+
+For browser inspection: [Python source patch](Vantemio_Infrastructure_Source.patch), [editor automation source patch](Vantemio_Editor_Automation.patch), [editor scope and verification](EDITOR_SOURCE.md), and [Kdenlive GPL license](Kdenlive_COPYING.txt). The archive contains ready-to-run Python files and a copy of the editor patch.
+
 ## Included implementation
 
 | Module | What reviewers can inspect |
@@ -17,7 +21,8 @@ Selected Python implementation from the developing Vantemio studio, prepared for
 Python 3.10 or later; standard library only:
 
 ```sh
-cd studio-infrastructure
+unzip Vantemio_Infrastructure_Source_2026-10-05.zip
+cd vantemio-public-source/studio-infrastructure
 python3 -m unittest discover -s tests -v
 ```
 
@@ -51,6 +56,6 @@ SHA-256 checks provide integrity and request binding, not peer authentication. A
 
 The private engine includes production planning, editing decisions, scene and sound matrices, learning and improvement policies, prompts, provider routing and production orchestration. Those implementations are deliberately excluded. So are internal graph contents, memory databases, task history, customer data, media, accounts, credentials, deployment addresses and machine configuration.
 
-The full VidRa editor fork is not included. This release includes only selected client-side reply parsing; publication of a fork requires identifying its source and preserving the applicable upstream licensing and notices.
+The archive also includes the existing VidRa/Kdenlive fork's native automation gateway and editor integration as a source patch, published as Vantemio Editor with its GPL license. The complete upstream Kdenlive tree and compiled editor are not included. The private production engine remains excluded.
 
 These excerpts are development evidence, not a claim of production readiness or an independent security audit. See [PUBLICATION_REVIEW.json](PUBLICATION_REVIEW.json) and [NOTICE.md](NOTICE.md).

@@ -1,11 +1,11 @@
 {
   "schema": "vantemio.publication_review/v1",
   "review_date": "2026-10-05",
-  "scope": "Explicitly selected infrastructure source excerpts and English documentation",
+  "scope": "Selected Python infrastructure and committed Kdenlive-derived automation source patch",
   "secret_pattern_scan": {
-    "files_checked": 9,
+    "files_checked": 19,
     "findings": [],
-    "limitation": "Pattern checks and manual source review; not an independent security audit."
+    "limitation": "Pattern checks and source review, not an independent security audit"
   },
   "isolated_tests": {
     "passed": 17,
@@ -13,33 +13,90 @@
     "external_connections": false,
     "data": "Synthetic fixtures only"
   },
+  "editor_patch": {
+    "apply_check": true,
+    "files_equal_recorded_commit": 24,
+    "compiled": false,
+    "live_editor_test": false,
+    "complete_upstream_tree_included": false
+  },
   "excluded": [
-    "Proprietary editing engine and production orchestration",
-    "Learning and improvement policies, prompts and matrices",
-    "Internal graph and memory data, registries, task history and media",
-    "Credentials, accounts, deployment routes and device settings",
-    "Full VidRa editor fork and binaries"
+    "Proprietary production orchestration and editing decisions",
+    "Learning policies, prompts and matrices",
+    "Internal memory, registry contents, task history and media",
+    "Credentials, accounts, deployment routes and machine settings",
+    "Operational editor overlay manifests, subtitle fixture changes, branding resources and editor binaries"
   ],
   "files": [
     {
       "path": "README.md",
-      "bytes": 4743,
-      "sha256": "b341ffcbde18cd590b597bc5c5754245d53da6a7c17c7db9c6f6527388b45ffe"
+      "bytes": 4836,
+      "sha256": "2be1c2b7af9b8a9bd72f8119b470453528c0c90582cc4ed1f42a0cb1056894f3"
+    },
+    {
+      "path": "editor-interface/COPYING",
+      "bytes": 34902,
+      "sha256": "d4d318987adc3e0eb41e91c97c593002bf99b665a1bc226919a6e8a8707b3408"
+    },
+    {
+      "path": "editor-interface/README.md",
+      "bytes": 2692,
+      "sha256": "d9fe8a2f990fc70eea7d1f1807c28e6471659d0ddd42305f3b2db6ca4c942c91"
+    },
+    {
+      "path": "editor-interface/SOURCE_MANIFEST.json",
+      "bytes": 1893,
+      "sha256": "7570937baa362572d0ef8d5f193094ec4e151a2de0f2ecf1534d96f382b326de"
+    },
+    {
+      "path": "editor-interface/Vantemio_Editor_Automation.patch",
+      "bytes": 764171,
+      "sha256": "b676d9144b6c4989d0da3040aaf2511fccfed084961c333d6e0a7d4bc0a61ea0"
+    },
+    {
+      "path": "editor-interface/gatewayprotocol.cpp",
+      "bytes": 3043,
+      "sha256": "c000470ac7b5e84683bbf95cfb111c551ff37c03a6c6dcb363ea7a12ee6e29e1"
+    },
+    {
+      "path": "editor-interface/gatewayprotocol.h",
+      "bytes": 996,
+      "sha256": "f6e770e0d350db9c2cd25d3f411dabaf1d24be8066e4c6bf3388425def7d5400"
+    },
+    {
+      "path": "studio-infrastructure/EDITOR_SOURCE.md",
+      "bytes": 2692,
+      "sha256": "d9fe8a2f990fc70eea7d1f1807c28e6471659d0ddd42305f3b2db6ca4c942c91"
+    },
+    {
+      "path": "studio-infrastructure/Kdenlive_COPYING.txt",
+      "bytes": 34902,
+      "sha256": "d4d318987adc3e0eb41e91c97c593002bf99b665a1bc226919a6e8a8707b3408"
     },
     {
       "path": "studio-infrastructure/NOTICE.md",
-      "bytes": 747,
-      "sha256": "03600c14ac5b19987d9ee662a4e836702720bd874e70d6216565f5b6515c4c47"
+      "bytes": 796,
+      "sha256": "00fe2ecb646ef8d2d6b7d5c9d541e9caba87b59cea8dbd2439dbb7425e3760f3"
     },
     {
       "path": "studio-infrastructure/README.md",
-      "bytes": 4515,
-      "sha256": "82217386c931afb648cd4f095493dba7892785f6a640486e8f0b00ede06e6160"
+      "bytes": 5266,
+      "sha256": "f4f3c86da63817d4879b7629df5fa4aa05bcf8d2c0f0d99986ceb54c5869f60d"
     },
     {
       "path": "studio-infrastructure/SOURCE_MANIFEST.json",
       "bytes": 1798,
       "sha256": "983a9f16186b6b613ab1ae4e283ff069b18b60afb809c1bf6fc403e6721c1c02"
+    },
+    {
+      "path": "studio-infrastructure/Vantemio_Editor_Automation.patch",
+      "bytes": 764171,
+      "sha256": "b676d9144b6c4989d0da3040aaf2511fccfed084961c333d6e0a7d4bc0a61ea0"
+    },
+    {
+      "path": "studio-infrastructure/Vantemio_Infrastructure_Source.patch",
+      "bytes": 23149,
+      "sha256": "e2e04cd527ef101e2ccdf24e519581fd4773ebac4122b4cf3c20fbdd958c95cc"
     },
     {
       "path": "studio-infrastructure/tests/test_public_infrastructure.py",
