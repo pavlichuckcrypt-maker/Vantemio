@@ -1,0 +1,13 @@
+VANTEMIO — public Base/Boson review overview
+
+The repository publishes the blockchain-commerce module, marketplace interface, accepted-media adapters, tests and historical engineering evidence. The proprietary AI video-production engine is maintained privately; reviewers may request controlled access from the team.
+
+The implemented workflow validates explicit final media acceptance, binds an exact version to a Base Sepolia NFT passport, creates a content-linked Boson offer, commits a buyer exchange, redeems and validates delivery, and completes settlement. Separate checks govern cancellation, refund, disputes and recovery. Studio-service demo confirmation is not proof of a new paid film production.
+
+The actual Chrome/MetaMask report records offer 138, exchange 261, 25 DEMO test credits and final state COMPLETED. Its commit, redeem and complete transaction hashes are listed in docs/DEMO_EVIDENCE.md. The 35-second edited recording is in demo/.
+
+Install locked dependencies with npm ci inside blockchain-demo, then run npm test and npm run test:site. The downloaded public source passed 105 module and 71 interface/account tests. These isolated tests do not send chain transactions. Runtime wallet state and local media are deliberately excluded, so a checkout does not reuse the founder's accounts or historical orders.
+
+The interface can be inspected with npm run site on loopback. Custom media can be selected with VIDRA_MEDIA_HOME. A live testnet workflow requires separately configured test wallets, contracts, accepted assets and runtime state.
+
+No independent audit, mainnet readiness, legal copyright transfer, physical fulfillment or paid service performance is claimed. Historical Safe demo signers shared one Mac. Reports retain their original dates and scope.
