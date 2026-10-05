@@ -19,6 +19,16 @@ Tasks, requests and results are recorded to support recovery and reuse. Competit
 - [Studio infrastructure excerpts: memory graph, response integrity and editor interface](studio-infrastructure/)
 - [Pitch presentation](docs/pitch/Vantemio_Presentation_2026-10-05.pdf)
 
+## Local AI infrastructure
+
+Vantemio is developing local inference capacity under the Station coordinator. A quantized Qwen 27B build has already completed recorded scene/graphics planning and bounded repair steps locally. A configured Qwen Coder 7B helper on the Windows Book serves Station. Registered visual, speech and audio specialists cover frame screening, narration, transcription and sound processing. Each execution still requires readiness, resource admission and output validation.
+
+The planning target is a **70–80% reduction in cloud AI inference spending for workflows eligible for local execution**, at comparable accepted quality. This is an unvalidated target, not measured total operating savings. Hardware, electricity, maintenance, hosting, rendering, AI coding subscriptions and external video/image generation remain separate costs. Video and image generation remain external.
+
+Station owns queues, memory, registries and production authority. Book, MacBook and additional registered compute nodes act as bounded executors. The registry supports expansion beyond the three currently known machines.
+
+See [model roles, evidence and cost assumptions](docs/pitch/LOCAL_AI_INFRASTRUCTURE.md). The proprietary production engine and internal runtime data remain private.
+
 ## Blockchain commerce
 
 The Base integration connects accepted media versions to onchain provenance and ownership records. Boson Market connects studio-service orders and digital-asset commerce through Boson Protocol. Parts of the purchase and protected digital-delivery flow have been verified on Base Sepolia.
