@@ -32,7 +32,11 @@ The Base integration connects accepted media versions to onchain provenance and 
 
 ## Expansion
 
-The architecture is intended to support client-specific workflows through MCP, with local, cloud and hybrid deployment options. Further applications include brand and social-media operations, marketing and travel-agency workflows. The planned service cycle is order intake, planning, execution, validation, delivery and feedback through the commerce layer. The search module will later be rebuilt as an owned software component.
+Video production is the engine's first application. Planned product delivery models include a hosted cloud service, installation on customer-owned hardware, and hybrid deployments that combine local execution with cloud services. The engine is intended to be adapted to business workflows, including marketing agencies, brand and social-media operations, and travel-service businesses.
+
+A developer API and MCP integrations are planned to let external applications submit jobs, track execution and retrieve validated results. The developer API is not yet implemented; it is a future development option based on the engine's task orchestration and modular interfaces.
+
+The longer-term goal is a service cycle that connects Boson Protocol orders to planning, execution, result validation and delivery of services or digital assets, with recorded outcomes informing subsequent operations.
 
 ## Public channels
 
