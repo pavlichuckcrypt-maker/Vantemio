@@ -1,0 +1,66 @@
+{
+  "verifiedAt": "2026-10-03T10:30:05.419Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "method": "pause",
+  "digest": "0xa47e957052ea66dc7d99524d28946525fa3f100fb93d3cd812ba5887eff91bfa",
+  "approvalAddresses": [
+    "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+    "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+    "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+  ],
+  "signatureCount": 3,
+  "safeNonce": "10",
+  "simulation": true,
+  "probes": [
+    {
+      "name": "missing-gateway-proposal",
+      "refusedBeforeGasAndSigning": true
+    },
+    {
+      "name": "changed-target",
+      "refused": true,
+      "method": "Copy of real prepared request changed in memory"
+    },
+    {
+      "name": "changed-actor",
+      "refused": true,
+      "method": "Copy of real prepared request changed in memory"
+    },
+    {
+      "name": "changed-calldata",
+      "refused": true,
+      "method": "Copy of real prepared request changed in memory"
+    },
+    {
+      "name": "native-value",
+      "refused": true,
+      "method": "Copy of real prepared request changed in memory"
+    },
+    {
+      "name": "wrong-chain",
+      "refused": true,
+      "method": "Copy of real prepared request changed in memory"
+    },
+    {
+      "name": "wrong-role",
+      "refused": true
+    },
+    {
+      "name": "exact-monotonic-expiry",
+      "refused": true,
+      "method": "Injected test clock; live chain unchanged"
+    },
+    {
+      "name": "two-signatures",
+      "refused": true,
+      "method": "Two real off-chain signatures; no transaction signing"
+    }
+  ],
+  "nativeTransactionsSigned": 0,
+  "chainWritesCreated": 0,
+  "receiptCountBefore": 77,
+  "receiptCountAfter": 77,
+  "scope": "Real registered Safe keys sign the actual pinned Safe digest; public execTransaction eth_call succeeds. Runtime guard checks canonical NFT-only mint/pause/unpause call, zero CALL/value/refunds, exact sorted three ECDSA approvals, current Safe nonce/authority and code, outer executor/from/to/bytes/nonce and 120-second monotonic deadline. Negative copies and clock changes stay in memory. The software timeout is not expiry enforced by the Safe contract; all demo signers are on one Mac."
+}

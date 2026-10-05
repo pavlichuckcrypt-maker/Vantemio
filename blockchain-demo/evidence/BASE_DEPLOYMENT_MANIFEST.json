@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "mode": "public-base-sepolia",
+  "chainId": 84532,
+  "rpc": "https://sepolia.base.org",
+  "explorer": "https://sepolia.basescan.org",
+  "publicTransactions": true,
+  "safeSingleton": "0x41675C099F32341bf84BFc5382aF534df5C7461a",
+  "safeFactory": "0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67",
+  "safeThreshold": 3,
+  "sameMachineDemoSigners": true,
+  "createdAt": "2026-10-03T03:51:42.574Z",
+  "sourceBoson": "0x7de418a7ce94debd057c34ebac232e7027634ade",
+  "sourceBosonCodeHash": "0xb228455d8bd3efca8bb96c27a51c9df33cb7e990a405b484bfdcfe23a92a3026",
+  "safe": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+  "safeOwners": [
+    "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+    "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+    "0xBA5ea590c82a88C419594AcE35949Af97D10b537",
+    "0x6D1013F2585f8F8E64b53ac94B542a565ef98844",
+    "0xe18Ea8F32cBc3537e0F16904099b647DFC5C19ac"
+  ],
+  "nft": "0x5856b200FebA81c1465805A898c5B00D361ce5Ed",
+  "nftCodeHash": "0x922ade397892ab1aa990addb5fc33c1ef52cd4ce43b866412db5f75a52deee19",
+  "safeCodeHash": "0xd7d408ebcd99b2b70be43e20253d6d92a8ea8fab29bd3be7f55b10032331fb4c",
+  "nftSourceHash": "0xb2d578c0168667c71f0d844f2833007a03a0079176f1516fc56fe4f51c2e5c9c",
+  "compiler": "solc 0.8.30 / shanghai",
+  "credit": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+  "creditCodeHash": "0xee5db37d68303bf5370a666413a5b2b7c0ab3a3d429dc5e4b6aeda0b02737f32",
+  "sourceBosonImplementationDigest": "0x5b2751aed93faf760c27a61f7ccc4159909af84e7abb1c566ef39c589c95841d"
+}

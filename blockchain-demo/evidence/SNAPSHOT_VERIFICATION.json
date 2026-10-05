@@ -1,0 +1,42 @@
+{
+  "verifiedAt": "2026-10-03T07:16:48.401Z",
+  "chainId": 84532,
+  "passed": true,
+  "readOnly": true,
+  "receiptCountBefore": 72,
+  "receiptCountAfter": 72,
+  "newTransactions": 0,
+  "singleBlockBalancesAndPauseVerified": true,
+  "block": 47621753,
+  "blockHash": "0x04a6e164c4e2584442256217ae23f2e89365fbd7655b64b2a033c08d83296530",
+  "providersRequired": 2,
+  "cacheSeconds": 15,
+  "simultaneousReaders": 5,
+  "sameCachedFrameReaders": 5,
+  "firstResponseMs": 9,
+  "responseTimesMs": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "verificationScope": "Actual server balances, funds and pause checked at its stated block on two RPCs. Concurrent polling measured without chain writes; latency is machine/network specific.",
+  "previousImplementationMeasurement": {
+    "checkedAt": "2026-10-03T07:10:07.847Z",
+    "responseTimesMs": [
+      627,
+      563,
+      572,
+      2286
+    ],
+    "method": "Four sequential reads before the update; the first three reported one projection block. Network and machine timing are not controlled."
+  },
+  "browserVerification": {
+    "screenshot": "MARKET_COHERENT_SNAPSHOT.png",
+    "screenshotCapturedAt": "2026-10-03T07:29:15.352724+00:00",
+    "buyerDisplayed": "9 856,5 DEMO",
+    "sellerDisplayed": "68,158 DEMO",
+    "visibleState": "Verified chain block; pending absent; NFT active"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "verifiedAt": "2026-10-03T19:18:31.005925+00:00",
+  "status": "passed",
+  "auditType": "Internal adversarial review and regression checks; not an independent audit",
+  "chainId": 84532,
+  "testOnly": true,
+  "scope": "Owned Base Sepolia demo platform; isolated loopback auditor HTTP server; synthetic request/receipt fixtures and temporary copies only.",
+  "reproducedBeforeFix": {
+    "observedAt": "2026-10-03T18:59:14.797Z",
+    "approvedMediaReplacedAfterStartupWasServed": true,
+    "unlistedSyntheticReportWasPubliclyExposed": true,
+    "unsafeIntegerNonceMismatchAccepted": true
+  },
+  "fixed": {
+    "approvedMediaUsesPinnedVerifiedByteSnapshot": true,
+    "digitalAndCreatorMasterDeliveryUseExactVerifiedBuffer": true,
+    "explicitPublicReportAllowlistAndRestrictedFieldScan": true,
+    "nonceComparedAsBigInt": true,
+    "gasBoundToPreparedLimit": true,
+    "twoRpcReceiptContentsMustAgree": true,
+    "threeConfirmationsRequiredFromBothRpcViews": true,
+    "exchangeBuyerIdCheckedForWalletOrderView": true
+  },
+  "liveHttpProbe": {
+    "negativeHttpProbes": [
+      {
+        "name": "foreign Host",
+        "status": 403
+      },
+      {
+        "name": "foreign Origin",
+        "status": 403
+      },
+      {
+        "name": "cross-site request",
+        "status": 403
+      },
+      {
+        "name": "missing CSRF",
+        "status": 403
+      },
+      {
+        "name": "wrong CSRF",
+        "status": 403
+      },
+      {
+        "name": "unknown challenge fields",
+        "status": 400
+      },
+      {
+        "name": "mainnet challenge",
+        "status": 400
+      },
+      {
+        "name": "wrong chain field type",
+        "status": 400
+      },
+      {
+        "name": "unknown proof replay",
+        "status": 400
+      },
+      {
+        "name": "unauthenticated wallet state",
+        "status": 400
+      },
+      {
+        "name": "unauthenticated wallet action",
+        "status": 400
+      },
+      {
+        "name": "unauthenticated file access",
+        "status": 400
+      },
+      {
+        "name": "runtime file access",
+        "status": 404
+      },
+      {
+        "name": "path traversal",
+        "status": 404
+      },
+      {
+        "name": "wrong method",
+        "status": 405
+      },
+      {
+        "name": "oversized body",
+        "status": 400
+      }
+    ],
+    "verifiedAt": "2026-10-03T19:15:06.918Z",
+    "scope": "Own isolated loopback auditor server; temporary approved sample copy and harmless synthetic evidence canary.",
+    "testOnly": true,
+    "chainId": 84532,
+    "afterFix": {
+      "mediaStatus": 200,
+      "mediaSubstitutionReproduced": false,
+      "unlistedEvidenceStatus": 404,
+      "unlistedEvidencePublished": false
+    },
+    "chainWrites": 0,
+    "originalMediaUnchanged": true,
+    "receiptsUnchanged": true
+  },
+  "nonceRegression": {
+    "sourceArchiveSha256": "f213e9c92a5fc28c5412fc7b8618814e17a33e3a3e13c4fc42468eea20773f32",
+    "beforeMismatchAccepted": true,
+    "afterMismatchRejected": true,
+    "syntheticBoundaryCase": true,
+    "chainWrites": 0
+  },
+  "moduleTestsPassed": 105,
+  "websiteTestsPassed": 15,
+  "totalTestsPassed": 120,
+  "chainWrites": 0,
+  "originalMediaUnchanged": true,
+  "limits": [
+    "No claim that the platform cannot be compromised.",
+    "All demo Safe signers share one Mac; OS/account/keychain compromise remains a fundamental risk.",
+    "Author console trusts local processes. Loopback deployment is not public production authentication.",
+    "Receipt agreement logic uses synthetic negative cases; actual MetaMask extension E2E remains pending.",
+    "File snapshots are bounded at 256 MiB per media/asset and reports at 2 MiB; public startup media snapshots consume memory.",
+    "New investor films are not ready and have not been attached or tokenized.",
+    "No third-party service penetration, mainnet transactions or real-money operations."
+  ]
+}

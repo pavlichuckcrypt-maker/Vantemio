@@ -1,0 +1,204 @@
+{
+  "verifiedAt": "2026-10-03T08:47:15.456Z",
+  "status": "passed",
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "offers": [
+    {
+      "offerId": "137",
+      "available": true,
+      "quantityAvailable": "9",
+      "blocks": [
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        },
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        }
+      ],
+      "staticSellerOffer": true,
+      "zeroSellerDeposit": true,
+      "zeroCancelPenalty": true
+    },
+    {
+      "offerId": "136",
+      "available": true,
+      "quantityAvailable": "9",
+      "blocks": [
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        },
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        }
+      ],
+      "staticSellerOffer": true,
+      "zeroSellerDeposit": true,
+      "zeroCancelPenalty": true
+    },
+    {
+      "offerId": "135",
+      "available": true,
+      "quantityAvailable": "2",
+      "blocks": [
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        },
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        }
+      ],
+      "staticSellerOffer": true,
+      "zeroSellerDeposit": true,
+      "zeroCancelPenalty": true
+    },
+    {
+      "offerId": "134",
+      "available": true,
+      "quantityAvailable": "1",
+      "blocks": [
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        },
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        }
+      ],
+      "staticSellerOffer": true,
+      "zeroSellerDeposit": true,
+      "zeroCancelPenalty": true
+    },
+    {
+      "offerId": "133",
+      "available": true,
+      "quantityAvailable": "9",
+      "blocks": [
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        },
+        {
+          "number": 47624471,
+          "hash": "0x3d0afe9eabb2b62f82f41f4ff9907a571a81a3056e62d743183ff3e7fe83f552",
+          "timestamp": 1791017230
+        }
+      ],
+      "staticSellerOffer": true,
+      "zeroSellerDeposit": true,
+      "zeroCancelPenalty": true
+    },
+    {
+      "offerId": "132",
+      "available": true,
+      "quantityAvailable": "9",
+      "blocks": [
+        {
+          "number": 47624472,
+          "hash": "0x6cbf2eb705b19398ea7c90f40daf63a5d5fbd31c0afdfc95edfc79dfe563c5b7",
+          "timestamp": 1791017232
+        },
+        {
+          "number": 47624472,
+          "hash": "0x6cbf2eb705b19398ea7c90f40daf63a5d5fbd31c0afdfc95edfc79dfe563c5b7",
+          "timestamp": 1791017232
+        }
+      ],
+      "staticSellerOffer": true,
+      "zeroSellerDeposit": true,
+      "zeroCancelPenalty": true
+    },
+    {
+      "offerId": "131",
+      "available": true,
+      "quantityAvailable": "97",
+      "blocks": [
+        {
+          "number": 47624472,
+          "hash": "0x6cbf2eb705b19398ea7c90f40daf63a5d5fbd31c0afdfc95edfc79dfe563c5b7",
+          "timestamp": 1791017232
+        },
+        {
+          "number": 47624472,
+          "hash": "0x6cbf2eb705b19398ea7c90f40daf63a5d5fbd31c0afdfc95edfc79dfe563c5b7",
+          "timestamp": 1791017232
+        }
+      ],
+      "staticSellerOffer": true,
+      "zeroSellerDeposit": true,
+      "zeroCancelPenalty": true
+    }
+  ],
+  "offerCount": 7,
+  "negativeCases": [
+    {
+      "name": "expired",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    },
+    {
+      "name": "not-started",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    },
+    {
+      "name": "sold-out",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    },
+    {
+      "name": "voided",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    },
+    {
+      "name": "unsupported-offer",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    },
+    {
+      "name": "cancel-penalty",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    },
+    {
+      "name": "seller-deposit",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    },
+    {
+      "name": "missing",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "Actual public missing offer ID"
+    },
+    {
+      "name": "noncanonical",
+      "refusedBeforeAllowanceAndSend": true,
+      "method": "In-memory changed reads derived from the actual public offer; no chain mutation"
+    }
+  ],
+  "chainWritesCreated": 0,
+  "receiptCountBefore": 76,
+  "receiptCountAfter": 76,
+  "allowanceReadsDuringNegativeProbes": 0,
+  "sendAttempts": 0,
+  "protocolReference": "https://github.com/bosonprotocol/boson-protocol-contracts/blob/v2.5.0/contracts/protocol/facets/ExchangeCommitFacet.sol#L407-L413",
+  "limits": "Positive quotes use actual current contracts on two RPCs and a fresh canonical block per quote. Except the real missing offer ID, negative probes alter in-memory read responses; no unavailable offers were created on-chain. This verifies the runtime pre-payment guard, not an atomic reservation of stock; simulation and the final contract still protect later state changes."
+}

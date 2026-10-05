@@ -1,0 +1,839 @@
+[
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 67,
+    "nfts": 6,
+    "orders": 10,
+    "checkedAt": "2026-10-03T05:54:24.293Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 67,
+    "nfts": 6,
+    "orders": 10,
+    "checkedAt": "2026-10-03T06:15:07.876Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 67,
+    "nfts": 6,
+    "orders": 10,
+    "checkedAt": "2026-10-03T06:20:01.721Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 72,
+    "nfts": 6,
+    "orders": 11,
+    "checkedAt": "2026-10-03T06:57:52.839Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 72,
+    "nfts": 6,
+    "orders": 11,
+    "checkedAt": "2026-10-03T07:08:40.178Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 72,
+    "nfts": 6,
+    "orders": 11,
+    "checkedAt": "2026-10-03T07:17:02.683Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 72,
+    "nfts": 6,
+    "orders": 11,
+    "checkedAt": "2026-10-03T07:54:51.176Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 72,
+    "nfts": 6,
+    "orders": 11,
+    "checkedAt": "2026-10-03T08:18:37.488Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 76,
+    "nfts": 6,
+    "orders": 12,
+    "checkedAt": "2026-10-03T08:47:13.400Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 76,
+    "nfts": 6,
+    "orders": 12,
+    "checkedAt": "2026-10-03T09:04:23.813Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 77,
+    "nfts": 6,
+    "orders": 12,
+    "checkedAt": "2026-10-03T09:49:10.024Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 77,
+    "nfts": 6,
+    "orders": 12,
+    "checkedAt": "2026-10-03T10:19:47.290Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T10:41:15.122Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T11:04:43.097Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T11:25:38.288Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T11:49:26.341Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T11:59:30.062Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T12:09:15.071Z"
+  },
+  {
+    "status": "busy",
+    "reason": "User/demo operation active or queued; chain checks deferred",
+    "checkedAt": "2026-10-03T12:16:14.147Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T12:17:38.008Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T12:19:07.882Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T12:29:16.826Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T12:39:12.988Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 80,
+    "nfts": 7,
+    "orders": 12,
+    "checkedAt": "2026-10-03T12:42:09.231Z"
+  },
+  {
+    "status": "healthy",
+    "chainId": 84532,
+    "checks": [
+      {
+        "name": "Base profile, live projection, pending protection and audit integrity",
+        "passed": true
+      },
+      {
+        "name": "two RPC chains and pinned contract code",
+        "passed": true
+      },
+      {
+        "name": "Boson facet routes and implementation code on two RPCs",
+        "passed": true
+      },
+      {
+        "name": "Safe implementation, owner quorum and no bypass modules/guard/fallback",
+        "passed": true
+      },
+      {
+        "name": "current NFT ownership and accepted asset fingerprints",
+        "passed": true
+      },
+      {
+        "name": "Boson order bindings remain on the public chain",
+        "passed": true
+      },
+      {
+        "name": "latest public receipt is canonical on both RPCs",
+        "passed": true
+      }
+    ],
+    "receipts": 87,
+    "nfts": 8,
+    "orders": 13,
+    "checkedAt": "2026-10-03T21:14:38.671Z"
+  }
+]

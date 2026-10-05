@@ -1,0 +1,49 @@
+{
+  "verifiedAt": "2026-10-03T11:24:18.440Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "runtime": {
+    "schemaVersion": 1,
+    "service": "AIMmontag-demo-runtime",
+    "mode": "base-sepolia",
+    "chainId": 84532,
+    "publicTransactions": true,
+    "pid": 88928,
+    "instanceId": "d3336e0c-edcf-4112-a93a-86d8ffe42fd1",
+    "active": null,
+    "queued": 0,
+    "pendingTransaction": false,
+    "scope": "Process identity only; blockchain verification uses /api/evidence"
+  },
+  "observedRoundTripsMs": [
+    11.287,
+    2.084,
+    1.003,
+    0.709,
+    1.261
+  ],
+  "managedStartReusedSamePidAndInstance": true,
+  "occupiedPortBlockedNewLaunch": true,
+  "probes": [
+    {
+      "name": "changed-pid",
+      "refusedAgainstActualHttpIdentity": true
+    },
+    {
+      "name": "changed-instance",
+      "refusedAgainstActualHttpIdentity": true
+    },
+    {
+      "name": "observation-timeout",
+      "refused": true,
+      "method": "Injected failed observation, no live service change"
+    }
+  ],
+  "signalsSent": 0,
+  "nativeTransactionsSigned": 0,
+  "chainWritesCreated": 0,
+  "receiptCountBefore": 80,
+  "receiptCountAfter": 80,
+  "scope": "Five actual loopback runtime-identity requests and a second managed start reuse the live PID/instance. Actual occupied TCP port refuses a new launch; wrong recorded PID/instance refuse against the real HTTP response. Active/queued/pending refusals are exercised by the separate unit fixtures, not by changing live process state. Identity endpoint performs no chain verification; blockchain readiness is checked separately. Round-trip numbers are this observation, not a latency guarantee. No process was stopped or restarted by this verifier."
+}

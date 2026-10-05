@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-10-03T12:43:47.694035+00:00",
+  "chainId": 84532,
+  "testOnly": true,
+  "requirements": [
+    {
+      "number": 1,
+      "requirement": "Защищённый шлюз Boson",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "APPROVAL_BROADCAST_VERIFICATION.json",
+        "LIVE_COMMERCE_BROADCAST_VERIFICATION.json",
+        "SIGNED_TRANSACTION_VERIFICATION.json",
+        "BOSON_IMPLEMENTATION_VERIFICATION.json"
+      ]
+    },
+    {
+      "number": 2,
+      "requirement": "Четыре категории каталога",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "MARKET_CATEGORIES_VERIFICATION.json",
+        "OFFER_BINDING_VERIFICATION.json"
+      ]
+    },
+    {
+      "number": 3,
+      "requirement": "Контент студии, автоматический callback и NFT",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "CONTENT_VERIFICATION.json",
+        "LIVE_SAFE_MINT_VERIFICATION.json",
+        "SOURCE_PACKAGE_VERIFICATION.json",
+        "STUDIO_STATUS_VERIFICATION.json"
+      ]
+    },
+    {
+      "number": 4,
+      "requirement": "Покупка, rNFT, redeem, выдача, завершение, возврат и спор",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "MARKETPLACE_VERIFICATION.json",
+        "MARKET_CATEGORIES_VERIFICATION.json",
+        "LIVE_PURCHASE_PREFLIGHT_VERIFICATION.json"
+      ]
+    },
+    {
+      "number": 5,
+      "requirement": "Безопасность выдачи и ключей",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "DEMO_READY_VERIFICATION.json",
+        "RESILIENCE_VERIFICATION.json",
+        "SAFE_AUTHORITY_VERIFICATION.json"
+      ]
+    },
+    {
+      "number": 6,
+      "requirement": "Единый интерфейс Mac и презентационный процесс",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "INTERFACE_LAYOUT_VERIFICATION.json",
+        "VIDEO_PROVENANCE.json"
+      ]
+    },
+    {
+      "number": 7,
+      "requirement": "Негативные проверки, публичные операции и crash recovery",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "UNIT_TEST_VERIFICATION.json",
+        "LIVE_PURCHASE_RECOVERY_VERIFICATION.json",
+        "RUNTIME_IDENTITY_VERIFICATION.json"
+      ]
+    },
+    {
+      "number": 8,
+      "requirement": "Фактическая запись, ролик, субтитры и передаваемый пакет",
+      "status": "passed-for-test-demo",
+      "evidence": [
+        "VIDEO_PROVENANCE.json",
+        "SOURCE_PACKAGE_VERIFICATION.json",
+        "PACKAGE_VERIFICATION.json"
+      ]
+    }
+  ],
+  "workWindow": {
+    "start": "2026-10-03T04:42:38Z",
+    "deadline": "2026-10-03T12:42:38Z",
+    "elapsed": true
+  },
+  "goalReadyForCompletion": true,
+  "state": {
+    "receipts": 80,
+    "nfts": 7,
+    "offers": 7,
+    "orders": 12,
+    "pending": false,
+    "liveProjectionVerified": true
+  },
+  "healthCheckedAt": "2026-10-03T12:42:09.231Z",
+  "unitTestsPassed": 92,
+  "sourceArchive": {
+    "sha256": "a866eaa82b817e10d6ebe6d4523d11e2d3f66742a24f90b8e877497023edee9c",
+    "verifiedFromIsolatedExtraction": true
+  },
+  "media": [
+    {
+      "artifact": "AIMmontag_INVESTOR_DEMO_RU.mp4",
+      "sha256": "46d655c8ca302cdd3c74db5fa64ebf6b806965594b34c5ae356f065fd952e6a6",
+      "durationSeconds": 124.52,
+      "fullDecodePassed": true,
+      "streams": [
+        {
+          "type": "video",
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "type": "audio",
+          "codec": "aac",
+          "sample_rate": "48000",
+          "channels": 2,
+          "r_frame_rate": "0/0"
+        }
+      ]
+    },
+    {
+      "artifact": "AIMmontag_INTERFACE_RECORDING.mp4",
+      "sha256": "8ff936f496b535cdca1a625907847d4ba5f52ea97e83a1f560163286041aadaa",
+      "durationSeconds": 72.56,
+      "fullDecodePassed": true,
+      "streams": [
+        {
+          "type": "video",
+          "codec": "h264",
+          "width": 1426,
+          "height": 892,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    }
+  ],
+  "subtitles": [
+    {
+      "language": "RU",
+      "cues": 14,
+      "endSeconds": 124.52
+    },
+    {
+      "language": "EN",
+      "cues": 14,
+      "endSeconds": 124.52
+    }
+  ],
+  "audioMeasurement": {
+    "meanDbfs": -22.3,
+    "samplePeakDbfs": -4.9,
+    "decodedAudioPresent": true,
+    "sampleClippingNotObserved": true,
+    "scope": "ffmpeg decoded sample-level measurement, not a listener review or true-peak/broadcast loudness certification."
+  },
+  "capture": {
+    "actualTimestampedFrames": 266,
+    "elapsedSeconds": 66.559,
+    "workflowStages": 7,
+    "exportFps": 25,
+    "repeatedFramesDisclosed": true
+  },
+  "keyStorage": {
+    "encryptedV3Wallets": 9,
+    "storage": "macOS Keychain",
+    "independentCustody": false,
+    "privateEnvelopeMode": "0600",
+    "runtimeDirectoryMode": "0700"
+  },
+  "limits": [
+    "Only Base Sepolia and test assets.",
+    "All signers share one Mac.",
+    "Boson approvals and monotonic deadline are application controls; NFT quorum is on-chain Safe.",
+    "Hash-chained local audit is unkeyed SHA-256, not protection against a full rewrite by a compromised trusted Mac.",
+    "Accepted source export is explicitly demo; the complete production montage pipeline was not rerun.",
+    "Digital bytes were delivered; no real service performance, physical shipment or copyright transfer claimed.",
+    "Browser viewport capture uses timestamped screenshots at about 4 fps; video is encoded at 25 fps with repeated frames.",
+    "No mainnet or production readiness claimed."
+  ]
+}

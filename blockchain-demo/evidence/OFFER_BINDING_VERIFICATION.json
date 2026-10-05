@@ -1,0 +1,117 @@
+{
+  "verifiedAt": "2026-10-03T08:12:02.355Z",
+  "status": "passed",
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "block": 47623412,
+  "blockHash": "0x260d495e6f0d6a764734c8d642240b8a6cc6fac6aa3dfa862fb5a9a6c4aa5bca",
+  "offers": [
+    {
+      "offerId": "137",
+      "kind": "video",
+      "conditionsAndUriVerified": true,
+      "assetSha256": "64dcb76243ed8ff8ac4146a9e70ca044598a397c12292c4ba48a4b33346d3caa",
+      "certificateTokenId": "5"
+    },
+    {
+      "offerId": "136",
+      "kind": "video",
+      "conditionsAndUriVerified": true,
+      "assetSha256": "7dd41cd465fbbf3d046124f846dcf46abfda257eb63a2730275a9da11b6ac7f5",
+      "certificateTokenId": "4"
+    },
+    {
+      "offerId": "135",
+      "kind": "physical",
+      "conditionsAndUriVerified": true,
+      "assetSha256": null,
+      "certificateTokenId": null
+    },
+    {
+      "offerId": "134",
+      "kind": "service",
+      "conditionsAndUriVerified": true,
+      "assetSha256": null,
+      "certificateTokenId": null
+    },
+    {
+      "offerId": "133",
+      "kind": "digital",
+      "conditionsAndUriVerified": true,
+      "assetSha256": "5f24bd89ba06ea72e836d83eedb5bd066d0b3fa43391f7408a4bd2c213e3bbb3",
+      "certificateTokenId": "3"
+    },
+    {
+      "offerId": "132",
+      "kind": "video",
+      "conditionsAndUriVerified": true,
+      "assetSha256": "8b149f56375b28e7a7e1eafc56b9d223de62f3dab6154caea2ef666494bd100d",
+      "certificateTokenId": "2"
+    },
+    {
+      "offerId": "131",
+      "kind": "service",
+      "conditionsAndUriVerified": true,
+      "assetSha256": null,
+      "certificateTokenId": null
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "15d1bc3c-01ea-49a2-96f2-71800479c022",
+      "kind": "video",
+      "acceptedVersionVerified": true,
+      "certificateTokenId": "6"
+    },
+    {
+      "assetId": "a45a50e9-1721-4a3d-b3ca-ae9a7c9e1a41",
+      "kind": "video",
+      "acceptedVersionVerified": true,
+      "certificateTokenId": "5"
+    },
+    {
+      "assetId": "92175f31-f9a2-43da-a04d-8c780b0bb248",
+      "kind": "video",
+      "acceptedVersionVerified": true,
+      "certificateTokenId": "4"
+    },
+    {
+      "assetId": "9f5e4d31-fa79-475f-a873-7a3eef48a067",
+      "kind": "digital",
+      "acceptedVersionVerified": true,
+      "certificateTokenId": "3"
+    },
+    {
+      "assetId": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+      "kind": "video",
+      "acceptedVersionVerified": true,
+      "certificateTokenId": "2"
+    }
+  ],
+  "offerCount": 7,
+  "assetCount": 5,
+  "negativeCases": [
+    "An existing accepted asset cannot publish a substituted cached token; actual NFT mapping was read, no mint or offer was sent.",
+    "Offer 137: modified local conditions refused against its actual public metadata.",
+    "Offer 136: modified local conditions refused against its actual public metadata.",
+    "Offer 135: modified local conditions refused against its actual public metadata.",
+    "Offer 134: modified local conditions refused against its actual public metadata.",
+    "Offer 133: modified local conditions refused against its actual public metadata.",
+    "Offer 132: modified local conditions refused against its actual public metadata.",
+    "Offer 131: modified local conditions refused against its actual public metadata."
+  ],
+  "chainWritesCreated": 0,
+  "receiptCountBefore": 72,
+  "receiptCountAfter": 72,
+  "checks": [
+    "official pinned code on two RPCs",
+    "displayed category/title/description/terms/file/certificate reconstruct exact Boson hash and data URI",
+    "original service migration has pinned metadata and cannot bypass digital binding",
+    "delivered asset category/fingerprint/certificate matches the published offer",
+    "all studio assets pass fresh acceptance and existing-certificate publication guard without signing",
+    "published digital bytes and certificate fingerprints match",
+    "same canonical block before and after offer reads"
+  ],
+  "limits": "Read-only current offer/content verification. Negative probes clone local inputs and use actual public contract data with shared runtime guards; they do not submit HTTP purchases or chain writes. Fresh publication guard reads latest NFT data. Historical lifecycle transactions and actual crash recovery are documented separately."
+}

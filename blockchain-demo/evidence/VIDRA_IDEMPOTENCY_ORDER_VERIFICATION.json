@@ -1,0 +1,16 @@
+{
+  "verifiedAt": "2026-10-03T18:32:09.510447+00:00",
+  "status": "passed",
+  "chainId": 84532,
+  "testOnly": true,
+  "realHttpServer": true,
+  "confirmedOfferId": "138",
+  "reorderedConfirmedRequestReturnedOriginalResult": true,
+  "changedPriceRejected": true,
+  "failedIntentRemainedFailed": true,
+  "originalDigestPreserved": true,
+  "additionalTransactions": 0,
+  "receiptsBefore": 87,
+  "receiptsAfter": 87,
+  "securityMeaning": "Object field order is irrelevant; changed values and ambiguous/failed writes remain blocked."
+}

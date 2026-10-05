@@ -1,0 +1,69 @@
+{
+  "verifiedAt": "2026-10-03T17:38:02.810331+00:00",
+  "chainId": 84532,
+  "testOnly": true,
+  "status": "passed",
+  "website": "http://127.0.0.1:18340/",
+  "languages": [
+    "ru",
+    "en"
+  ],
+  "browserChecks": {
+    "desktopWidths": {
+      "viewport": 1280,
+      "scrollWidth": 1265
+    },
+    "mobileWidths": {
+      "viewport": 390,
+      "scrollWidth": 375
+    },
+    "bothLanguagesNoOverflow": true,
+    "englishVisibleRussianText": false,
+    "queryOverrideVerified": true,
+    "reloadPreferenceVerified": true,
+    "filterPreservedAcrossLanguageSwitch": true,
+    "cloudFilterCards": 4,
+    "documentsHTTPVerified": 7,
+    "browserConsoleErrors": 0,
+    "actualContentVideoReadyState": 4,
+    "actualContentVideoSeconds": 7.966667
+  },
+  "unitChecks": {
+    "siteTestsPassed": 14,
+    "failed": 0,
+    "languageSwitchWithProvedWalletNoRequests": true,
+    "ambiguousPurchaseControlsUnchanged": true,
+    "staleEvidenceRemainsStaleOnLanguageSwitch": true,
+    "oldWalletResponseCannotEnableDisconnectedCheckout": true
+  },
+  "fundingPrograms": 11,
+  "screenshots": [
+    {
+      "artifact": "VIDRA_AUDITOR_SITE_EN_DESKTOP.png",
+      "sha256": "9ba5308c37d326c32abed4f6467f58030ae2305bf2148d3e854f9b32dd17d85b",
+      "bytes": 78384
+    },
+    {
+      "artifact": "VIDRA_AUDITOR_SITE_EN_MOBILE.png",
+      "sha256": "b32a89746009b01d12e5e65eabb857054702520dd49884da482389bf06e5f716",
+      "bytes": 7445
+    },
+    {
+      "artifact": "VIDRA_AUDITOR_SITE_RU_DESKTOP.png",
+      "sha256": "6e228066e522a61193d04d3a50ddcb127ce2b9687cebd17258632b31c2f92f92",
+      "bytes": 89047
+    },
+    {
+      "artifact": "VIDRA_AUDITOR_SITE_RU_MOBILE.png",
+      "sha256": "7796c9176a7571947650c8ca2c838435e50c02bb86b50b8a617039c3257ebaba",
+      "bytes": 36758
+    }
+  ],
+  "limits": {
+    "actualMetaMaskExtensionE2E": false,
+    "studioConsoleLanguage": "ru",
+    "investorNarrationLanguage": "ru",
+    "independentSecurityAudit": false,
+    "grantSubmissions": 0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "verifiedAt": "2026-10-03T07:30:20.472514+00:00",
+  "passed": true,
+  "scope": "Actual browser layout checked after fixing grid overflow of video previews; no transactions or content changes.",
+  "fixedDefect": "On a narrow pane, the video grid item exceeded its 145px frame and overlapped the product title.",
+  "viewports": [
+    {
+      "requestedWidth": 1440,
+      "requestedHeight": 900,
+      "pageWidth": 1425,
+      "horizontalOverflow": false,
+      "videoCardsChecked": 3,
+      "allPreviewsContained": true,
+      "allTitlesNotOverlapped": true,
+      "screenshot": "MARKET_DESKTOP_VERIFIED.png"
+    },
+    {
+      "requestedWidth": 390,
+      "requestedHeight": 844,
+      "pageWidth": 375,
+      "horizontalOverflow": false,
+      "videoCardsChecked": 3,
+      "allPreviewsContained": true,
+      "allTitlesNotOverlapped": true,
+      "screenshot": "MARKET_MOBILE_VERIFIED.png"
+    }
+  ],
+  "defaultViewportRestored": true
+}

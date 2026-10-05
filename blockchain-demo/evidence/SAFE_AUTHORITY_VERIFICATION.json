@@ -1,0 +1,102 @@
+{
+  "verifiedAt": "2026-10-03T10:17:23.275Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "authority": {
+    "chainId": 84532,
+    "safe": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+    "singleton": "0x41675C099F32341bf84BFc5382aF534df5C7461a",
+    "proxyCodeHash": "0xd7d408ebcd99b2b70be43e20253d6d92a8ea8fab29bd3be7f55b10032331fb4c",
+    "singletonCodeHash": "0x1fe2df852ba3299d6534ef416eefa406e56ced995bca886ab7a553e6d0c5e1c4",
+    "owners": [
+      "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+      "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+      "0xBA5ea590c82a88C419594AcE35949Af97D10b537",
+      "0x6D1013F2585f8F8E64b53ac94B542a565ef98844",
+      "0xe18Ea8F32cBc3537e0F16904099b647DFC5C19ac"
+    ],
+    "threshold": 3,
+    "modules": [],
+    "guard": "0x0000000000000000000000000000000000000000",
+    "fallbackHandler": "0x0000000000000000000000000000000000000000",
+    "block": {
+      "number": 47627174,
+      "hash": "0x3c97a82b7c88118598eb1d5e4177460d2ab7e0d3fd1561c10b45a978a67f974b"
+    }
+  },
+  "probes": [
+    {
+      "name": "master-copy",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "singleton-code",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "proxy-code",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "enabled-module",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "module-pagination",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "guard",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "fallback",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "replaced-owner",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "threshold",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "reorg",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "wrong-network",
+      "refusedBeforeProposalSigningAndNftDomainWork": true,
+      "method": "In-memory alteration of actual observed Safe responses; no live configuration change"
+    },
+    {
+      "name": "missing-runtime-verifier",
+      "refused": true
+    }
+  ],
+  "chainWritesCreated": 0,
+  "nativeTransactionsSigned": 0,
+  "receiptCountBefore": 77,
+  "receiptCountAfter": 77,
+  "checks": [
+    "Official pinned Safe 1.4.1 proxy and singleton bytecode, storage implementation pointer",
+    "Exactly five registered owners and threshold three",
+    "No enabled modules, guard or fallback handler",
+    "All configuration reads in one canonical block with two-RPC agreement",
+    "Runtime startup, NFT publication, Safe signing, commerce/delivery approval, live view and final broadcast require authority verification"
+  ],
+  "limits": "Configuration observed at the recorded block. Negative probes use copied responses, not live upgrades or module installations. All demo signers share one Mac; this does not provide independent custody. A pre-broadcast read cannot prevent a separate authorized Safe configuration change after broadcast and before mining."
+}

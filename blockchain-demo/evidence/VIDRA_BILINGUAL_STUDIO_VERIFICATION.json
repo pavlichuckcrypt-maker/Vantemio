@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-10-03T18:42:08.280816+00:00",
+  "status": "passed",
+  "chainId": 84532,
+  "testOnly": true,
+  "interfaces": [
+    "auditor website",
+    "automated studio console"
+  ],
+  "languages": [
+    "ru",
+    "en"
+  ],
+  "languageQueryAndPersistedPreference": true,
+  "languagePreservedAcrossStudioAuditorLinks": true,
+  "studioDesktop": {
+    "viewport": "1426x892",
+    "clientWidth": 1411,
+    "scrollWidth": 1411
+  },
+  "studioMobile": {
+    "viewport": "390x844",
+    "clientWidth": 375,
+    "scrollWidth": 375
+  },
+  "assetPreserved": "2d5c7b1f-3877-4b3a-b316-3fe4e5c07d80",
+  "editedContentTitlePreserved": true,
+  "technicalHashesAddressesAndIdsUnchanged": true,
+  "unitRenderingOnlyTestPassed": true,
+  "busyWriteGuardsAndStaleStatePreservedInUnitTest": true,
+  "capturedScreenshots": [
+    "VIDRA_AI_STUDIO_EN_DESKTOP.png",
+    "VIDRA_AI_STUDIO_RU_DESKTOP.png",
+    "VIDRA_AI_STUDIO_EN_MOBILE.png",
+    "VIDRA_AI_STUDIO_RU_MOBILE.png"
+  ],
+  "newWorkflowProof": "VIDRA_ENGLISH_WORKFLOW_VERIFICATION.json",
+  "metaMaskExtensionAcceptance": false,
+  "limits": "Bilingual local demo and managed wallet E2E. Actual MetaMask extension acceptance and independent security audit remain pending."
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "verifiedAt": "2026-10-03T20:33:32.717Z",
+  "testOnly": true,
+  "chainId": 84532,
+  "actualMetaMaskExtension": true,
+  "browser": "Normal Google Chrome",
+  "profile": "VidRa AI · Base Sepolia Demo",
+  "account": "0x98539cf1e88f2621705644061881bD42e10C5E92",
+  "offerId": "138",
+  "exchangeId": "261",
+  "priceDEMO": "25",
+  "creditContract": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+  "boson": "0x7de418a7ce94debd057c34ebac232e7027634ade",
+  "nftTokenId": "8",
+  "canonicalBlock": 47645656,
+  "rpcProviders": 2,
+  "minimumConfirmations": 3,
+  "blockHash": "0x2e56a46aa307bd970170235e034faefb68f9e2d9be600ee3ff696947d12dc9c6",
+  "exchangeState": "COMPLETED",
+  "buyerId": "43",
+  "nonce": 6,
+  "balance": "75000000000000000000",
+  "allowance": "0",
+  "authorNFT8Owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+  "standardAccount": true,
+  "transactions": [
+    {
+      "action": "commit",
+      "hash": "0xcf1ad65d455542e686aa38ad8ec73c11096092451c32eceae75dd63a87cf138c",
+      "block": 47645483,
+      "blockHash": "0x576dca7dab46392d40a638bced97ce3c81a91126ef3d849eb96ef8cf797ed6c6",
+      "from": "0x98539cf1e88f2621705644061881bD42e10C5E92",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 3,
+      "gasLimit": "480135",
+      "gasUsed": "462733",
+      "exactIntentMatched": true
+    },
+    {
+      "action": "redeem",
+      "hash": "0xacb27a75e69feb095679890ee3f5d7de59dd5ebed3f376aa2b50f5bc4eb66fbc",
+      "block": 47645523,
+      "blockHash": "0xa90afc89ae9ebb8ab57fe29c76d12cb91ba8f6d0db3c217fb11afdfb4c21f46d",
+      "from": "0x98539cf1e88f2621705644061881bD42e10C5E92",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 4,
+      "gasLimit": "165397",
+      "gasUsed": "143313",
+      "exactIntentMatched": true
+    },
+    {
+      "action": "complete",
+      "hash": "0xc1f7e5790a1b5a0ab96d9d9dd15a001239b38eb1b0705964612e62b74bd4c867",
+      "block": 47645598,
+      "blockHash": "0x09e77957e586f20c0af20b9202d86675e9be658dd83a19582424d22a2f9ebd84",
+      "from": "0x98539cf1e88f2621705644061881bD42e10C5E92",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 5,
+      "gasLimit": "125460",
+      "gasUsed": "118400",
+      "exactIntentMatched": true
+    }
+  ],
+  "downloadBytes": 6400860,
+  "assetSha256": "3867647a40867cd842d22ac6632b58155e01b5a05c642ae65c94920a404e3466",
+  "exactBrowserDownloadVerified": true,
+  "externalPrivateKeyStoredByServer": false,
+  "seedBackupConfirmed": false,
+  "approvalRecovery": {
+    "reason": "confirmed-nonce-consumed-and-exact-allowance",
+    "chainId": 84532,
+    "block": 47645422,
+    "blockHash": "0x1e6fc942be53bd44efcbf7f1e70d85f6358b78a8926c634e681770fc4698ccd2",
+    "nonce": [
+      "3",
+      "3"
+    ],
+    "allowance": [
+      "25000000000000000000",
+      "25000000000000000000"
+    ]
+  },
+  "relayReceiptAccepted": false,
+  "verificationChainWrites": 0,
+  "limits": [
+    "Only Base Sepolia test assets",
+    "Smart-account relayed receipts are unsupported; choose test ETH in MetaMask network fee options",
+    "Existing managed-wallet video is historical; this report verifies the additional actual MetaMask workflow",
+    "All Safe demo signers remain on one Mac"
+  ]
+}

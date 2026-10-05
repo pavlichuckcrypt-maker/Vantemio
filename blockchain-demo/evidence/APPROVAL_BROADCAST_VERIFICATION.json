@@ -1,0 +1,75 @@
+{
+  "verifiedAt": "2026-10-03T09:47:46.242Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "policy": "demo-commerce-v3",
+  "readonlySimulationHistory": [
+    {
+      "verifiedAt": "2026-10-03T09:38:35.639Z",
+      "simulation": "withdrawFunds: seller, 1 DEMO; eth_call only, not a withdrawal",
+      "quorumDigest": "0xe4ee94922771fba183deedfaecdef13d2a31ff955905fd9be03b929f781f70f9",
+      "receiptCountBefore": 76,
+      "receiptCountAfter": 76
+    }
+  ],
+  "offchainApprovalsVerified": 3,
+  "implementationDigest": "0x5b2751aed93faf760c27a61f7ccc4159909af84e7abb1c566ef39c589c95841d",
+  "quorumDigest": "0xa2ba935d41467fd2b1288e23fa53d0fed7dbf40a8f01566b7907e3da8765dc15",
+  "requestSimulated": true,
+  "simulation": "createOffer: seller, test service, 1 DEMO, quantity 1; eth_call only, no offer published; remains usable after all seller proceeds are withdrawn",
+  "probes": [
+    {
+      "name": "actor",
+      "refused": true,
+      "method": "Changed prepared input in memory; original real off-chain signatures retained"
+    },
+    {
+      "name": "nonce",
+      "refused": true,
+      "method": "Changed prepared input in memory; original real off-chain signatures retained"
+    },
+    {
+      "name": "calldata",
+      "refused": true,
+      "method": "Changed prepared input in memory; original real off-chain signatures retained"
+    },
+    {
+      "name": "native-value",
+      "refused": true,
+      "method": "Changed prepared input in memory; original real off-chain signatures retained"
+    },
+    {
+      "name": "target",
+      "refused": true,
+      "method": "Changed prepared input in memory; original real off-chain signatures retained"
+    },
+    {
+      "name": "network",
+      "refused": true,
+      "method": "Changed prepared input in memory; original real off-chain signatures retained"
+    },
+    {
+      "name": "implementation-digest",
+      "refused": true,
+      "method": "In-memory changed verifier result; live code unchanged"
+    },
+    {
+      "name": "missing-approval",
+      "refused": true,
+      "method": "Actual protected transaction gateway; refused before fee estimation/wallet signing"
+    },
+    {
+      "name": "preparation-deadline",
+      "refused": true,
+      "method": "Actual journal and runtime final guard, real typed approvals/current chain reads; wallet native-sign step stubbed, monotonic delay modeled at 120 seconds; no pending persistence/broadcast"
+    }
+  ],
+  "nativeTransactionsSigned": 0,
+  "broadcastAttempts": 0,
+  "chainWritesCreated": 0,
+  "receiptCountBefore": 77,
+  "receiptCountAfter": 77,
+  "expiredProbePersistedPending": false,
+  "limits": "Real demo EIP-712 signatures and live pinned protocol/authority/nonce reads. Negative inputs and delay are modeled in memory; no protocol state is changed. Software quorum/expiry gates are enforced by this runtime, not by the native EOA transaction or Boson contracts. Raw approval signatures remain in memory and are not exported. Same-Mac demo custody remains."
+}

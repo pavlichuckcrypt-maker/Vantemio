@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-03T06:13:50.518Z",
+  "chainId": 84532,
+  "passed": true,
+  "chainWritesCreated": 0,
+  "confirmedExchangeReplayed": "253",
+  "receiptCountBefore": 67,
+  "receiptCountAfter": 67,
+  "checks": [
+    "lost HTTP response + reconstructed browser client reused the same intent",
+    "confirmed Boson purchase returned idempotent result",
+    "order and receipt counts unchanged",
+    "live chain projection verified NFT ownership/order states/offer availability at one block",
+    "browser retry module served"
+  ],
+  "localFailureInjection": "HTTP errors, post-receipt exceptions, unavailable storage, external NFT transfer, depleted offer, changed terms and reorg covered by local tests",
+  "browserVerification": {
+    "verifiedAt": "2026-10-03T06:19:51.191595+00:00",
+    "existingNFTChecked": "6",
+    "displayedReceiptCount": 67,
+    "visibleResult": "Existing result verified; no repeat transaction",
+    "desktopViewport": [
+      1440,
+      900
+    ],
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "desktopPageWidth": 1425,
+    "mobilePageWidth": 375,
+    "viewportReset": true
+  }
+}

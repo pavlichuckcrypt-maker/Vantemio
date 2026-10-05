@@ -1,0 +1,46 @@
+{
+  "verifiedAt": "2026-10-03T10:32:34.039Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "operations": [
+    {
+      "transaction": "0x32685ef08902d728d3ca5272772dd4300ec0d21bc9c3e62f70bd6009c0299b68",
+      "block": {
+        "number": 47627609,
+        "hash": "0x49f40dde9537ae0fe9f26b8259a3615c8b088366d83e820e5d09e178eb4cf3d4"
+      },
+      "method": "pause",
+      "digest": "0xa47e957052ea66dc7d99524d28946525fa3f100fb93d3cd812ba5887eff91bfa",
+      "approvalAddresses": [
+        "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+        "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+        "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+      ],
+      "safeNonceBefore": "10",
+      "pausedAtReceiptBlock": true
+    },
+    {
+      "transaction": "0xd846deb660c3adadf54d1fec6195847f5f7b245cf67be1bc5fafd488dd5df754",
+      "block": {
+        "number": 47627621,
+        "hash": "0xe1e84be37a83b273733bc92dd79c43cdf04dee54d5001adcb2c4719031c59eae"
+      },
+      "method": "unpause",
+      "digest": "0xfbf1d532b8e2622abb1c9fc2ed2e493fcdff56ea2339e3d342cece248888b95d",
+      "approvalAddresses": [
+        "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+        "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+        "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+      ],
+      "safeNonceBefore": "11",
+      "pausedAtReceiptBlock": false
+    }
+  ],
+  "pausedAfter": false,
+  "replayCreatedTransactions": 0,
+  "receiptCountBefore": 77,
+  "receiptCountAfter": 79,
+  "scope": "One actual HTTP Safe pause/unpause cycle using the bound proposal and final pre-broadcast guard. Two successful canonical receipts, three confirmations, exact nested NFT-only calls, ExecutionSuccess digest and recovered sorted three registered signers, authority and historical pause states verified on two RPCs. Same-key repeats add no writes. No content, NFT, offer, order or currency transfer created."
+}

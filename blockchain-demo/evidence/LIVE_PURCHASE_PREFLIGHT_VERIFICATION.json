@@ -1,0 +1,73 @@
+{
+  "verifiedAt": "2026-10-03T08:45:36.251Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "exchangeId": "259",
+  "offerId": "133",
+  "price": "7.5",
+  "finalOrderState": "CANCELLED",
+  "refundWithdrawn": true,
+  "buyerCreditBefore": "9856.5",
+  "buyerCreditAfter": "9856.5",
+  "nftPassportOwnerUnchanged": true,
+  "replayCreatedTransactions": 0,
+  "receiptCountBefore": 72,
+  "receiptCountAfter": 76,
+  "newReceipts": [
+    {
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x0e7db8dbdc1934cd9ad647a139bffc839534239920ada50cdc9318e71c67aace",
+      "block": 47624396,
+      "blockHash": "0xe182faf04d2fd7103e80f92e315bdfb33996ff991738e8439d46b0f548818f75",
+      "gasUsed": "46366",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x0e7db8dbdc1934cd9ad647a139bffc839534239920ada50cdc9318e71c67aace",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-commit",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0xee24ba15e71625606a1a67e82be3f1a14cc64d808b6c86c1b32945a383dcce36",
+      "block": 47624401,
+      "blockHash": "0xaf06411949ff593ef96d2301f519543fdf8f112e62d263d159b2cd2cc74f8230",
+      "gasUsed": "394429",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xee24ba15e71625606a1a67e82be3f1a14cc64d808b6c86c1b32945a383dcce36",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-cancel",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0xb7dfce6bb9d325a00d27c55d5ffea2c3dadab9affb5982e8596e6bca271c7932",
+      "block": 47624409,
+      "blockHash": "0x55db488036b74dbe180946e4d9da2ae3ec4f74a4ad8c79734884aeb6a0a4f378",
+      "gasUsed": "255585",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xb7dfce6bb9d325a00d27c55d5ffea2c3dadab9affb5982e8596e6bca271c7932",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-refund",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x421339e373d8b04a19a49587665a9c3a04d603dde47dc42d6a664a338179eddc",
+      "block": 47624417,
+      "blockHash": "0x9ac33c772e712b936568ce3bd890df40d398ba36c8be3c9fea2dd20858cdf0f1",
+      "gasUsed": "63128",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x421339e373d8b04a19a49587665a9c3a04d603dde47dc42d6a664a338179eddc",
+      "confirmations": 3
+    }
+  ],
+  "confirmedBlock": {
+    "number": 47624422,
+    "hash": "0x6eb6512b6f44c6235f75f64cc8cf4c18f2c9a7c5d2377ad84ef5c7d4439386d9"
+  },
+  "scope": "One real HTTP purchase through the changed canonical offer-availability guard, same-key replay, cancellation and exact test-token refund. Public receipts, exchange state, buyer balance and unchanged NFT ownership verified on two RPCs. Persistent private probe keys allow only this purchase to resume; a completed run sends nothing. Stock is consumed by a Boson commitment even when cancelled. No real-money sale or transfer of copyright/NFT is demonstrated."
+}

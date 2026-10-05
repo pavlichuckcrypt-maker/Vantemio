@@ -1,0 +1,1101 @@
+{
+  "verifiedAt": "2026-10-03T10:52:52.414Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "transactionsVerified": 80,
+  "proofs": [
+    {
+      "transaction": "0x732426b98e8d9cd32c68390b62b618e5a4ae3d99f842c77d24a2ecdb3859904d",
+      "label": "deploy-safe",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67",
+      "nonce": 0,
+      "block": {
+        "number": 47616571,
+        "hash": "0x1b9af7f6c81857b9ec52efcc700d007accf8591fd8ffa7abdff00d732805ca5e"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x6d242c6c90b7c2ff1c19dc9aac624e4526a638b24355f441ecfc78ece4287d9a",
+      "label": "deploy-nft",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": null,
+      "nonce": 1,
+      "block": {
+        "number": 47616575,
+        "hash": "0x20096de78d24215b5182017af723cbacdd8ffce9f73c015acc73041364346b65"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xd4a05aeda7821b12f90e099b9818237e06a55e32ee2be80880aaddd25c842ac3",
+      "label": "deploy-demo-credit",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": null,
+      "nonce": 2,
+      "block": {
+        "number": 47616579,
+        "hash": "0xa9fc3c05f32578fe4d28d53e7e1165e00f801e4cf4635643e18209cf2271374e"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x7bd71b8be090fcf99a9fb0eb766cd32c884e93ba768b82e5ed6c4d936b8c2fe2",
+      "label": "fund-demo-buyer",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "nonce": 3,
+      "block": {
+        "number": 47616583,
+        "hash": "0x92401198d48c6035fac8729cef13d494218135929ab670c10a7a6e9dcc51d9c2"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xa0468b076da46ea5413ca81c22812c848744a2188fdaf23e5fdcfb3c5234c432",
+      "label": "fund-demo-seller",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "nonce": 4,
+      "block": {
+        "number": 47616586,
+        "hash": "0x2c89e8e2ec6c09b652e14082de3b4ca066b1178a6dee34e45c6eda83b50127ce"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x950ee327941fc08bdeb8c646b81e2a12198211a47829c829cdb56153a80f5b7a",
+      "label": "fund-demo-resolver",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0xc070e569444A581d9e1c66088da94b8997bc24f1",
+      "nonce": 5,
+      "block": {
+        "number": 47616590,
+        "hash": "0x9c88c9746038b89fe5751f630f46bc3e1371ee63126e95fe2d070eb409814535"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xf3991f6d73b2d5f91df22660ef4d0d6fad4fc20213104d189a4748d7e7877034",
+      "label": "boson-seller",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 0,
+      "block": {
+        "number": 47616595,
+        "hash": "0xe67e869d521833135d0f8da9fb3eaaed07dee1432b908fd3655dc2c3bca06f6a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x1857c793b570c18aa7493efa8f128505c87627689aaf10835753633f9a805a7f",
+      "label": "boson-resolver",
+      "role": "resolver",
+      "from": "0xc070e569444A581d9e1c66088da94b8997bc24f1",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 0,
+      "block": {
+        "number": 47616599,
+        "hash": "0x4b8e3cbd36b1787a6a178aeaf924d5c98a1625f640dfb51f72e0795b2fd18ff0"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x07114d42127ad9a4ecf6fe3491f7c7e7594a21724819a3ddeb1d7cfb8253b69a",
+      "label": "boson-offer",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 1,
+      "block": {
+        "number": 47616602,
+        "hash": "0xd079ff88f77a4ba187c78db1fe449885d5cb1bdb038a3dbef4ea889c775b5200"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x31fd4d5d44b53ebd3a7330e618b08b2c027ed7231f0b14d8fdb126d27f37fdae",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 6,
+      "block": {
+        "number": 47616614,
+        "hash": "0xff54ca8974577c4507e47217e65c44d41ecb30779ece4eed1f28125cf766160a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x60f12c0cfcdb93f8ba46a9b0534e273262cfcd5884aa9f9a8cd2b602c0975cbd",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 7,
+      "block": {
+        "number": 47616629,
+        "hash": "0x78a50fe8a92622d0b62f24b8e064238891dc3644eb8400679b84c18ff63bb1f2"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x18e0851a403be00ab00712c60709f58c808130e8a3fd4e4eb96cba6138d7f29a",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 8,
+      "block": {
+        "number": 47616633,
+        "hash": "0x25fe10031b67b0e5b8eada573f711e2eb5d237be308bc24cc51db3d3b30935c2"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xf8a488b4308c110cda5325d8753d49aa8ce9d6c98a5baf05d5793cafdd6ff35c",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 0,
+      "block": {
+        "number": 47616638,
+        "hash": "0xa6a46a0d0b9a5bbf79cf800b7a15caf2eede36b089056e9e6c9500b1b48a1339"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x2aa6092a57e721638e58e5a87bf21cfcaad6fe7e73c4e16a2a4c2a487bc6dd6d",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 1,
+      "block": {
+        "number": 47616641,
+        "hash": "0x599969a50970713583dc1a19fc66e0ef7a8526a129b400610f7dfefa5e318fdd"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xb6422d19f20ce7c6c99489f1d85ced411c8cbb65ba39a831295c4e9d7e52b2b9",
+      "label": "boson-redeem",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 2,
+      "block": {
+        "number": 47616645,
+        "hash": "0x4912b00843d589872db526029a711d97aa078f2c642a07b50aec24023bd40b9f"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xb8187272b3098d28cf95fdb204b06ecdeb1f3a702e0282320504aebe066897e1",
+      "label": "boson-complete",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 3,
+      "block": {
+        "number": 47616648,
+        "hash": "0x84ca8c7975b75bf9a29488caf155b3f4a39561553670924124d3246fcbf22020"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x7d66cf1c86b2c72e389e32cb6aa1af22ea8e42ab204203bdf710dbbf13fe4304",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 4,
+      "block": {
+        "number": 47616652,
+        "hash": "0x6d3b2473fb17190bbafc8490e15ca3f652f2603e0f8603a2764916c4e2a83297"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xa1738425fd2bc7cfed528d466adf234490d4b44c050d4ff9c5086bacb4a21980",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 5,
+      "block": {
+        "number": 47616655,
+        "hash": "0x812519795e532bdda3f9b90a1a482f64475e9664aa138ba20e094e9ae774d506"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xf3fbf61695ed19fd6a7f1147664706b9bb4519a857032cec7e26260d7718ec6c",
+      "label": "boson-cancel",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 6,
+      "block": {
+        "number": 47616658,
+        "hash": "0x8af36e81e88e03210c94499930780a355bb527c054ab761f09554587eaae7dbb"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xb6fab140b8d6ece40cbe2a86cd1a6e1c91e6369c8e5ba70f5d3a7e7ba0ad64a4",
+      "label": "boson-refund",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 7,
+      "block": {
+        "number": 47616663,
+        "hash": "0x2a2b5e37e9ef380f8c8763a9ecd43c9ebd6b81b81394db5a7ac0c02de16967ab"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x2044da8db7b445bd0a6c56e4e21c5e52c8bffdeaa1ec93ebe6be9dddb2e36f24",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 8,
+      "block": {
+        "number": 47616667,
+        "hash": "0x7da336f58d2b2ed7e6dd4cd641a0b3381382cbb63a87122bde3bbf9ca434b863"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xa61b62e94ad48f5dabafe967614dab0a8e0010cc033efdae043dea5e9cff2804",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 9,
+      "block": {
+        "number": 47616671,
+        "hash": "0x81961428e038ef5b9fcdef92cefdabe67236c721a009b94bf4a09aa35bde7e00"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xa69c77e867e8680b04dfd717aa71e40c7cd4b88403fc1503d90fc097b204a87d",
+      "label": "boson-redeem",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 10,
+      "block": {
+        "number": 47616674,
+        "hash": "0xbdc56f8ff07e6e4de2fba421171349b688de8916d43bb0e6864a973290048100"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x6462338da23577e3e4afdb5bfb1ab6a1abec4f8e1ac6b90838440bc060600ca9",
+      "label": "boson-dispute",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 11,
+      "block": {
+        "number": 47616678,
+        "hash": "0x0bf9ef709b51faf983d9374c0b310480be318c3af9fb735ae6ae7743fa2b8595"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xcc16166946124b95674491c152cac9117bc6c1184a77e5feee79c8ffb37dea92",
+      "label": "boson-retract",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 12,
+      "block": {
+        "number": 47616682,
+        "hash": "0xbe595e82f8af3c3a26562c06a3c1dcd4eaf5b2ef3e3c44757c96468ae631fb66"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 9,
+      "block": {
+        "number": 47617859,
+        "hash": "0x48dc954d3bc9d2c5115ad1f42712a3c9c7b6ecb453c335983fd815e69b5c1a4f"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2",
+      "label": "boson-market-offer",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 2,
+      "block": {
+        "number": 47618029,
+        "hash": "0xad5dc26d14b01f9ee8e7696ba5b743e537ea43eb6332d84d66db5f88d2b48364"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xb1bbb72736c3f3f9f5e6782ed200251f3db39a740569ebdc73b4a7276527461a",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 13,
+      "block": {
+        "number": 47618034,
+        "hash": "0x32a234bdcd83cba110ab396926b56c4c8b02ecf53bdf07809f9a4292c3e82c62"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x506863032560cc7aa474467900bab6a41b1aaea69cab8efce2bbf6bf94fcce03",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 14,
+      "block": {
+        "number": 47618038,
+        "hash": "0xa7bfaf97f3fa84f1a390eb76e0a56c621985b4582dc7564052b81df18d56d2e0"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x688755f1a481f5f0c687669974c0ab99d6a5c1916ebca349ea0b1b2672c7c89a",
+      "label": "boson-redeem",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 15,
+      "block": {
+        "number": 47618043,
+        "hash": "0x71b34da8fc351fd4c4ccb86f9bb9e54914c0b2a176682cdf8bde86780e8172e8"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x5cd49f546ffdc6651586d0847f290f282412f26779c35cd34fdb2e1b77cd90bf",
+      "label": "boson-complete",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 16,
+      "block": {
+        "number": 47618048,
+        "hash": "0xb2af505c92b2bcd5b297db190ce56ee42f69f6ed175ee15ca001c437ec2ecdf7"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 10,
+      "block": {
+        "number": 47618054,
+        "hash": "0xab83273bf38379d7542df9cb6e7aada3ab5a041f17f3eb47cef3eb2b1933ed76"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950",
+      "label": "boson-market-offer",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 3,
+      "block": {
+        "number": 47618059,
+        "hash": "0xeadf64e2dc44d33280a8e58467b54ffaf42d8d3aec6f7a79945c6f6ceef0da7a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x5e47f88b9574378ec1121f3b000918c48affbfb0443a51e2a18e44523dd90cad",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 17,
+      "block": {
+        "number": 47618063,
+        "hash": "0x294d61c30efe54593270a1f76a3b53550200d9ec89c0d244e91c6fba91f54f72"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xf4dd72c0badb33994f28bc0bdb4b2cdbcf71bfab1926fa43ef2a1212020c2d9c",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 18,
+      "block": {
+        "number": 47618067,
+        "hash": "0x8532312377bedb6d48b7b0c9bf010230927f551ef1eaf00caa1f32de04cd5e99"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x1806c8bb8ae9a96c76bbaf611f52e31eba72caaf871055bed1574eda74bb6b59",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 11,
+      "block": {
+        "number": 47618072,
+        "hash": "0xd929a6221fe25e5d5d9f62501b5fe6e50dcd92fe452efd32b90dfee00f8c4c5c"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xa4279402390e5f5d4a7464ce18e9670f58c8512118ebb80d3c6ce591c02bd294",
+      "label": "boson-cancel",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 19,
+      "block": {
+        "number": 47618077,
+        "hash": "0x4b89e6deb7f19232db0307f3f6de1e576a749c73609825ee82bb452f8a24197b"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xd59145f2cca11020af8fbf073a3f3ea29aea6f09a509cb4bfff334db5ee7f617",
+      "label": "boson-refund",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 20,
+      "block": {
+        "number": 47618081,
+        "hash": "0xd20fc13d034c9c34eef223b3944ad4914f123b12c98638369941a1ee8c0456bd"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x479f06b4315136b1f3ba8eb0275d88fe3f87f2fb0e3edfe62734a2612924c68b",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 12,
+      "block": {
+        "number": 47618085,
+        "hash": "0xb1461f566a35090e73bd21f0b53cbc24e72dd90c0a834f635b7e97ab291cc08c"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e",
+      "label": "boson-market-offer",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 4,
+      "block": {
+        "number": 47618090,
+        "hash": "0xe9760422d9d8bcc70a497a4a590be1d9152be06bafa39a050ca50bfac2596d53"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd",
+      "label": "boson-market-offer",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 5,
+      "block": {
+        "number": 47618095,
+        "hash": "0xe0168abc11af5c4bc6f48275230815d9f03782d49e099f887ef0e7d2b7105c47"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x80e313a023706f0665e20722882856119ab2ab99e3e0445711314cf1b7748547",
+      "label": "boson-seller-withdraw",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 6,
+      "block": {
+        "number": 47618099,
+        "hash": "0xd7337a77d85573c8f227c165edb784384ea1cadca73789d55654b837118e312e"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x646ea64cccd16072ba0e70ed4736de42ccdc1ab70cfe11dcd1b15a0481a8489c",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 13,
+      "block": {
+        "number": 47618222,
+        "hash": "0x83bf8f8fb69e2dbd48e6ea03c853a77c87b8de92eb137b26a9a48aa9b016babf"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x4a5d42dbc2ffd6f9f1a48f8113a0e8fddd96978197efd317ae498707c89c6c81",
+      "label": "boson-market-offer",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 7,
+      "block": {
+        "number": 47618227,
+        "hash": "0x60d1eea2154af9f34f0c7f986cf88ae08804ba29ac545c4ff7166facc39a8348"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xa421a82fe7368c434fe8dd9b284230105a9396c64d53870e2fa3fc87f07720f9",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 21,
+      "block": {
+        "number": 47618231,
+        "hash": "0x5ab547f5acbf81d72afa94a350940c6b18602d2466cd789f406e0d3d6ddcc3c3"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x8b5675b38c1ef57e521bb460297fdb47e5d8042217f74ba1cc5a8c06e9606111",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 22,
+      "block": {
+        "number": 47618235,
+        "hash": "0x4767629ea9219a8beef979f158f96d6692662a4bf33507e5cb5d621ba184286b"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xbf3dde9115c90b425f08a534a3cc4145af59fee4083f247431122985078b8f2f",
+      "label": "boson-redeem",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 23,
+      "block": {
+        "number": 47618240,
+        "hash": "0xccdfbf98f47a77a8d9f1e6cdad7cfea93c63aca207d91202deb7224aa9880f8a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x6d2560c37f3d28c200a4272556211b40dd5f394a08919c24868c5cedcff656d7",
+      "label": "boson-complete",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 24,
+      "block": {
+        "number": 47618247,
+        "hash": "0x1b5fe7a62112ae6c69eb4cdc558784fbed57ab711b58db77be4beecd1120fa03"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xff1b4c543435cebf2addf9cbe7892362698907e48fa5d665dc9d2633ed6a9758",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 14,
+      "block": {
+        "number": 47618617,
+        "hash": "0x77eeb7ee041bd5c0e512eedaafca184656e1830a99b3c579e7a9bbbfa995bcbb"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x8857547e78f86343f868fa59434925192d1df0d9e23cb7b8c4f5666b0101cc19",
+      "label": "boson-market-offer",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 8,
+      "block": {
+        "number": 47618621,
+        "hash": "0xc18675a7d6164eb07125448b0484e7a1a7320061fc0025db3e2f32fa97fca404"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x5f5be03d35ae72f3ed694e8b5d2e40afa9aa4ed8ce60cd1a6584439abd3c6438",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 25,
+      "block": {
+        "number": 47618625,
+        "hash": "0x432d1f1c053a6b2e3e6eb776b552d333e1f56b5a7a962c011e9136b15f87426a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xabef9eec3bae36e104312067a7ff1ae05ec4dfb48b958217d9c5b7c760ad6ed3",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 26,
+      "block": {
+        "number": 47618629,
+        "hash": "0xa6f91fd554287ab793e672b5d6ba273f58d1f02cf7028806b60ff4d14cb2683f"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x9f1f2114df46630a4c81d3e07117ffedd996489ce22de3f51b2eca3251ee4c76",
+      "label": "boson-redeem",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 27,
+      "block": {
+        "number": 47618633,
+        "hash": "0x06d20693839f48c69abae8efffa90cbf6559d90b32374f81d8e00bbf77a485eb"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x0fb9981b09d81581bdfeb89bef6b4b7f89bc3b6067c19aed285f9a0fbe5a6c32",
+      "label": "boson-complete",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 28,
+      "block": {
+        "number": 47618639,
+        "hash": "0x12589381360a9fc4a08a18c20f1117586dc9a2acf02d5e74d3920498128b5af5"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xaff63d21de1c7d19dd4265ca7a885bf4b0f3b6f51694853c67f1d780eb209afc",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 29,
+      "block": {
+        "number": 47618714,
+        "hash": "0xef4d600b12c289f60a597eb7dfdcf87aec2a25d9e4aca7ba6d144b5521fc22d9"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x6431c296c5809cf9f13365bc0ab7cbd796bc6b79df5a9667b4bc6d5d464853d3",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 30,
+      "block": {
+        "number": 47618718,
+        "hash": "0x42f333932770590b8c5936316d18de38a062c1cd546d3191e536833c5a7b9a7e"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x6abaf0dda36d341a7e9ca78e6614eb10dadcac5a63b2f2abbebbe01acf6a87d7",
+      "label": "boson-redeem",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 31,
+      "block": {
+        "number": 47618722,
+        "hash": "0xdc6962ff4328857df903aa2dfa961170518f634c533f33e181d32b6d4eb8343f"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xe1312158ed37c09b1a18adfe4945b4fa4afea57f3fab627a903f9253ffecd1d4",
+      "label": "boson-complete",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 32,
+      "block": {
+        "number": 47618727,
+        "hash": "0xe1213b0cafb582c87ca75fd4194c6434eaec53d2e97e822dc9c9750a845ccfb1"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x325430b7bfc18285958c798908d6c3afdd492acb73cf73a618f3d20f17bb469d",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 33,
+      "block": {
+        "number": 47618731,
+        "hash": "0x403eb8a9c2ee91ab1041aadbaa1c28851b1e7fbd9cfd4adec763974620774ad4"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x9b26a8271322caaf03c85735ba5df7ccdb1bc869fb3a6227f4312597744d56e5",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 34,
+      "block": {
+        "number": 47618735,
+        "hash": "0x046962419baf69bcaf8966d6a2dad5e433b88a4b5946d8aeb8b720081b4b9ffa"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x7a59b80a30dd81eacca1ec82f5fa1c1206b51a141b4c4db0e9b34349c5d2a4ac",
+      "label": "boson-redeem",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 35,
+      "block": {
+        "number": 47618740,
+        "hash": "0xa309deca2ad7dc97e1148384869c6ea6849134f6ad5196fca202fc8d1a10ead1"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xf004c0f69915092fe5788aaaf2ccfd90172de414ee1d28ec68e91edae5cb8f69",
+      "label": "boson-complete",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 36,
+      "block": {
+        "number": 47618745,
+        "hash": "0xb0d088f4c1f40d8788158d163b57df73b8ea07e1d1b2f57718285a5aed757563"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x1de1a62a6d04536ecc5e775ad1b41d57ae38117b2a3da95632a0fb861e18afb0",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 37,
+      "block": {
+        "number": 47618749,
+        "hash": "0xe767ec29d40e61960e7931a42ad7c851b0befe2c0d92b919ab8b1b02725fe055"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xea9db4f7200b73509addf055579f25ef576a1877757839bae99408e04d270273",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 38,
+      "block": {
+        "number": 47618753,
+        "hash": "0xebaebd8d9c994895f4b0f10e02cfb7d0b70a2219399635e8257c3bc700f9de1a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x4a462f42d12510b70e8adeb7107e562ab9ac70a5b8c022647bef163ba5cb7670",
+      "label": "boson-cancel",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 39,
+      "block": {
+        "number": 47618758,
+        "hash": "0xf720dd76a57bb3b7739c3357091acc7c32ef3053f44ae67bc9545c5f946aa64c"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xb9aea22bf3f29946334cc7b8e2a5f0b678f983f0530df3aad990cdcef69b4eea",
+      "label": "boson-refund",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 40,
+      "block": {
+        "number": 47618762,
+        "hash": "0x0cfde93e899f094e0eddf490eb4fc8c5eca04ea1bd4dcb3c3f8d304ee961ca3a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x2e81c3a7e317b6982af08b11dbe652c022a138a964441b8847d2d946b0457547",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 15,
+      "block": {
+        "number": 47618769,
+        "hash": "0x2398ee38e00c56826bf76808c55c3f794f9d583d6022476d35383e1d1fd7b070"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xb3bd44797d71ab63a86a7d883c949802397ab5f5368f117cfd6f0864f1759d84",
+      "label": "fund-demo-buyer",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "nonce": 16,
+      "block": {
+        "number": 47620806,
+        "hash": "0x0872a81270c1f40bee262e9965e0144daf00fa0c6789ce99185612d0f10eea72"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x52421518ef3f4db9f7b664ea4ea8ac106fd437a2d5092efbe73ccd6761a588d5",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 41,
+      "block": {
+        "number": 47620819,
+        "hash": "0x0bfc82f75524f2e039c3ce111fb7e93d091dad278f576fa959574467b2d88d0b"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x4c609ef3d9402dedfd155335197ae0a33dbc46ae5517303f964dfd227076cff3",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 42,
+      "block": {
+        "number": 47620835,
+        "hash": "0xe4731b0d1291fc9c95a05b908a63f3f0a65fb37471aaeb2fb62454f02fd255ef"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x50b920559414568d767038dcce68ee236073c1a10d9d7b2c6245fffb5d733453",
+      "label": "boson-cancel",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 43,
+      "block": {
+        "number": 47621035,
+        "hash": "0x9510c9d8749d17299a0148fd3f0bb1a024edeb6f371da2bc90bfd65674efdc9a"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x80354a1caa81cc7b5893fcf66cc67547b027b54baf2a93cdbe03a7f152b16478",
+      "label": "boson-refund",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 44,
+      "block": {
+        "number": 47621061,
+        "hash": "0x6b84bd4a425b59a13d8ded8c7616935dc83e09dd11668005414aadc1d14ced9e"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x0e7db8dbdc1934cd9ad647a139bffc839534239920ada50cdc9318e71c67aace",
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "nonce": 45,
+      "block": {
+        "number": 47624396,
+        "hash": "0xe182faf04d2fd7103e80f92e315bdfb33996ff991738e8439d46b0f548818f75"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xee24ba15e71625606a1a67e82be3f1a14cc64d808b6c86c1b32945a383dcce36",
+      "label": "boson-commit",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 46,
+      "block": {
+        "number": 47624401,
+        "hash": "0xaf06411949ff593ef96d2301f519543fdf8f112e62d263d159b2cd2cc74f8230"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xb7dfce6bb9d325a00d27c55d5ffea2c3dadab9affb5982e8596e6bca271c7932",
+      "label": "boson-cancel",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 47,
+      "block": {
+        "number": 47624409,
+        "hash": "0x55db488036b74dbe180946e4d9da2ae3ec4f74a4ad8c79734884aeb6a0a4f378"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x421339e373d8b04a19a49587665a9c3a04d603dde47dc42d6a664a338179eddc",
+      "label": "boson-refund",
+      "role": "buyer",
+      "from": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 48,
+      "block": {
+        "number": 47624417,
+        "hash": "0x9ac33c772e712b936568ce3bd890df40d398ba36c8be3c9fea2dd20858cdf0f1"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x34f740d4b2fd9ac79c626425f2c566008cf88b1d0836565ab1ff41cbf1a8b9d4",
+      "label": "boson-seller-withdraw",
+      "role": "seller",
+      "from": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+      "to": "0x7dE418A7CE94DEbd057c34EBAC232E7027634adE",
+      "nonce": 9,
+      "block": {
+        "number": 47626131,
+        "hash": "0xd0eefa102410e2f636bf22e5517f6fb8071cfba165301f3bdf8c12907063eee5"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x32685ef08902d728d3ca5272772dd4300ec0d21bc9c3e62f70bd6009c0299b68",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 17,
+      "block": {
+        "number": 47627609,
+        "hash": "0x49f40dde9537ae0fe9f26b8259a3615c8b088366d83e820e5d09e178eb4cf3d4"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0xd846deb660c3adadf54d1fec6195847f5f7b245cf67be1bc5fafd488dd5df754",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 18,
+      "block": {
+        "number": 47627621,
+        "hash": "0xe1e84be37a83b273733bc92dd79c43cdf04dee54d5001adcb2c4719031c59eae"
+      },
+      "signedBytesValidated": true
+    },
+    {
+      "transaction": "0x7afeb071f95168ed346648cf1dff9f15a9473c553b8c81f1c91178babfe31366",
+      "label": "safe-execution",
+      "role": "operator",
+      "from": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "to": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "nonce": 19,
+      "block": {
+        "number": 47627761,
+        "hash": "0x7327c168314f23cfed555881584ff240688f3e87af5dbf9df09360a60df5f981"
+      },
+      "signedBytesValidated": true
+    }
+  ],
+  "probes": [
+    {
+      "name": "target",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "data",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "nonce",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "value",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "network",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "gas",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "max-fee",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "priority-fee",
+      "refused": true,
+      "method": "Public transaction fields changed only in memory; no signing or broadcast"
+    },
+    {
+      "name": "unsigned",
+      "refused": true
+    }
+  ],
+  "nativeTransactionsSigned": 0,
+  "chainWritesCreated": 0,
+  "receiptCountBefore": 80,
+  "receiptCountAfter": 80,
+  "scope": "Actual public transaction fields/signatures reconstructed from both RPCs; canonical blocks, registered actor, transaction hash and signed/unsigned serialization checked using the same runtime validator. All observed records pass. Negative changes use public bytes in memory. Runtime snapshots caller fields before async preparation, forbids validated field changes, verifies the recovered signer and exact signed fields/fees, gives final guards a frozen canonical request, and journals these actual bytes before sending. This does not prove confidentiality of demo keys or independently audit ethers; no new native transaction was signed or broadcast."
+}

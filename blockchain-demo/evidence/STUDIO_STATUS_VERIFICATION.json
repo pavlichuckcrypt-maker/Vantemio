@@ -1,0 +1,21 @@
+{
+  "verifiedAt": "2026-10-03T12:16:20.140953+00:00",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "actualPythonCallback": true,
+  "tokenId": "7",
+  "idempotent": true,
+  "busyStatus": "studio-release",
+  "busyStatusObserved": true,
+  "queueIncludesActiveOperation": true,
+  "busySnapshots": 8,
+  "actualHealthDeferredBeforeChainChecks": true,
+  "statusClearedAfterSuccess": true,
+  "changedAcceptanceRejected": true,
+  "statusClearedAfterFailure": true,
+  "receiptCountBefore": 80,
+  "receiptCountAfter": 80,
+  "createdTransactions": 0,
+  "scope": "Existing NFT #7 replay through the real Python after-render publisher and authenticated studio HTTP route. Live process endpoint observed studio-release plus queued work during asynchronous verification. Altered acceptance rejects before publication and clears busy state. No new mint, sale, order, native signing or broadcast. Monitor now defers for active or queued work; independent custody is not claimed."
+}

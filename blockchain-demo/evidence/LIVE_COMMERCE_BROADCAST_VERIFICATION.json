@@ -1,0 +1,38 @@
+{
+  "verifiedAt": "2026-10-03T09:42:46.238Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "policy": "demo-commerce-v3",
+  "transaction": "0x34f740d4b2fd9ac79c626425f2c566008cf88b1d0836565ab1ff41cbf1a8b9d4",
+  "explorer": "https://sepolia.basescan.org/tx/0x34f740d4b2fd9ac79c626425f2c566008cf88b1d0836565ab1ff41cbf1a8b9d4",
+  "amount": "68.1575",
+  "currency": "DEMO",
+  "sellerCreditBefore": "10074.625",
+  "sellerCreditAfter": "10142.7825",
+  "buyerCreditUnchanged": true,
+  "sellerAvailableAfter": "0",
+  "replayCreatedTransactions": 0,
+  "receiptCountBefore": 76,
+  "receiptCountAfter": 77,
+  "newReceipts": [
+    {
+      "label": "boson-seller-withdraw",
+      "role": "seller",
+      "chainId": 84532,
+      "tx": "0x34f740d4b2fd9ac79c626425f2c566008cf88b1d0836565ab1ff41cbf1a8b9d4",
+      "block": 47626131,
+      "blockHash": "0xd0eefa102410e2f636bf22e5517f6fb8071cfba165301f3bdf8c12907063eee5",
+      "gasUsed": "68502",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x34f740d4b2fd9ac79c626425f2c566008cf88b1d0836565ab1ff41cbf1a8b9d4",
+      "confirmations": 3
+    }
+  ],
+  "confirmedBlock": {
+    "number": 47626138,
+    "hash": "0x04637d938393734f58abbaab31ea293209789409cb93c322b310fdc69240f6e6"
+  },
+  "scope": "One real HTTP withdrawal of existing TEST proceeds, after runtime reload with v3 typed implementation binding and the final journal guard. Same-key replay adds no transaction. Exact public calldata, canonical successful receipt, three confirmations, credit balances and zero remaining seller funds checked on two RPCs. No new content, NFT, offer, purchase or real-money transfer."
+}

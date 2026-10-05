@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-03T06:54:09.658Z",
+  "chainId": 84532,
+  "passed": true,
+  "actualCrashExitCode": 91,
+  "faultPoint": "Canonical commit archived and pending hash cleared; domain order not yet saved",
+  "publicExchangeRecovered": "258",
+  "commitTransaction": "0x4c609ef3d9402dedfd155335197ae0a33dbc46ae5517303f964dfd227076cff3",
+  "runtimeStartupRecovery": true,
+  "providersRequired": 2,
+  "replayCreatedTransactions": 0,
+  "finalOrderState": "CANCELLED",
+  "refundWithdrawn": true,
+  "buyerCreditBefore": "9856.5",
+  "buyerCreditAfter": "9856.5",
+  "creditBeforeSource": "Identical historical balance on both RPCs at the block before commitment",
+  "receiptCountBefore": 67,
+  "receiptCountAfter": 72,
+  "newReceipts": [
+    {
+      "label": "fund-demo-buyer",
+      "role": "operator",
+      "chainId": 84532,
+      "tx": "0xb3bd44797d71ab63a86a7d883c949802397ab5f5368f117cfd6f0864f1759d84",
+      "block": 47620806,
+      "blockHash": "0x0872a81270c1f40bee262e9965e0144daf00fa0c6789ce99185612d0f10eea72",
+      "gasUsed": "21000",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xb3bd44797d71ab63a86a7d883c949802397ab5f5368f117cfd6f0864f1759d84",
+      "confirmations": 3
+    },
+    {
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x52421518ef3f4db9f7b664ea4ea8ac106fd437a2d5092efbe73ccd6761a588d5",
+      "block": 47620819,
+      "blockHash": "0x0bfc82f75524f2e039c3ce111fb7e93d091dad278f576fa959574467b2d88d0b",
+      "gasUsed": "46366",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x52421518ef3f4db9f7b664ea4ea8ac106fd437a2d5092efbe73ccd6761a588d5",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-commit",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x4c609ef3d9402dedfd155335197ae0a33dbc46ae5517303f964dfd227076cff3",
+      "block": 47620835,
+      "blockHash": "0xe4731b0d1291fc9c95a05b908a63f3f0a65fb37471aaeb2fb62454f02fd255ef",
+      "gasUsed": "394429",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x4c609ef3d9402dedfd155335197ae0a33dbc46ae5517303f964dfd227076cff3",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-cancel",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x50b920559414568d767038dcce68ee236073c1a10d9d7b2c6245fffb5d733453",
+      "block": 47621035,
+      "blockHash": "0x9510c9d8749d17299a0148fd3f0bb1a024edeb6f371da2bc90bfd65674efdc9a",
+      "gasUsed": "255585",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x50b920559414568d767038dcce68ee236073c1a10d9d7b2c6245fffb5d733453",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-refund",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x80354a1caa81cc7b5893fcf66cc67547b027b54baf2a93cdbe03a7f152b16478",
+      "block": 47621061,
+      "blockHash": "0x6b84bd4a425b59a13d8ded8c7616935dc83e09dd11668005414aadc1d14ced9e",
+      "gasUsed": "63128",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x80354a1caa81cc7b5893fcf66cc67547b027b54baf2a93cdbe03a7f152b16478",
+      "confirmations": 3
+    }
+  ],
+  "verifierResumedAfter": "Stale localhost connection after restart; no purchase or transaction was resubmitted",
+  "testScope": "Real protected testnet purchase and deliberate child exit, actual runtime startup recovery, same-key replay, cancellation and exact refund. Parent verifier resumed after a read-only connection failure.",
+  "browserVerification": {
+    "viewports": [
+      "1440x900",
+      "390x844"
+    ],
+    "horizontalOverflow": false,
+    "orderId": "258",
+    "visibleRecoveryMarker": true,
+    "visibleRefundWithdrawn": true,
+    "screenshot": "ORDER_RECOVERY.png",
+    "screenshotCapturedAt": "2026-10-03T07:00:42.667315+00:00"
+  }
+}

@@ -1,0 +1,1622 @@
+{
+  "schemaVersion": 2,
+  "verifiedAt": "2026-10-03T05:14:58.096Z",
+  "chainId": 84532,
+  "mode": "public-base-sepolia",
+  "testsPassed": 13,
+  "tests": [
+    {
+      "name": "studio export quality and existing certificate bind actual content",
+      "passed": true
+    },
+    {
+      "name": "seller publishes an immutable content-linked offer in official Boson",
+      "passed": true
+    },
+    {
+      "name": "purchase idempotency prevents duplicate Boson exchanges and parameter substitution",
+      "passed": true
+    },
+    {
+      "name": "unredeemed order and premature completion cannot receive/settle a digital file",
+      "passed": true
+    },
+    {
+      "name": "redeemed buyer receives exact bytes once; replay is refused",
+      "passed": true
+    },
+    {
+      "name": "digital file delivery settles the official Boson exchange",
+      "passed": true
+    },
+    {
+      "name": "digital resource is produced, fingerprinted, tokenized and listed",
+      "passed": true
+    },
+    {
+      "name": "Safe pause stops new purchases and publication",
+      "passed": true
+    },
+    {
+      "name": "cancellation and exact wallet refund remain possible while paused; delivery is denied",
+      "passed": true
+    },
+    {
+      "name": "service and physical-demo categories publish real protocol offers",
+      "passed": true
+    },
+    {
+      "name": "seller proceeds withdraw to actual demo wallet",
+      "passed": true
+    },
+    {
+      "name": "foreign origins, altered actor/chain and public evidence secret fields are denied",
+      "passed": true
+    },
+    {
+      "name": "every new chain receipt is confirmed on two Base RPCs",
+      "passed": true
+    }
+  ],
+  "unitTests": 28,
+  "newPublicReceipts": [
+    {
+      "label": "boson-market-offer",
+      "role": "seller",
+      "chainId": 84532,
+      "tx": "0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2",
+      "block": 47618029,
+      "blockHash": "0xad5dc26d14b01f9ee8e7696ba5b743e537ea43eb6332d84d66db5f88d2b48364",
+      "gasUsed": "1265833",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2",
+      "confirmations": 3
+    },
+    {
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0xb1bbb72736c3f3f9f5e6782ed200251f3db39a740569ebdc73b4a7276527461a",
+      "block": 47618034,
+      "blockHash": "0x32a234bdcd83cba110ab396926b56c4c8b02ecf53bdf07809f9a4292c3e82c62",
+      "gasUsed": "46378",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xb1bbb72736c3f3f9f5e6782ed200251f3db39a740569ebdc73b4a7276527461a",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-commit",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x506863032560cc7aa474467900bab6a41b1aaea69cab8efce2bbf6bf94fcce03",
+      "block": 47618038,
+      "blockHash": "0xa7bfaf97f3fa84f1a390eb76e0a56c621985b4582dc7564052b81df18d56d2e0",
+      "gasUsed": "411529",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x506863032560cc7aa474467900bab6a41b1aaea69cab8efce2bbf6bf94fcce03",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-redeem",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x688755f1a481f5f0c687669974c0ab99d6a5c1916ebca349ea0b1b2672c7c89a",
+      "block": 47618043,
+      "blockHash": "0x71b34da8fc351fd4c4ccb86f9bb9e54914c0b2a176682cdf8bde86780e8172e8",
+      "gasUsed": "143301",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x688755f1a481f5f0c687669974c0ab99d6a5c1916ebca349ea0b1b2672c7c89a",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-complete",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x5cd49f546ffdc6651586d0847f290f282412f26779c35cd34fdb2e1b77cd90bf",
+      "block": 47618048,
+      "blockHash": "0xb2af505c92b2bcd5b297db190ce56ee42f69f6ed175ee15ca001c437ec2ecdf7",
+      "gasUsed": "118388",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x5cd49f546ffdc6651586d0847f290f282412f26779c35cd34fdb2e1b77cd90bf",
+      "confirmations": 3
+    },
+    {
+      "label": "safe-execution",
+      "role": "operator",
+      "chainId": 84532,
+      "tx": "0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+      "block": 47618054,
+      "blockHash": "0xab83273bf38379d7542df9cb6e7aada3ab5a041f17f3eb47cef3eb2b1933ed76",
+      "gasUsed": "745569",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-market-offer",
+      "role": "seller",
+      "chainId": 84532,
+      "tx": "0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950",
+      "block": 47618059,
+      "blockHash": "0xeadf64e2dc44d33280a8e58467b54ffaf42d8d3aec6f7a79945c6f6ceef0da7a",
+      "gasUsed": "1242725",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950",
+      "confirmations": 3
+    },
+    {
+      "label": "demo-credit-approval",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0x5e47f88b9574378ec1121f3b000918c48affbfb0443a51e2a18e44523dd90cad",
+      "block": 47618063,
+      "blockHash": "0x294d61c30efe54593270a1f76a3b53550200d9ec89c0d244e91c6fba91f54f72",
+      "gasUsed": "46366",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x5e47f88b9574378ec1121f3b000918c48affbfb0443a51e2a18e44523dd90cad",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-commit",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0xf4dd72c0badb33994f28bc0bdb4b2cdbcf71bfab1926fa43ef2a1212020c2d9c",
+      "block": 47618067,
+      "blockHash": "0x8532312377bedb6d48b7b0c9bf010230927f551ef1eaf00caa1f32de04cd5e99",
+      "gasUsed": "411529",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xf4dd72c0badb33994f28bc0bdb4b2cdbcf71bfab1926fa43ef2a1212020c2d9c",
+      "confirmations": 3
+    },
+    {
+      "label": "safe-execution",
+      "role": "operator",
+      "chainId": 84532,
+      "tx": "0x1806c8bb8ae9a96c76bbaf611f52e31eba72caaf871055bed1574eda74bb6b59",
+      "block": 47618072,
+      "blockHash": "0xd929a6221fe25e5d5d9f62501b5fe6e50dcd92fe452efd32b90dfee00f8c4c5c",
+      "gasUsed": "72977",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x1806c8bb8ae9a96c76bbaf611f52e31eba72caaf871055bed1574eda74bb6b59",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-cancel",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0xa4279402390e5f5d4a7464ce18e9670f58c8512118ebb80d3c6ce591c02bd294",
+      "block": 47618077,
+      "blockHash": "0x4b89e6deb7f19232db0307f3f6de1e576a749c73609825ee82bb452f8a24197b",
+      "gasUsed": "255573",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xa4279402390e5f5d4a7464ce18e9670f58c8512118ebb80d3c6ce591c02bd294",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-refund",
+      "role": "buyer",
+      "chainId": 84532,
+      "tx": "0xd59145f2cca11020af8fbf073a3f3ea29aea6f09a509cb4bfff334db5ee7f617",
+      "block": 47618081,
+      "blockHash": "0xd20fc13d034c9c34eef223b3944ad4914f123b12c98638369941a1ee8c0456bd",
+      "gasUsed": "63128",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xd59145f2cca11020af8fbf073a3f3ea29aea6f09a509cb4bfff334db5ee7f617",
+      "confirmations": 3
+    },
+    {
+      "label": "safe-execution",
+      "role": "operator",
+      "chainId": 84532,
+      "tx": "0x479f06b4315136b1f3ba8eb0275d88fe3f87f2fb0e3edfe62734a2612924c68b",
+      "block": 47618085,
+      "blockHash": "0xb1461f566a35090e73bd21f0b53cbc24e72dd90c0a834f635b7e97ab291cc08c",
+      "gasUsed": "72914",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x479f06b4315136b1f3ba8eb0275d88fe3f87f2fb0e3edfe62734a2612924c68b",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-market-offer",
+      "role": "seller",
+      "chainId": 84532,
+      "tx": "0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e",
+      "block": 47618090,
+      "blockHash": "0xe9760422d9d8bcc70a497a4a590be1d9152be06bafa39a050ca50bfac2596d53",
+      "gasUsed": "874194",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-market-offer",
+      "role": "seller",
+      "chainId": 84532,
+      "tx": "0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd",
+      "block": 47618095,
+      "blockHash": "0xe0168abc11af5c4bc6f48275230815d9f03782d49e099f887ef0e7d2b7105c47",
+      "gasUsed": "851074",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd",
+      "confirmations": 3
+    },
+    {
+      "label": "boson-seller-withdraw",
+      "role": "seller",
+      "chainId": 84532,
+      "tx": "0x80e313a023706f0665e20722882856119ab2ab99e3e0445711314cf1b7748547",
+      "block": 47618099,
+      "blockHash": "0xd7337a77d85573c8f227c165edb784384ea1cadca73789d55654b837118e312e",
+      "gasUsed": "68502",
+      "status": 1,
+      "explorer": "https://sepolia.basescan.org/tx/0x80e313a023706f0665e20722882856119ab2ab99e3e0445711314cf1b7748547",
+      "confirmations": 3
+    }
+  ],
+  "evidence": {
+    "mode": "PUBLIC BASE SEPOLIA",
+    "publicTransactions": true,
+    "independentCustody": false,
+    "deploymentReady": true,
+    "funding": {
+      "address": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8",
+      "balance": "230785154594329",
+      "unit": "wei"
+    },
+    "manifest": {
+      "schemaVersion": 1,
+      "mode": "public-base-sepolia",
+      "chainId": 84532,
+      "rpc": "https://sepolia.base.org",
+      "explorer": "https://sepolia.basescan.org",
+      "publicTransactions": true,
+      "safeSingleton": "0x41675C099F32341bf84BFc5382aF534df5C7461a",
+      "safeFactory": "0x4e1DCf7AD4e460CfD30791CCC4F9c8a4f820ec67",
+      "safeThreshold": 3,
+      "sameMachineDemoSigners": true,
+      "createdAt": "2026-10-03T03:51:42.574Z",
+      "sourceBoson": "0x7de418a7ce94debd057c34ebac232e7027634ade",
+      "sourceBosonCodeHash": "0xb228455d8bd3efca8bb96c27a51c9df33cb7e990a405b484bfdcfe23a92a3026",
+      "safe": "0x9d27ae635bafeE3866e7b80240e63ade249629C3",
+      "safeOwners": [
+        "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+        "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+        "0xBA5ea590c82a88C419594AcE35949Af97D10b537",
+        "0x6D1013F2585f8F8E64b53ac94B542a565ef98844",
+        "0xe18Ea8F32cBc3537e0F16904099b647DFC5C19ac"
+      ],
+      "nft": "0x5856b200FebA81c1465805A898c5B00D361ce5Ed",
+      "nftCodeHash": "0x922ade397892ab1aa990addb5fc33c1ef52cd4ce43b866412db5f75a52deee19",
+      "safeCodeHash": "0xd7d408ebcd99b2b70be43e20253d6d92a8ea8fab29bd3be7f55b10032331fb4c",
+      "nftSourceHash": "0xb2d578c0168667c71f0d844f2833007a03a0079176f1516fc56fe4f51c2e5c9c",
+      "compiler": "solc 0.8.30 / shanghai",
+      "credit": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99",
+      "creditCodeHash": "0xee5db37d68303bf5370a666413a5b2b7c0ab3a3d429dc5e4b6aeda0b02737f32"
+    },
+    "wallets": [
+      {
+        "role": "operator",
+        "address": "0x89b99F8B686e58a598ecfC7c6321873D1DB672e8"
+      },
+      {
+        "role": "seller",
+        "address": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0"
+      },
+      {
+        "role": "buyer",
+        "address": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6"
+      },
+      {
+        "role": "resolver",
+        "address": "0xc070e569444A581d9e1c66088da94b8997bc24f1"
+      },
+      {
+        "role": "signer1",
+        "address": "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822"
+      },
+      {
+        "role": "signer2",
+        "address": "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789"
+      },
+      {
+        "role": "signer3",
+        "address": "0xBA5ea590c82a88C419594AcE35949Af97D10b537"
+      },
+      {
+        "role": "signer4",
+        "address": "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+      },
+      {
+        "role": "signer5",
+        "address": "0xe18Ea8F32cBc3537e0F16904099b647DFC5C19ac"
+      }
+    ],
+    "commerce": {
+      "sellerId": "40",
+      "resolverId": "41",
+      "offerId": "131",
+      "voucher": "0xcdd2F50789efFF5139dF526aAc71811468ca9dCA",
+      "price": "25",
+      "currency": "DEMO",
+      "buyerBalance": "9925.0",
+      "sellerAvailable": "0",
+      "buyerRefundAvailable": "0",
+      "protocolBalance": "0.375",
+      "authority": "demo EOAs + 3 verified software approvals; same Mac",
+      "escrow": "official Boson contracts on public Base Sepolia"
+    },
+    "releases": [
+      {
+        "releaseId": "aimmontag-investor-demo-v1",
+        "tokenId": "1",
+        "owner": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+        "videoSha256": "c7d1e415ce9df102bc069c962aa95be9ad5ee3e29db408b2fd501e9235388e64",
+        "metadataHash": "0xaf12a6615a224bb4ebbd3f912a8d0ec83f200209cc3b218886e41dbba0315ec0",
+        "termsHash": "0x7ed7d65d28e89743f7aad1adf4fdc385ee92db30848927af0b6406bf0df5fbe1",
+        "tx": "0x31fd4d5d44b53ebd3a7330e618b08b2c027ed7231f0b14d8fdb126d27f37fdae",
+        "block": 47616614,
+        "operationDigest": "0x2e06d3ae0c6793b80f68533640f47c25c47f459af8eb70fcb6909a2e82cbb777",
+        "approvalAddresses": [
+          "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+          "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+          "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+        ],
+        "status": "confirmed",
+        "confirmationPolicy": "three public confirmations + receipt + event + ownerOf + passport",
+        "chainId": 84532,
+        "explorer": "https://sepolia.basescan.org/tx/0x31fd4d5d44b53ebd3a7330e618b08b2c027ed7231f0b14d8fdb126d27f37fdae",
+        "createdAt": "2026-10-03T04:25:21.376Z"
+      },
+      {
+        "releaseId": "market-ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+        "tokenId": "2",
+        "owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+        "videoSha256": "8b149f56375b28e7a7e1eafc56b9d223de62f3dab6154caea2ef666494bd100d",
+        "metadataHash": "0xcd4dba75f3f1855e8b10794f2e823fa66fc81746c03029eda60cf6539c47ad57",
+        "termsHash": "0x729e0f5bc5200d6e94b984a00483b52ba38cb7e24458d1d9deeda98f1fb72524",
+        "tx": "0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+        "block": 47617859,
+        "operationDigest": "0x1ec019a24a18e2b24646044f697e340af4d122f7d65d77bd49c8c25f8b9080b9",
+        "approvalAddresses": [
+          "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+          "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+          "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+        ],
+        "status": "confirmed",
+        "confirmationPolicy": "three public confirmations + receipt + event + ownerOf + passport",
+        "chainId": 84532,
+        "explorer": "https://sepolia.basescan.org/tx/0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+        "createdAt": "2026-10-03T05:06:51.406Z"
+      },
+      {
+        "releaseId": "market-9f5e4d31-fa79-475f-a873-7a3eef48a067",
+        "tokenId": "3",
+        "owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+        "videoSha256": "5f24bd89ba06ea72e836d83eedb5bd066d0b3fa43391f7408a4bd2c213e3bbb3",
+        "metadataHash": "0x9251e9c3855a6851487df8dc8996529c5912373cc4c4178f7433ddcd1c5ba7b8",
+        "termsHash": "0x729e0f5bc5200d6e94b984a00483b52ba38cb7e24458d1d9deeda98f1fb72524",
+        "tx": "0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+        "block": 47618054,
+        "operationDigest": "0xa7c02785c6305581d40493df2cdf2e3a8688dc27461d7715ffdfae57eec95036",
+        "approvalAddresses": [
+          "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+          "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+          "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+        ],
+        "status": "confirmed",
+        "confirmationPolicy": "three public confirmations + receipt + event + ownerOf + passport",
+        "chainId": 84532,
+        "explorer": "https://sepolia.basescan.org/tx/0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+        "createdAt": "2026-10-03T05:13:21.351Z"
+      }
+    ],
+    "orders": [
+      {
+        "exchangeId": "252",
+        "buyerId": "42",
+        "offerId": "133",
+        "listingId": "33b517e7-3ca9-42fc-b3fa-3d5d4eed1605",
+        "title": "LUT digital resource",
+        "kind": "digital",
+        "assetId": "9f5e4d31-fa79-475f-a873-7a3eef48a067",
+        "state": "CANCELLED",
+        "price": "7.5",
+        "currency": "DEMO",
+        "createdAt": "2026-10-03T05:13:48.100Z",
+        "txs": [
+          {
+            "action": "commit",
+            "tx": "0xf4dd72c0badb33994f28bc0bdb4b2cdbcf71bfab1926fa43ef2a1212020c2d9c",
+            "block": 47618067
+          },
+          {
+            "action": "cancel",
+            "tx": "0xa4279402390e5f5d4a7464ce18e9670f58c8512118ebb80d3c6ce591c02bd294",
+            "block": 47618077
+          },
+          {
+            "action": "refund",
+            "tx": "0xd59145f2cca11020af8fbf073a3f3ea29aea6f09a509cb4bfff334db5ee7f617",
+            "block": 47618081
+          }
+        ],
+        "redeemedAt": "0",
+        "refundWithdrawn": true
+      },
+      {
+        "exchangeId": "251",
+        "buyerId": "42",
+        "offerId": "132",
+        "listingId": "97788a1e-daf5-4c21-9db6-fffdfd9760da",
+        "title": "Verified video license",
+        "kind": "video",
+        "assetId": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+        "state": "COMPLETED",
+        "price": "25",
+        "currency": "DEMO",
+        "createdAt": "2026-10-03T05:12:48.868Z",
+        "txs": [
+          {
+            "action": "commit",
+            "tx": "0x506863032560cc7aa474467900bab6a41b1aaea69cab8efce2bbf6bf94fcce03",
+            "block": 47618038
+          },
+          {
+            "action": "redeem",
+            "tx": "0x688755f1a481f5f0c687669974c0ab99d6a5c1916ebca349ea0b1b2672c7c89a",
+            "block": 47618043
+          },
+          {
+            "action": "complete",
+            "tx": "0x5cd49f546ffdc6651586d0847f290f282412f26779c35cd34fdb2e1b77cd90bf",
+            "block": 47618048
+          }
+        ],
+        "redeemedAt": "1791004374",
+        "deliveredSha256": "8b149f56375b28e7a7e1eafc56b9d223de62f3dab6154caea2ef666494bd100d"
+      },
+      {
+        "exchangeId": "250",
+        "buyerId": "42",
+        "offerId": "131",
+        "state": "DISPUTED",
+        "price": "25",
+        "currency": "DEMO",
+        "createdAt": "2026-10-03T04:27:14.258Z",
+        "txs": [
+          {
+            "action": "commit",
+            "tx": "0xa61b62e94ad48f5dabafe967614dab0a8e0010cc033efdae043dea5e9cff2804",
+            "block": 47616671
+          },
+          {
+            "action": "redeem",
+            "tx": "0xa69c77e867e8680b04dfd717aa71e40c7cd4b88403fc1503d90fc097b204a87d",
+            "block": 47616674
+          },
+          {
+            "action": "dispute",
+            "tx": "0x6462338da23577e3e4afdb5bfb1ab6a1abec4f8e1ac6b90838440bc060600ca9",
+            "block": 47616678
+          },
+          {
+            "action": "retract",
+            "tx": "0xcc16166946124b95674491c152cac9117bc6c1184a77e5feee79c8ffb37dea92",
+            "block": 47616682
+          }
+        ],
+        "redeemedAt": "1791001636",
+        "disputeState": 1,
+        "disputeFinalizedAt": "1791001652",
+        "disputeRetracted": true
+      },
+      {
+        "exchangeId": "249",
+        "buyerId": "42",
+        "offerId": "131",
+        "state": "CANCELLED",
+        "price": "25",
+        "currency": "DEMO",
+        "createdAt": "2026-10-03T04:26:42.363Z",
+        "txs": [
+          {
+            "action": "commit",
+            "tx": "0xa1738425fd2bc7cfed528d466adf234490d4b44c050d4ff9c5086bacb4a21980",
+            "block": 47616655
+          },
+          {
+            "action": "cancel",
+            "tx": "0xf3fbf61695ed19fd6a7f1147664706b9bb4519a857032cec7e26260d7718ec6c",
+            "block": 47616658
+          },
+          {
+            "action": "refund",
+            "tx": "0xb6fab140b8d6ece40cbe2a86cd1a6e1c91e6369c8e5ba70f5d3a7e7ba0ad64a4",
+            "block": 47616663
+          }
+        ],
+        "redeemedAt": "0",
+        "refundWithdrawn": true
+      },
+      {
+        "exchangeId": "248",
+        "buyerId": "42",
+        "offerId": "131",
+        "state": "COMPLETED",
+        "price": "25",
+        "currency": "DEMO",
+        "createdAt": "2026-10-03T04:26:15.280Z",
+        "txs": [
+          {
+            "action": "commit",
+            "tx": "0x2aa6092a57e721638e58e5a87bf21cfcaad6fe7e73c4e16a2a4c2a487bc6dd6d",
+            "block": 47616641
+          },
+          {
+            "action": "redeem",
+            "tx": "0xb6422d19f20ce7c6c99489f1d85ced411c8cbb65ba39a831295c4e9d7e52b2b9",
+            "block": 47616645
+          },
+          {
+            "action": "complete",
+            "tx": "0xb8187272b3098d28cf95fdb204b06ecdeb1f3a702e0282320504aebe066897e1",
+            "block": 47616648
+          }
+        ],
+        "redeemedAt": "1791001578"
+      }
+    ],
+    "checks": [
+      {
+        "number": 1,
+        "id": "identity",
+        "label": "Registered initiator",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 2,
+        "id": "roles",
+        "label": "Assigned demo roles",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 3,
+        "id": "accepted",
+        "label": "Accepted final version",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 4,
+        "id": "video",
+        "label": "Matching video hash",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 5,
+        "id": "metadata",
+        "label": "Pinned passport and terms",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 6,
+        "id": "recipient",
+        "label": "Verified recipient",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 7,
+        "id": "chain",
+        "label": "Allowed demo network",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 8,
+        "id": "contract",
+        "label": "Verified code and ownership",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 9,
+        "id": "call",
+        "label": "Exact transaction parameters",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 10,
+        "id": "unique",
+        "label": "No duplicate issuance",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 11,
+        "id": "limits",
+        "label": "Operation limits",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 12,
+        "id": "simulation",
+        "label": "Successful simulation",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 13,
+        "id": "quorum",
+        "label": "Safe quorum: 3 of 5",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 14,
+        "id": "fresh",
+        "label": "Fresh approval; issuance active",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      },
+      {
+        "number": 15,
+        "id": "audit",
+        "label": "Recorded audit evidence",
+        "passed": true,
+        "policy": "demo-15-v1",
+        "reason": "verified"
+      }
+    ],
+    "marketplace": {
+      "schemaVersion": 2,
+      "paused": false,
+      "assets": [
+        {
+          "id": "9f5e4d31-fa79-475f-a873-7a3eef48a067",
+          "kind": "digital",
+          "title": "Studio Neutral LUT · security demo",
+          "sha256": "5f24bd89ba06ea72e836d83eedb5bd066d0b3fa43391f7408a4bd2c213e3bbb3",
+          "quality": {
+            "format": "CUBE",
+            "gridSize": 17,
+            "samples": 4913,
+            "bytes": 132800,
+            "description": "Generated neutral identity LUT; demonstration resource"
+          },
+          "releaseId": "market-9f5e4d31-fa79-475f-a873-7a3eef48a067",
+          "certificate": {
+            "tokenId": "3",
+            "contract": "0x5856b200FebA81c1465805A898c5B00D361ce5Ed",
+            "owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+            "tx": "0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+            "explorer": "https://sepolia.basescan.org/tx/0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+            "chainId": 84532
+          },
+          "createdAt": "2026-10-03T05:13:10.375Z",
+          "previewUrl": null
+        },
+        {
+          "id": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+          "kind": "video",
+          "title": "AIMmontag · Investor Demo 23:06:37",
+          "sha256": "8b149f56375b28e7a7e1eafc56b9d223de62f3dab6154caea2ef666494bd100d",
+          "quality": {
+            "width": 1920,
+            "height": 1080,
+            "codec": "h264",
+            "frameRate": "30/1",
+            "duration": 8,
+            "bytes": 4782720,
+            "sourceWidth": 1920,
+            "sourceHeight": 1080
+          },
+          "releaseId": "market-ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+          "certificate": {
+            "tokenId": "2",
+            "contract": "0x5856b200FebA81c1465805A898c5B00D361ce5Ed",
+            "owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+            "tx": "0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+            "explorer": "https://sepolia.basescan.org/tx/0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+            "chainId": 84532
+          },
+          "createdAt": "2026-10-03T05:06:40.458Z",
+          "previewUrl": "/api/market/preview/ee7e7282-80c5-430d-80e5-2c07fe22c1be"
+        }
+      ],
+      "listings": [
+        {
+          "id": "b9c05524-3e05-4187-a32a-439c14a218d8",
+          "kind": "physical",
+          "title": "Studio print · test item",
+          "description": "Public testnet example; no real commission or shipment.",
+          "price": "40",
+          "quantity": 3,
+          "terms": "Testnet item only; no real shipment or money.",
+          "assetId": null,
+          "assetSha256": null,
+          "certificate": null,
+          "createdAt": "2026-10-03T05:14:33.822Z",
+          "offerId": "135",
+          "metadataHash": "0xa4926227e4a4097c751fd487ccdd0f21c7c0330f9430cd7744c8c43814df2b2e",
+          "tx": "0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd",
+          "block": 47618095,
+          "explorer": "https://sepolia.basescan.org/tx/0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd",
+          "status": "PUBLISHED"
+        },
+        {
+          "id": "a87d335c-68ae-4b2d-ad28-9ad6ce84c52b",
+          "kind": "service",
+          "title": "Монтажная услуга · demo",
+          "description": "Public testnet example; no real commission or shipment.",
+          "price": "11",
+          "quantity": 3,
+          "terms": "Testnet service demonstration; no real commission or payment.",
+          "assetId": null,
+          "assetSha256": null,
+          "certificate": null,
+          "createdAt": "2026-10-03T05:14:23.927Z",
+          "offerId": "134",
+          "metadataHash": "0xd39e2183ee9c63c658574b5b4cd04804d89c3bcaca4eb974040c6b8f44cd2fef",
+          "tx": "0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e",
+          "block": 47618090,
+          "explorer": "https://sepolia.basescan.org/tx/0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e",
+          "status": "PUBLISHED"
+        },
+        {
+          "id": "33b517e7-3ca9-42fc-b3fa-3d5d4eed1605",
+          "kind": "digital",
+          "title": "LUT digital resource",
+          "description": "Generated neutral CUBE resource; test-only license.",
+          "price": "7.5",
+          "quantity": 12,
+          "terms": "Demo file access license; no copyright transfer. NFT passport stays with creator.",
+          "assetId": "9f5e4d31-fa79-475f-a873-7a3eef48a067",
+          "assetSha256": "5f24bd89ba06ea72e836d83eedb5bd066d0b3fa43391f7408a4bd2c213e3bbb3",
+          "certificate": {
+            "tokenId": "3",
+            "contract": "0x5856b200FebA81c1465805A898c5B00D361ce5Ed",
+            "owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+            "tx": "0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+            "explorer": "https://sepolia.basescan.org/tx/0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+            "chainId": 84532
+          },
+          "createdAt": "2026-10-03T05:13:22.032Z",
+          "offerId": "133",
+          "metadataHash": "0xeab278631bb6e2eab41829fbe210f19411206fc0b68336315cc7980abd1d0c7d",
+          "tx": "0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950",
+          "block": 47618059,
+          "explorer": "https://sepolia.basescan.org/tx/0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950",
+          "status": "PUBLISHED"
+        },
+        {
+          "id": "97788a1e-daf5-4c21-9db6-fffdfd9760da",
+          "kind": "video",
+          "title": "Verified video license",
+          "description": "Demo file access to accepted studio video; no copyright or passport transfer.",
+          "price": "25",
+          "quantity": 10,
+          "terms": "Demo file access license; no copyright transfer. NFT passport stays with creator.",
+          "assetId": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+          "assetSha256": "8b149f56375b28e7a7e1eafc56b9d223de62f3dab6154caea2ef666494bd100d",
+          "certificate": {
+            "tokenId": "2",
+            "contract": "0x5856b200FebA81c1465805A898c5B00D361ce5Ed",
+            "owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+            "tx": "0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+            "explorer": "https://sepolia.basescan.org/tx/0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+            "chainId": 84532
+          },
+          "createdAt": "2026-10-03T05:12:21.996Z",
+          "offerId": "132",
+          "metadataHash": "0x94f5551e09d9eb642ae62d9f6d105cf127c091e2c89c83cb1e90dce8f0bbb831",
+          "tx": "0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2",
+          "block": 47618029,
+          "explorer": "https://sepolia.basescan.org/tx/0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2",
+          "status": "PUBLISHED"
+        },
+        {
+          "id": "legacy-service",
+          "kind": "service",
+          "title": "Монтаж видео · исходное демо",
+          "description": "Готовое тестовое предложение монтажной студии.",
+          "price": "25",
+          "quantity": 97,
+          "terms": "Testnet demonstration service only.",
+          "assetId": null,
+          "assetSha256": null,
+          "certificate": null,
+          "metadataHash": "",
+          "offerId": "131",
+          "status": "PUBLISHED",
+          "createdAt": "2026-10-03T05:04:41.654Z"
+        }
+      ],
+      "timeline": [
+        {
+          "at": "2026-10-03T05:14:51.323Z",
+          "type": "seller-withdrawn",
+          "title": "Средства продавца выведены в кошелёк",
+          "tx": "0x80e313a023706f0665e20722882856119ab2ab99e3e0445711314cf1b7748547",
+          "amount": "74.625"
+        },
+        {
+          "at": "2026-10-03T05:14:42.861Z",
+          "type": "listing-confirmed",
+          "title": "Предложение опубликовано в Boson",
+          "listingId": "b9c05524-3e05-4187-a32a-439c14a218d8",
+          "offerId": "135",
+          "kind": "physical",
+          "tx": "0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd"
+        },
+        {
+          "at": "2026-10-03T05:14:32.895Z",
+          "type": "listing-confirmed",
+          "title": "Предложение опубликовано в Boson",
+          "listingId": "a87d335c-68ae-4b2d-ad28-9ad6ce84c52b",
+          "offerId": "134",
+          "kind": "service",
+          "tx": "0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e"
+        },
+        {
+          "at": "2026-10-03T05:14:23.230Z",
+          "type": "pause",
+          "title": "Safe: работа возобновлена",
+          "paused": false,
+          "tx": "0x479f06b4315136b1f3ba8eb0275d88fe3f87f2fb0e3edfe62734a2612924c68b"
+        },
+        {
+          "at": "2026-10-03T05:14:15.450Z",
+          "type": "order-refund",
+          "title": "Заказ: refund",
+          "exchangeId": "252",
+          "tx": "0xd59145f2cca11020af8fbf073a3f3ea29aea6f09a509cb4bfff334db5ee7f617"
+        },
+        {
+          "at": "2026-10-03T05:14:06.676Z",
+          "type": "order-cancel",
+          "title": "Заказ: cancel",
+          "exchangeId": "252",
+          "tx": "0xa4279402390e5f5d4a7464ce18e9670f58c8512118ebb80d3c6ce591c02bd294"
+        },
+        {
+          "at": "2026-10-03T05:13:56.968Z",
+          "type": "pause",
+          "title": "Safe: новые продажи остановлены",
+          "paused": true,
+          "tx": "0x1806c8bb8ae9a96c76bbaf611f52e31eba72caaf871055bed1574eda74bb6b59"
+        },
+        {
+          "at": "2026-10-03T05:13:48.194Z",
+          "type": "purchase-confirmed",
+          "title": "Покупка подтверждена: Boson rNFT получен",
+          "listingId": "33b517e7-3ca9-42fc-b3fa-3d5d4eed1605",
+          "exchangeId": "252",
+          "tx": "0xf4dd72c0badb33994f28bc0bdb4b2cdbcf71bfab1926fa43ef2a1212020c2d9c"
+        },
+        {
+          "at": "2026-10-03T05:13:30.904Z",
+          "type": "listing-confirmed",
+          "title": "Предложение опубликовано в Boson",
+          "listingId": "33b517e7-3ca9-42fc-b3fa-3d5d4eed1605",
+          "offerId": "133",
+          "kind": "digital",
+          "tx": "0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950"
+        },
+        {
+          "at": "2026-10-03T05:13:21.364Z",
+          "type": "nft-confirmed",
+          "title": "NFT-паспорт подтверждён в Base Sepolia",
+          "assetId": "9f5e4d31-fa79-475f-a873-7a3eef48a067",
+          "tokenId": "3",
+          "tx": "0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992"
+        },
+        {
+          "at": "2026-10-03T05:13:10.375Z",
+          "type": "render-confirmed",
+          "title": "Студия: файл создан и технически проверен",
+          "assetId": "9f5e4d31-fa79-475f-a873-7a3eef48a067",
+          "kind": "digital",
+          "sha256": "5f24bd89ba06ea72e836d83eedb5bd066d0b3fa43391f7408a4bd2c213e3bbb3"
+        },
+        {
+          "at": "2026-10-03T05:13:10.295Z",
+          "type": "render-start",
+          "title": "Студия: начата сборка демо-ресурса",
+          "assetId": "9f5e4d31-fa79-475f-a873-7a3eef48a067",
+          "kind": "digital"
+        },
+        {
+          "at": "2026-10-03T05:13:09.457Z",
+          "type": "order-complete",
+          "title": "Заказ: complete",
+          "exchangeId": "251",
+          "tx": "0x5cd49f546ffdc6651586d0847f290f282412f26779c35cd34fdb2e1b77cd90bf"
+        },
+        {
+          "at": "2026-10-03T05:13:00.951Z",
+          "type": "delivery-confirmed",
+          "title": "Цифровой файл выдан покупателю",
+          "exchangeId": "251",
+          "assetSha256": "8b149f56375b28e7a7e1eafc56b9d223de62f3dab6154caea2ef666494bd100d"
+        },
+        {
+          "at": "2026-10-03T05:12:58.908Z",
+          "type": "order-redeem",
+          "title": "Заказ: redeem",
+          "exchangeId": "251",
+          "tx": "0x688755f1a481f5f0c687669974c0ab99d6a5c1916ebca349ea0b1b2672c7c89a"
+        },
+        {
+          "at": "2026-10-03T05:12:48.966Z",
+          "type": "purchase-confirmed",
+          "title": "Покупка подтверждена: Boson rNFT получен",
+          "listingId": "97788a1e-daf5-4c21-9db6-fffdfd9760da",
+          "exchangeId": "251",
+          "tx": "0x506863032560cc7aa474467900bab6a41b1aaea69cab8efce2bbf6bf94fcce03"
+        },
+        {
+          "at": "2026-10-03T05:12:30.980Z",
+          "type": "listing-confirmed",
+          "title": "Предложение опубликовано в Boson",
+          "listingId": "97788a1e-daf5-4c21-9db6-fffdfd9760da",
+          "offerId": "132",
+          "kind": "video",
+          "tx": "0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2"
+        },
+        {
+          "at": "2026-10-03T05:12:21.277Z",
+          "type": "nft-confirmed",
+          "title": "NFT-паспорт подтверждён в Base Sepolia",
+          "assetId": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+          "tokenId": "2",
+          "tx": "0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389"
+        },
+        {
+          "at": "2026-10-03T05:06:51.430Z",
+          "type": "nft-confirmed",
+          "title": "NFT-паспорт подтверждён в Base Sepolia",
+          "assetId": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+          "tokenId": "2",
+          "tx": "0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389"
+        },
+        {
+          "at": "2026-10-03T05:06:40.461Z",
+          "type": "render-confirmed",
+          "title": "Студия: файл создан и технически проверен",
+          "assetId": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+          "kind": "video",
+          "sha256": "8b149f56375b28e7a7e1eafc56b9d223de62f3dab6154caea2ef666494bd100d"
+        },
+        {
+          "at": "2026-10-03T05:06:37.106Z",
+          "type": "render-start",
+          "title": "Студия: начата сборка демо-ресурса",
+          "assetId": "ee7e7282-80c5-430d-80e5-2c07fe22c1be",
+          "kind": "video"
+        }
+      ],
+      "deliveryPolicy": "Redeemed/completed on-chain buyer; fingerprint; 60-second single-use grant",
+      "commercePolicy": "Three verified EIP-712 approvals bind Base, role, target, calldata, nonce and expiry; demo EOAs send; same-Mac custody"
+    },
+    "checkDefinitions": [
+      {
+        "number": 1,
+        "id": "identity",
+        "label": "Registered initiator"
+      },
+      {
+        "number": 2,
+        "id": "roles",
+        "label": "Assigned demo roles"
+      },
+      {
+        "number": 3,
+        "id": "accepted",
+        "label": "Accepted final version"
+      },
+      {
+        "number": 4,
+        "id": "video",
+        "label": "Matching video hash"
+      },
+      {
+        "number": 5,
+        "id": "metadata",
+        "label": "Pinned passport and terms"
+      },
+      {
+        "number": 6,
+        "id": "recipient",
+        "label": "Verified recipient"
+      },
+      {
+        "number": 7,
+        "id": "chain",
+        "label": "Allowed demo network"
+      },
+      {
+        "number": 8,
+        "id": "contract",
+        "label": "Verified code and ownership"
+      },
+      {
+        "number": 9,
+        "id": "call",
+        "label": "Exact transaction parameters"
+      },
+      {
+        "number": 10,
+        "id": "unique",
+        "label": "No duplicate issuance"
+      },
+      {
+        "number": 11,
+        "id": "limits",
+        "label": "Operation limits"
+      },
+      {
+        "number": 12,
+        "id": "simulation",
+        "label": "Successful simulation"
+      },
+      {
+        "number": 13,
+        "id": "quorum",
+        "label": "Safe quorum: 3 of 5"
+      },
+      {
+        "number": 14,
+        "id": "fresh",
+        "label": "Fresh approval; issuance active"
+      },
+      {
+        "number": 15,
+        "id": "audit",
+        "label": "Recorded audit evidence"
+      }
+    ],
+    "paused": false,
+    "active": null,
+    "securityScope": "NFT: 15 gates + on-chain Safe 3/5. Boson: 3 verified software approvals + strict intents. Same-Mac demo custody.",
+    "pendingTransaction": false,
+    "auditVerified": true,
+    "receipts": [
+      {
+        "label": "deploy-safe",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x732426b98e8d9cd32c68390b62b618e5a4ae3d99f842c77d24a2ecdb3859904d",
+        "block": 47616571,
+        "blockHash": "0x1b9af7f6c81857b9ec52efcc700d007accf8591fd8ffa7abdff00d732805ca5e",
+        "gasUsed": "330393",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x732426b98e8d9cd32c68390b62b618e5a4ae3d99f842c77d24a2ecdb3859904d",
+        "confirmations": 3
+      },
+      {
+        "label": "deploy-nft",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x6d242c6c90b7c2ff1c19dc9aac624e4526a638b24355f441ecfc78ece4287d9a",
+        "block": 47616575,
+        "blockHash": "0x20096de78d24215b5182017af723cbacdd8ffce9f73c015acc73041364346b65",
+        "gasUsed": "1308254",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x6d242c6c90b7c2ff1c19dc9aac624e4526a638b24355f441ecfc78ece4287d9a",
+        "confirmations": 3
+      },
+      {
+        "label": "deploy-demo-credit",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0xd4a05aeda7821b12f90e099b9818237e06a55e32ee2be80880aaddd25c842ac3",
+        "block": 47616579,
+        "blockHash": "0xa9fc3c05f32578fe4d28d53e7e1165e00f801e4cf4635643e18209cf2271374e",
+        "gasUsed": "578035",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xd4a05aeda7821b12f90e099b9818237e06a55e32ee2be80880aaddd25c842ac3",
+        "confirmations": 3
+      },
+      {
+        "label": "fund-demo-buyer",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x7bd71b8be090fcf99a9fb0eb766cd32c884e93ba768b82e5ed6c4d936b8c2fe2",
+        "block": 47616583,
+        "blockHash": "0x92401198d48c6035fac8729cef13d494218135929ab670c10a7a6e9dcc51d9c2",
+        "gasUsed": "21000",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x7bd71b8be090fcf99a9fb0eb766cd32c884e93ba768b82e5ed6c4d936b8c2fe2",
+        "confirmations": 3
+      },
+      {
+        "label": "fund-demo-seller",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0xa0468b076da46ea5413ca81c22812c848744a2188fdaf23e5fdcfb3c5234c432",
+        "block": 47616586,
+        "blockHash": "0x2c89e8e2ec6c09b652e14082de3b4ca066b1178a6dee34e45c6eda83b50127ce",
+        "gasUsed": "21000",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xa0468b076da46ea5413ca81c22812c848744a2188fdaf23e5fdcfb3c5234c432",
+        "confirmations": 3
+      },
+      {
+        "label": "fund-demo-resolver",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x950ee327941fc08bdeb8c646b81e2a12198211a47829c829cdb56153a80f5b7a",
+        "block": 47616590,
+        "blockHash": "0x9c88c9746038b89fe5751f630f46bc3e1371ee63126e95fe2d070eb409814535",
+        "gasUsed": "21000",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x950ee327941fc08bdeb8c646b81e2a12198211a47829c829cdb56153a80f5b7a",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-seller",
+        "role": "seller",
+        "chainId": 84532,
+        "tx": "0xf3991f6d73b2d5f91df22660ef4d0d6fad4fc20213104d189a4748d7e7877034",
+        "block": 47616595,
+        "blockHash": "0xe67e869d521833135d0f8da9fb3eaaed07dee1432b908fd3655dc2c3bca06f6a",
+        "gasUsed": "644115",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xf3991f6d73b2d5f91df22660ef4d0d6fad4fc20213104d189a4748d7e7877034",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-resolver",
+        "role": "resolver",
+        "chainId": 84532,
+        "tx": "0x1857c793b570c18aa7493efa8f128505c87627689aaf10835753633f9a805a7f",
+        "block": 47616599,
+        "blockHash": "0x4b8e3cbd36b1787a6a178aeaf924d5c98a1625f640dfb51f72e0795b2fd18ff0",
+        "gasUsed": "415769",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x1857c793b570c18aa7493efa8f128505c87627689aaf10835753633f9a805a7f",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-offer",
+        "role": "seller",
+        "chainId": 84532,
+        "tx": "0x07114d42127ad9a4ecf6fe3491f7c7e7594a21724819a3ddeb1d7cfb8253b69a",
+        "block": 47616602,
+        "blockHash": "0xd079ff88f77a4ba187c78db1fe449885d5cb1bdb038a3dbef4ea889c775b5200",
+        "gasUsed": "624221",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x07114d42127ad9a4ecf6fe3491f7c7e7594a21724819a3ddeb1d7cfb8253b69a",
+        "confirmations": 3
+      },
+      {
+        "label": "safe-execution",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x31fd4d5d44b53ebd3a7330e618b08b2c027ed7231f0b14d8fdb126d27f37fdae",
+        "block": 47616614,
+        "blockHash": "0xff54ca8974577c4507e47217e65c44d41ecb30779ece4eed1f28125cf766160a",
+        "gasUsed": "711891",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x31fd4d5d44b53ebd3a7330e618b08b2c027ed7231f0b14d8fdb126d27f37fdae",
+        "confirmations": 3
+      },
+      {
+        "label": "safe-execution",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x60f12c0cfcdb93f8ba46a9b0534e273262cfcd5884aa9f9a8cd2b602c0975cbd",
+        "block": 47616629,
+        "blockHash": "0x78a50fe8a92622d0b62f24b8e064238891dc3644eb8400679b84c18ff63bb1f2",
+        "gasUsed": "72965",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x60f12c0cfcdb93f8ba46a9b0534e273262cfcd5884aa9f9a8cd2b602c0975cbd",
+        "confirmations": 3
+      },
+      {
+        "label": "safe-execution",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x18e0851a403be00ab00712c60709f58c808130e8a3fd4e4eb96cba6138d7f29a",
+        "block": 47616633,
+        "blockHash": "0x25fe10031b67b0e5b8eada573f711e2eb5d237be308bc24cc51db3d3b30935c2",
+        "gasUsed": "72914",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x18e0851a403be00ab00712c60709f58c808130e8a3fd4e4eb96cba6138d7f29a",
+        "confirmations": 3
+      },
+      {
+        "label": "demo-credit-approval",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xf8a488b4308c110cda5325d8753d49aa8ce9d6c98a5baf05d5793cafdd6ff35c",
+        "block": 47616638,
+        "blockHash": "0xa6a46a0d0b9a5bbf79cf800b7a15caf2eede36b089056e9e6c9500b1b48a1339",
+        "gasUsed": "46378",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xf8a488b4308c110cda5325d8753d49aa8ce9d6c98a5baf05d5793cafdd6ff35c",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-commit",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x2aa6092a57e721638e58e5a87bf21cfcaad6fe7e73c4e16a2a4c2a487bc6dd6d",
+        "block": 47616641,
+        "blockHash": "0x599969a50970713583dc1a19fc66e0ef7a8526a129b400610f7dfefa5e318fdd",
+        "gasUsed": "496933",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x2aa6092a57e721638e58e5a87bf21cfcaad6fe7e73c4e16a2a4c2a487bc6dd6d",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-redeem",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xb6422d19f20ce7c6c99489f1d85ced411c8cbb65ba39a831295c4e9d7e52b2b9",
+        "block": 47616645,
+        "blockHash": "0x4912b00843d589872db526029a711d97aa078f2c642a07b50aec24023bd40b9f",
+        "gasUsed": "143301",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xb6422d19f20ce7c6c99489f1d85ced411c8cbb65ba39a831295c4e9d7e52b2b9",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-complete",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xb8187272b3098d28cf95fdb204b06ecdeb1f3a702e0282320504aebe066897e1",
+        "block": 47616648,
+        "blockHash": "0x84ca8c7975b75bf9a29488caf155b3f4a39561553670924124d3246fcbf22020",
+        "gasUsed": "269595",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xb8187272b3098d28cf95fdb204b06ecdeb1f3a702e0282320504aebe066897e1",
+        "confirmations": 3
+      },
+      {
+        "label": "demo-credit-approval",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x7d66cf1c86b2c72e389e32cb6aa1af22ea8e42ab204203bdf710dbbf13fe4304",
+        "block": 47616652,
+        "blockHash": "0x6d3b2473fb17190bbafc8490e15ca3f652f2603e0f8603a2764916c4e2a83297",
+        "gasUsed": "46378",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x7d66cf1c86b2c72e389e32cb6aa1af22ea8e42ab204203bdf710dbbf13fe4304",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-commit",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xa1738425fd2bc7cfed528d466adf234490d4b44c050d4ff9c5086bacb4a21980",
+        "block": 47616655,
+        "blockHash": "0x812519795e532bdda3f9b90a1a482f64475e9664aa138ba20e094e9ae774d506",
+        "gasUsed": "394429",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xa1738425fd2bc7cfed528d466adf234490d4b44c050d4ff9c5086bacb4a21980",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-cancel",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xf3fbf61695ed19fd6a7f1147664706b9bb4519a857032cec7e26260d7718ec6c",
+        "block": 47616658,
+        "blockHash": "0x8af36e81e88e03210c94499930780a355bb527c054ab761f09554587eaae7dbb",
+        "gasUsed": "255573",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xf3fbf61695ed19fd6a7f1147664706b9bb4519a857032cec7e26260d7718ec6c",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-refund",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xb6fab140b8d6ece40cbe2a86cd1a6e1c91e6369c8e5ba70f5d3a7e7ba0ad64a4",
+        "block": 47616663,
+        "blockHash": "0x2a2b5e37e9ef380f8c8763a9ecd43c9ebd6b81b81394db5a7ac0c02de16967ab",
+        "gasUsed": "63138",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xb6fab140b8d6ece40cbe2a86cd1a6e1c91e6369c8e5ba70f5d3a7e7ba0ad64a4",
+        "confirmations": 3
+      },
+      {
+        "label": "demo-credit-approval",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x2044da8db7b445bd0a6c56e4e21c5e52c8bffdeaa1ec93ebe6be9dddb2e36f24",
+        "block": 47616667,
+        "blockHash": "0x7da336f58d2b2ed7e6dd4cd641a0b3381382cbb63a87122bde3bbf9ca434b863",
+        "gasUsed": "46378",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x2044da8db7b445bd0a6c56e4e21c5e52c8bffdeaa1ec93ebe6be9dddb2e36f24",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-commit",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xa61b62e94ad48f5dabafe967614dab0a8e0010cc033efdae043dea5e9cff2804",
+        "block": 47616671,
+        "blockHash": "0x81961428e038ef5b9fcdef92cefdabe67236c721a009b94bf4a09aa35bde7e00",
+        "gasUsed": "394429",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xa61b62e94ad48f5dabafe967614dab0a8e0010cc033efdae043dea5e9cff2804",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-redeem",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xa69c77e867e8680b04dfd717aa71e40c7cd4b88403fc1503d90fc097b204a87d",
+        "block": 47616674,
+        "blockHash": "0xbdc56f8ff07e6e4de2fba421171349b688de8916d43bb0e6864a973290048100",
+        "gasUsed": "143301",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xa69c77e867e8680b04dfd717aa71e40c7cd4b88403fc1503d90fc097b204a87d",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-dispute",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x6462338da23577e3e4afdb5bfb1ab6a1abec4f8e1ac6b90838440bc060600ca9",
+        "block": 47616678,
+        "blockHash": "0x0bf9ef709b51faf983d9374c0b310480be318c3af9fb735ae6ae7743fa2b8595",
+        "gasUsed": "127534",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x6462338da23577e3e4afdb5bfb1ab6a1abec4f8e1ac6b90838440bc060600ca9",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-retract",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xcc16166946124b95674491c152cac9117bc6c1184a77e5feee79c8ffb37dea92",
+        "block": 47616682,
+        "blockHash": "0xbe595e82f8af3c3a26562c06a3c1dcd4eaf5b2ef3e3c44757c96468ae631fb66",
+        "gasUsed": "161358",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xcc16166946124b95674491c152cac9117bc6c1184a77e5feee79c8ffb37dea92",
+        "confirmations": 3
+      },
+      {
+        "label": "safe-execution",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+        "block": 47617859,
+        "blockHash": "0x48dc954d3bc9d2c5115ad1f42712a3c9c7b6ecb453c335983fd815e69b5c1a4f",
+        "gasUsed": "740155",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xc1e3f5d6316961d09a7832a0770ce7e8ebb157c1629992f654a8a7d148580389",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-market-offer",
+        "role": "seller",
+        "chainId": 84532,
+        "tx": "0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2",
+        "block": 47618029,
+        "blockHash": "0xad5dc26d14b01f9ee8e7696ba5b743e537ea43eb6332d84d66db5f88d2b48364",
+        "gasUsed": "1265833",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xbfcdf98cda45b5ccde7be4a0b5fbbacd8464a759576322b5490418aaa4292ec2",
+        "confirmations": 3
+      },
+      {
+        "label": "demo-credit-approval",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xb1bbb72736c3f3f9f5e6782ed200251f3db39a740569ebdc73b4a7276527461a",
+        "block": 47618034,
+        "blockHash": "0x32a234bdcd83cba110ab396926b56c4c8b02ecf53bdf07809f9a4292c3e82c62",
+        "gasUsed": "46378",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xb1bbb72736c3f3f9f5e6782ed200251f3db39a740569ebdc73b4a7276527461a",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-commit",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x506863032560cc7aa474467900bab6a41b1aaea69cab8efce2bbf6bf94fcce03",
+        "block": 47618038,
+        "blockHash": "0xa7bfaf97f3fa84f1a390eb76e0a56c621985b4582dc7564052b81df18d56d2e0",
+        "gasUsed": "411529",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x506863032560cc7aa474467900bab6a41b1aaea69cab8efce2bbf6bf94fcce03",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-redeem",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x688755f1a481f5f0c687669974c0ab99d6a5c1916ebca349ea0b1b2672c7c89a",
+        "block": 47618043,
+        "blockHash": "0x71b34da8fc351fd4c4ccb86f9bb9e54914c0b2a176682cdf8bde86780e8172e8",
+        "gasUsed": "143301",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x688755f1a481f5f0c687669974c0ab99d6a5c1916ebca349ea0b1b2672c7c89a",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-complete",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x5cd49f546ffdc6651586d0847f290f282412f26779c35cd34fdb2e1b77cd90bf",
+        "block": 47618048,
+        "blockHash": "0xb2af505c92b2bcd5b297db190ce56ee42f69f6ed175ee15ca001c437ec2ecdf7",
+        "gasUsed": "118388",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x5cd49f546ffdc6651586d0847f290f282412f26779c35cd34fdb2e1b77cd90bf",
+        "confirmations": 3
+      },
+      {
+        "label": "safe-execution",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+        "block": 47618054,
+        "blockHash": "0xab83273bf38379d7542df9cb6e7aada3ab5a041f17f3eb47cef3eb2b1933ed76",
+        "gasUsed": "745569",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x8e4e7eb79c73f9d0a4f97b706dad92feafa6ebed3d04b062c497cfee98c7a992",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-market-offer",
+        "role": "seller",
+        "chainId": 84532,
+        "tx": "0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950",
+        "block": 47618059,
+        "blockHash": "0xeadf64e2dc44d33280a8e58467b54ffaf42d8d3aec6f7a79945c6f6ceef0da7a",
+        "gasUsed": "1242725",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x932a7f161c7116e7f9c6eab755ed0d97065898655ccd3a91b9d53c7e19647950",
+        "confirmations": 3
+      },
+      {
+        "label": "demo-credit-approval",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0x5e47f88b9574378ec1121f3b000918c48affbfb0443a51e2a18e44523dd90cad",
+        "block": 47618063,
+        "blockHash": "0x294d61c30efe54593270a1f76a3b53550200d9ec89c0d244e91c6fba91f54f72",
+        "gasUsed": "46366",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x5e47f88b9574378ec1121f3b000918c48affbfb0443a51e2a18e44523dd90cad",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-commit",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xf4dd72c0badb33994f28bc0bdb4b2cdbcf71bfab1926fa43ef2a1212020c2d9c",
+        "block": 47618067,
+        "blockHash": "0x8532312377bedb6d48b7b0c9bf010230927f551ef1eaf00caa1f32de04cd5e99",
+        "gasUsed": "411529",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xf4dd72c0badb33994f28bc0bdb4b2cdbcf71bfab1926fa43ef2a1212020c2d9c",
+        "confirmations": 3
+      },
+      {
+        "label": "safe-execution",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x1806c8bb8ae9a96c76bbaf611f52e31eba72caaf871055bed1574eda74bb6b59",
+        "block": 47618072,
+        "blockHash": "0xd929a6221fe25e5d5d9f62501b5fe6e50dcd92fe452efd32b90dfee00f8c4c5c",
+        "gasUsed": "72977",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x1806c8bb8ae9a96c76bbaf611f52e31eba72caaf871055bed1574eda74bb6b59",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-cancel",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xa4279402390e5f5d4a7464ce18e9670f58c8512118ebb80d3c6ce591c02bd294",
+        "block": 47618077,
+        "blockHash": "0x4b89e6deb7f19232db0307f3f6de1e576a749c73609825ee82bb452f8a24197b",
+        "gasUsed": "255573",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xa4279402390e5f5d4a7464ce18e9670f58c8512118ebb80d3c6ce591c02bd294",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-refund",
+        "role": "buyer",
+        "chainId": 84532,
+        "tx": "0xd59145f2cca11020af8fbf073a3f3ea29aea6f09a509cb4bfff334db5ee7f617",
+        "block": 47618081,
+        "blockHash": "0xd20fc13d034c9c34eef223b3944ad4914f123b12c98638369941a1ee8c0456bd",
+        "gasUsed": "63128",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xd59145f2cca11020af8fbf073a3f3ea29aea6f09a509cb4bfff334db5ee7f617",
+        "confirmations": 3
+      },
+      {
+        "label": "safe-execution",
+        "role": "operator",
+        "chainId": 84532,
+        "tx": "0x479f06b4315136b1f3ba8eb0275d88fe3f87f2fb0e3edfe62734a2612924c68b",
+        "block": 47618085,
+        "blockHash": "0xb1461f566a35090e73bd21f0b53cbc24e72dd90c0a834f635b7e97ab291cc08c",
+        "gasUsed": "72914",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x479f06b4315136b1f3ba8eb0275d88fe3f87f2fb0e3edfe62734a2612924c68b",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-market-offer",
+        "role": "seller",
+        "chainId": 84532,
+        "tx": "0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e",
+        "block": 47618090,
+        "blockHash": "0xe9760422d9d8bcc70a497a4a590be1d9152be06bafa39a050ca50bfac2596d53",
+        "gasUsed": "874194",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x35be8c8b6a0c4147a20e56c11f3ba20784f7bcb22c2be5b073fd9247bc92b88e",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-market-offer",
+        "role": "seller",
+        "chainId": 84532,
+        "tx": "0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd",
+        "block": 47618095,
+        "blockHash": "0xe0168abc11af5c4bc6f48275230815d9f03782d49e099f887ef0e7d2b7105c47",
+        "gasUsed": "851074",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0xc00e89c839ff7a9dd950a92f63ebaf43b4f16b383e07ee471662aef98ee3f1dd",
+        "confirmations": 3
+      },
+      {
+        "label": "boson-seller-withdraw",
+        "role": "seller",
+        "chainId": 84532,
+        "tx": "0x80e313a023706f0665e20722882856119ab2ab99e3e0445711314cf1b7748547",
+        "block": 47618099,
+        "blockHash": "0xd7337a77d85573c8f227c165edb784384ea1cadca73789d55654b837118e312e",
+        "gasUsed": "68502",
+        "status": 1,
+        "explorer": "https://sepolia.basescan.org/tx/0x80e313a023706f0665e20722882856119ab2ab99e3e0445711314cf1b7748547",
+        "confirmations": 3
+      }
+    ],
+    "studioIntegration": {
+      "projectRegistered": true,
+      "automaticHook": "tools/blockchain_publish.py after_render; acceptance required"
+    },
+    "exportedAt": "2026-10-03T05:14:58.094Z"
+  },
+  "limitations": [
+    "Same-Mac demo signers; no independent custody.",
+    "Boson uses EOA transactions after a verified software quorum.",
+    "Digital access license is separate from NFT passport/copyright.",
+    "Physical/service examples do not prove real shipment or service performance."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "verifiedAt": "2026-10-03T10:39:29.306Z",
+  "passed": true,
+  "chainId": 84532,
+  "testOnly": true,
+  "providersVerified": 2,
+  "assetId": "2531df02-9191-4e9f-b03c-342028d960ad",
+  "quality": {
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "frameRate": "30/1",
+    "duration": 7.966667,
+    "bytes": 3682018,
+    "sourceWidth": 1920,
+    "sourceHeight": 1080
+  },
+  "acceptedFileSha256": "f51bb532928cbf878fbafa87e8e7e26e761b079e4189600ab1530275919b546c",
+  "acceptedFileBytes": 3682018,
+  "publication": {
+    "transaction": "0x7afeb071f95168ed346648cf1dff9f15a9473c553b8c81f1c91178babfe31366",
+    "block": {
+      "number": 47627761,
+      "hash": "0x7327c168314f23cfed555881584ff240688f3e87af5dbf9df09360a60df5f981"
+    },
+    "tokenId": "7",
+    "owner": "0xB986FAFdE18de1e9D5D8986cd8A927D6cA0932D0",
+    "videoSha256": "f51bb532928cbf878fbafa87e8e7e26e761b079e4189600ab1530275919b546c",
+    "metadataHash": "0x725bccf7c4c0356471aeddcdced9fea2731770d95e1424c4f631b038b8c505f6",
+    "termsHash": "0x729e0f5bc5200d6e94b984a00483b52ba38cb7e24458d1d9deeda98f1fb72524",
+    "safeDigest": "0x0936d673c9583bddd24cb7484e974cd7f8187cc95ff62cb1050a1b1f9f306907",
+    "approvalAddresses": [
+      "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822",
+      "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789",
+      "0x6D1013F2585f8F8E64b53ac94B542a565ef98844"
+    ]
+  },
+  "nftGatesPassed": 15,
+  "replayCreatedTransactions": 0,
+  "studioCallbackIdempotent": true,
+  "offersUnchanged": true,
+  "ordersUnchanged": true,
+  "receiptCountBefore": 79,
+  "receiptCountAfter": 80,
+  "scope": "Real studio 8-second export with marked demo acceptance, SHA-256, native Safe mint through the updated bound-proposal/final-broadcast gateway. Successful canonical receipt, three confirmations, exact nested zero-value CALL, three registered sorted recovered ECDSA signatures, owner/passport/URI and release/video uniqueness mapped on both RPCs. Existing actual Python publication callback and same HTTP key recover this NFT without another transaction. No sale or purchase; same-Mac test custody."
+}

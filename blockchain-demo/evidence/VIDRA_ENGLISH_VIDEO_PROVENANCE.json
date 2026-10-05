@@ -1,0 +1,221 @@
+{
+  "verifiedAt": "2026-10-03T18:41:13.523637+00:00",
+  "status": "passed",
+  "chainId": 84532,
+  "testOnly": true,
+  "artifact": "VIDRA_AI_INVESTOR_DEMO_EN.mp4",
+  "sha256": "e16c4ecdd1e306e043f1f96dbff6300f59d904ac9f60be16c40b01c923310832",
+  "bytes": 3590655,
+  "durationSeconds": 70,
+  "resolution": "1920x1080",
+  "videoCodec": "H264",
+  "audioCodec": "AAC",
+  "outputFps": 25,
+  "spokenLanguage": "English",
+  "voice": "macOS Samantha",
+  "narrationDurationSeconds": 61.709161,
+  "subtitleTiming": "Approximate sentence timings apportioned by word count; narration text is supplied.",
+  "actualCapturedFrames": 604,
+  "selectedMovingCaptureFrames": 126,
+  "captureWindowSeconds": 1927.181,
+  "captureMedianStepSeconds": 0.305,
+  "editing": "Edited timestamped UI capture batches with compressed waits, still holds, title cards and voice-over. Output 25 fps repeats captured frames; it is not a continuous 25 fps screen recording.",
+  "scenes": [
+    {
+      "scene": "title",
+      "duration": 4,
+      "assets": [
+        "intro.jpg"
+      ]
+    },
+    {
+      "scene": "build-and-mint",
+      "duration": 12,
+      "assets": [
+        "frame-00000.png",
+        "frame-00001.png",
+        "frame-00002.png",
+        "frame-00003.png",
+        "frame-00004.png",
+        "frame-00005.png",
+        "frame-00006.png",
+        "frame-00007.png",
+        "frame-00008.png",
+        "frame-00009.png",
+        "frame-00010.png",
+        "frame-00011.png",
+        "frame-00012.png",
+        "frame-00013.png",
+        "frame-00014.png",
+        "frame-00015.png",
+        "frame-00016.png",
+        "frame-00017.png",
+        "frame-00018.png",
+        "frame-00019.png",
+        "frame-00020.png",
+        "frame-00021.png",
+        "frame-00022.png",
+        "frame-00023.png",
+        "frame-00024.png",
+        "frame-00025.png",
+        "frame-00026.png",
+        "frame-00027.png",
+        "frame-00028.png",
+        "frame-00029.png",
+        "frame-00030.png",
+        "frame-00031.png",
+        "frame-00032.png",
+        "frame-00033.png",
+        "frame-00034.png",
+        "frame-00035.png",
+        "frame-00036.png",
+        "frame-00037.png",
+        "frame-00038.png",
+        "frame-00039.png",
+        "frame-00040.png",
+        "frame-00041.png",
+        "frame-00042.png",
+        "frame-00043.png",
+        "frame-00044.png",
+        "frame-00045.png",
+        "frame-00046.png",
+        "frame-00047.png",
+        "frame-00048.png",
+        "frame-00049.png",
+        "frame-00050.png",
+        "frame-00051.png",
+        "frame-00052.png",
+        "frame-00053.png",
+        "frame-00054.png",
+        "frame-00055.png",
+        "frame-00056.png",
+        "frame-00057.png",
+        "frame-00058.png",
+        "frame-00059.png",
+        "frame-00060.png",
+        "frame-00061.png",
+        "frame-00062.png",
+        "frame-00063.png",
+        "frame-00064.png",
+        "frame-00065.png"
+      ]
+    },
+    {
+      "scene": "accepted-video-nft8",
+      "duration": 6,
+      "assets": [
+        "frame-00584.png",
+        "frame-00585.png",
+        "frame-00586.png",
+        "frame-00587.png",
+        "frame-00588.png",
+        "frame-00589.png",
+        "frame-00590.png",
+        "frame-00591.png",
+        "frame-00592.png",
+        "frame-00593.png",
+        "frame-00594.png",
+        "frame-00595.png",
+        "frame-00596.png",
+        "frame-00597.png",
+        "frame-00598.png",
+        "frame-00599.png",
+        "frame-00600.png",
+        "frame-00601.png",
+        "frame-00602.png",
+        "frame-00603.png"
+      ]
+    },
+    {
+      "scene": "boson-offer-138",
+      "duration": 8,
+      "assets": [
+        "VIDRA_MARKET_OFFER_138_EN.png"
+      ]
+    },
+    {
+      "scene": "redeemed-order-260",
+      "duration": 8,
+      "assets": [
+        "frame-00441.png",
+        "frame-00442.png",
+        "frame-00443.png",
+        "frame-00444.png",
+        "frame-00445.png",
+        "frame-00446.png",
+        "frame-00447.png",
+        "frame-00448.png",
+        "frame-00449.png",
+        "frame-00450.png",
+        "frame-00451.png",
+        "frame-00452.png",
+        "frame-00453.png",
+        "frame-00454.png",
+        "frame-00455.png",
+        "frame-00456.png",
+        "frame-00457.png",
+        "frame-00458.png",
+        "frame-00459.png",
+        "frame-00460.png",
+        "frame-00461.png",
+        "frame-00462.png",
+        "frame-00463.png",
+        "frame-00464.png",
+        "frame-00465.png",
+        "frame-00466.png",
+        "frame-00467.png",
+        "frame-00468.png",
+        "frame-00469.png",
+        "frame-00470.png",
+        "frame-00471.png",
+        "frame-00472.png",
+        "frame-00473.png",
+        "frame-00474.png",
+        "frame-00475.png",
+        "frame-00476.png",
+        "frame-00477.png",
+        "frame-00478.png",
+        "frame-00479.png",
+        "frame-00480.png"
+      ]
+    },
+    {
+      "scene": "completed-order-260",
+      "duration": 8,
+      "assets": [
+        "VIDRA_BOSON_ORDER_260_EN.png"
+      ]
+    },
+    {
+      "scene": "security",
+      "duration": 8,
+      "assets": [
+        "VIDRA_STUDIO_SECURITY_EN.png"
+      ]
+    },
+    {
+      "scene": "russian-interface",
+      "duration": 6,
+      "assets": [
+        "VIDRA_AI_STUDIO_RU_DESKTOP.png"
+      ]
+    },
+    {
+      "scene": "limits",
+      "duration": 10,
+      "assets": [
+        "outro.jpg"
+      ]
+    }
+  ],
+  "decodeVerified": true,
+  "sampleFramesVisuallyReviewedAtSeconds": [
+    18,
+    40,
+    66
+  ],
+  "custody": "Managed demo wallets; all Safe signers on one Mac. Actual MetaMask extension acceptance pending.",
+  "workflowProof": "VIDRA_ENGLISH_WORKFLOW_VERIFICATION.json",
+  "limits": "Workflow resumed manually after insufficient seller gas and a bounded test-ETH transfer. No mainnet/real funds, copyright claim, independent custody or audit.",
+  "captureFrameManifestSha256": "b55b78ca1294f42e5c2303da1a55b553c5e0f045820149f3cfab3bac605790fb"
+}

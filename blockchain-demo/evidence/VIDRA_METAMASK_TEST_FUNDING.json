@@ -1,0 +1,54 @@
+{
+  "verifiedAt": "2026-10-03T20:01:34.001Z",
+  "status": "passed",
+  "testOnly": true,
+  "chainId": 84532,
+  "source": "0x70BA881850C4c4b22d9BeceE60fa0daCd8F4a8C6",
+  "destination": "0x98539cf1e88f2621705644061881bD42e10C5E92",
+  "testETH": "0.00005",
+  "DEMO": "100",
+  "nonce": 53,
+  "maximumFeePerGas": "11000000",
+  "canonicalBlock": 47644689,
+  "canonicalBlockHash": "0x12a575cf39fa7aaad831a09102298d27c87654962348c4a0162b8bb23bcab7d5",
+  "approvals": [
+    {
+      "role": "signer1",
+      "address": "0x15E4a2F2b9e5ba8Efe6f1b7B66223F3c50614822"
+    },
+    {
+      "role": "signer2",
+      "address": "0x44D417CFdA6aCCB2fe71259FB2b192b10D20B789"
+    },
+    {
+      "role": "signer3",
+      "address": "0xBA5ea590c82a88C419594AcE35949Af97D10b537"
+    }
+  ],
+  "softwareApprovalOnly": true,
+  "independentCustody": false,
+  "externalPrivateKeyStoredByServer": false,
+  "confirmations": 3,
+  "rpcProviders": 2,
+  "transactions": [
+    {
+      "kind": "test-gas",
+      "hash": "0xb6946c76c9f2581d3e219297032d7604acefda1df2d121bc7706513dbc3325f4",
+      "nonce": 53,
+      "status": "CONFIRMED",
+      "blockNumber": 47644695,
+      "blockHash": "0x183369b1657df15f1a78733148702dbba96e2eb730091a452522b977d56b3040"
+    },
+    {
+      "kind": "test-DEMO",
+      "hash": "0xbf7262647c7142e238812166e3867fabf1bb560ea72842ed2ad7b79bfab98c15",
+      "nonce": 54,
+      "status": "CONFIRMED",
+      "blockNumber": 47644699,
+      "blockHash": "0x278c1e4f5a59ba8f4356526eac56c840147b44819a411be91462e29aee84b237"
+    }
+  ],
+  "DEMOAfter": "100",
+  "testETHAfter": "50000000000000",
+  "creditContract": "0x3f40eEB401EA47a5c3baB7F8cFf611aD54659f99"
+}

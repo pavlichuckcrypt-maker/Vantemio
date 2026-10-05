@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-03T08:04:32.228Z",
+  "chainId": 84532,
+  "passed": true,
+  "publicExchangeRecovered": "253",
+  "state": "COMPLETED",
+  "commitTransaction": "0x8b5675b38c1ef57e521bb460297fdb47e5d8042217f74ba1cc5a8c06e9606111",
+  "providersVerified": 2,
+  "chainWritesCreated": 0,
+  "liveDemoModified": false,
+  "receiptCountBefore": 72,
+  "receiptCountAfter": 72,
+  "testScope": "Real public Boson receipt and contract reads; missing order and pending request injected into isolated local files. Historical request-to-receipt linkage is a fixture; no live crash or new transaction was induced.",
+  "checks": [
+    "canonical success and at least three confirmations on both RPCs",
+    "exact buyer/target/chain/value/calldata and official BuyerCommitted event",
+    "pinned Boson/DEMO code and exact registered offer terms",
+    "identical buyer/exchange/offer state at a shared canonical block",
+    "missing order reconstructed without a signer",
+    "saved intent returns the same order after local state reload",
+    "repeat reconstruction does not duplicate the local order"
+  ]
+}
