@@ -30,12 +30,43 @@
       "owner-specific packaging utilities",
       "outdated grant and publication documents"
     ],
-    "code_changes_from_snapshot": "None in the published source files; documentation replaced and source subset selected."
+    "code_changes_from_snapshot": "Only auditor-site/server.mjs documentation allowlist changed; five public technical documents added and module README annotated. No transaction, account or private studio implementation changed.",
+    "synthetic_negative_test_literals_reviewed": 4
   },
   "limitations": [
     "Engineering checks are not an independent security audit.",
     "Testnet/fork reports are historical evidence, not current production availability.",
     "No mainnet readiness, live customer product or revenue is claimed.",
     "Full acceptance by a new external seller remains pending."
-  ]
+  ],
+  "reaudit": {
+    "baseline_commit": "4cc5d1263df76573f37f08b09d876525851fa734",
+    "baseline_files": 205,
+    "all_text_files_read_from_github": 204,
+    "downloaded_text_git_blob_hashes_verified": 204,
+    "historical_commit_trees_checked": 14,
+    "historical_only_blob_review": "Initial README only; no private engine or credential content identified.",
+    "final_expected_files": 210,
+    "tests_run_from_downloaded_public_source": true,
+    "interface_tests_repeated_after_documentation_fix": {
+      "passed": 71,
+      "failed": 0
+    },
+    "http_checks": {
+      "root_http_status": 200,
+      "documentation": {
+        "START_HERE_RU.txt": 200,
+        "AUDIT_AND_ARCHITECTURE_RU.txt": 200,
+        "PUBLICATION_REGISTER_RU.txt": 200,
+        "AUDITOR_OVERVIEW_EN.txt": 200,
+        "MULTIUSER_ARCHITECTURE_RU_EN.txt": 200,
+        "APPLICATION_DRAFTS_RU_EN.txt": 404,
+        "FUNDING_SHORTLIST_RU.txt": 404,
+        "ROADMAP_AND_BUDGET_RU.txt": 404
+      },
+      "isolated_state": true,
+      "chain_writes": false
+    },
+    "dependency_install": "Locked local dependency installation reused; no new online dependency audit performed."
+  }
 }
