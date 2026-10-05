@@ -31,6 +31,10 @@ The listed models are an initial hardware-dependent baseline. Deployments can re
 
 See [model roles, evidence and cost assumptions](docs/pitch/LOCAL_AI_INFRASTRUCTURE.md). The proprietary production engine and internal runtime data remain private.
 
+## Local AI code for technical review
+
+The [local-AI review package](studio-infrastructure/local-ai/) publishes model declarations, a selected existing response validator, an offline catalog checker and synthetic tests. The archive and source patch contain inspectable Python code. Production routing, prompts, editing logic, learning policies and internal data remain private. These excerpts are development evidence, not an independent audit or a runnable studio.
+
 ## Blockchain commerce
 
 The Base integration connects accepted media versions to onchain provenance and ownership records. Boson Market connects studio-service orders and digital-asset commerce through Boson Protocol. Parts of the purchase and protected digital-delivery flow have been verified on Base Sepolia.
