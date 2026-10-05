@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "pinnedAt": "2026-10-03T08:52:09.406Z",
+  "testOnly": true,
+  "providersVerified": 2,
+  "block": {
+    "number": 47624620,
+    "hash": "0x16042e03ab7a6e91d5c387471be5e45f99c1327039216502baf8ee3565f214b0"
+  },
+  "digest": "0x5b2751aed93faf760c27a61f7ccc4159909af84e7abb1c566ef39c589c95841d",
+  "snapshot": {
+    "chainId": 84532,
+    "diamond": "0x7de418a7ce94debd057c34ebac232e7027634ade",
+    "proxyCodeHash": "0xb228455d8bd3efca8bb96c27a51c9df33cb7e990a405b484bfdcfe23a92a3026",
+    "facets": [
+      {
+        "address": "0x169c77bfec2ead0a08601b0f1accf60d6757a9fe",
+        "codeHash": "0x3a64bf33f5219a7444315f94fd1a62ce7c052a41eaf5c076e2820043c28f23b4",
+        "selectors": [
+          "0x0cf9c2e7",
+          "0x12b52cf5",
+          "0x1ac3e64a",
+          "0x1c86f287",
+          "0x1d73add8",
+          "0x1e3c725e",
+          "0x42e27b6f",
+          "0x4579268a",
+          "0x4915907b",
+          "0x4bec59f4",
+          "0x7629327e",
+          "0x7f5c9236",
+          "0x9ab178f5",
+          "0x9e1c432f",
+          "0xcc00c061",
+          "0xdb7af92f",
+          "0xe450f473"
+        ]
+      },
+      {
+        "address": "0x2d4c7fea57a5575c4a4eb5c8bba23ff825c0a1ef",
+        "codeHash": "0xbdce4ccc9479a427fefcd1fa8e27637849b348dbe9d31fd831606d2aeb126eb5",
+        "selectors": [
+          "0x0d8e6e2c",
+          "0xc90423da"
+        ]
+      },
+      {
+        "address": "0x3312e39044e8b887f1550cd58fcdd11a0c5e6de6",
+        "codeHash": "0x667b151ce00adebd4d1b7834d85177ce199666402df85e880f9f910cc3af43c7",
+        "selectors": [
+          "0x1c437e6d",
+          "0x56ad966f",
+          "0xcd8ee97c",
+          "0xf81f7640"
+        ]
+      },
+      {
+        "address": "0x429e21b081d62611a9d4c19a0bd1aeefec2a6652",
+        "codeHash": "0x35e59d5158b5ef5b868625357e05d2ad2016d62d7c1932df204ceb3f1b61eded",
+        "selectors": [
+          "0x34780cc6"
+        ]
+      },
+      {
+        "address": "0x4a6ad6bd4840a11642cceac32c201e4a50811404",
+        "codeHash": "0xd1deed0a6bc15db5228685f5f7374901c7ea9db14900b0d2ddda664d60aed343",
+        "selectors": [
+          "0x1227dbbb",
+          "0x125e35ec",
+          "0x1843b3a9",
+          "0x2230dd12",
+          "0x4e534c96",
+          "0x6f4fbc16",
+          "0x8236d3c0",
+          "0x9b646e88",
+          "0xa880fd89",
+          "0xfa92792a"
+        ]
+      },
+      {
+        "address": "0x4ca86ca67cf086d6e68d1a1e413b2e09212c140b",
+        "codeHash": "0x3d33d167c5bcb377dad7141f74dd4fad0bbc7ab39dc96d4008f46242add6d083",
+        "selectors": [
+          "0x1f317d1c",
+          "0x2334fd56",
+          "0x337e6a6d",
+          "0x60900f5e",
+          "0xa2443b71",
+          "0xed2fae6a"
+        ]
+      },
+      {
+        "address": "0x590fada10d9b4a38f5b23a03a1119b60f1e0cffd",
+        "codeHash": "0x56499fd6b9923c3605a5e22978749146afecc1852b9355371473997379b87596",
+        "selectors": [
+          "0x0ae2126d",
+          "0x5bf608b8",
+          "0x6adb0d9c"
+        ]
+      },
+      {
+        "address": "0x5f0fb018b9773ff059804e6643856287add26ebd",
+        "codeHash": "0x5bc4c9449089f4e88ba0f014a219728a29043698b6be64a02d0c1e5467ddc413",
+        "selectors": [
+          "0x20dead55",
+          "0x49b3cccf",
+          "0x4ff2e056",
+          "0x73acab43",
+          "0x9349f39c",
+          "0xceb60654"
+        ]
+      },
+      {
+        "address": "0x6819a12a401ba1da0a34b2476396335dee90d774",
+        "codeHash": "0xddd58a23f998b0b476cf373083da1bb2c043a9127bef176c8264f843f834d7e6",
+        "selectors": [
+          "0x11ec8693",
+          "0x41b63bd8",
+          "0x573f625a",
+          "0x685ef733",
+          "0x6c48b1fa",
+          "0x8c46317f",
+          "0xa07fcc70"
+        ]
+      },
+      {
+        "address": "0x7d6de038582a6b26acd9407a5469470b460492ad",
+        "codeHash": "0xeb5a52d1efc184dd195a4ae9abbd0cf5ee9bfc37b0127193dfc46cd7c14e6e21",
+        "selectors": [
+          "0xdec319c9"
+        ]
+      },
+      {
+        "address": "0x91a9a64cb51d632f0072b3f10f7a181de1ea9ca9",
+        "codeHash": "0x85644eb3a8798ab2548b5d2a1be2bef6b80c3b3d24c92ee3195cbc1fb24cfbbb",
+        "selectors": [
+          "0x04f63e12",
+          "0x1c192790",
+          "0x20a68d25",
+          "0x42443efd",
+          "0x50f5e643",
+          "0x65f65c94",
+          "0xa5c1674e",
+          "0xae707f1e",
+          "0xc3c834b7",
+          "0xc6a470e2",
+          "0xdfdcd613",
+          "0xe3a96cbd",
+          "0xf7d95f3b",
+          "0xfb50e235"
+        ]
+      },
+      {
+        "address": "0x98b1f88acae0e3cf143bf9db4ca92c48edc43540",
+        "codeHash": "0xf3d17084b0ab991964edb1006c267925effe0cbb9743daba6861931ccffa69d1",
+        "selectors": [
+          "0x164a82f7",
+          "0x6574e3ba",
+          "0xa7c078d6",
+          "0xb44d17eb"
+        ]
+      },
+      {
+        "address": "0x9c28d54c4b7f3eac94aacf8418d0f72cf8b36d8f",
+        "codeHash": "0x6b4d7bd3da6f29de21587047cd008a20441337099a616bf341121914b8b3f782",
+        "selectors": [
+          "0xab00c0da"
+        ]
+      },
+      {
+        "address": "0x9eadd480f48e4b0559e1bf487514e5b5d69a05a1",
+        "codeHash": "0x5b80af9e7d83ae41b49b37a953725891e62c499c20e098b6dbaf718a3fca601d",
+        "selectors": [
+          "0x5e086f2f",
+          "0x8b93dd63",
+          "0xa290249c"
+        ]
+      },
+      {
+        "address": "0xbe500d976df53526699ab9d3adf631dc4a1b6381",
+        "codeHash": "0xe0c65fb5f7a6a8dfddc723281103fb7a2ea9ddef1c61c218771e1435077cc38d",
+        "selectors": [
+          "0x2d0821b7",
+          "0x4475643d",
+          "0x7c016ad5",
+          "0xa8e31107",
+          "0xc6cce096"
+        ]
+      },
+      {
+        "address": "0xc01e8df7e43b9789a773bd35af72bcd0414d490c",
+        "codeHash": "0x9aeeb48a7063b3052968b0eca2482e4426f8057c2101fcd0fe27c201de0ead7f",
+        "selectors": [
+          "0x0b9d5847",
+          "0x18170b73",
+          "0x1c6d6b5e",
+          "0x229f6943",
+          "0x309bb762",
+          "0x452ddd66",
+          "0x492edd28",
+          "0x58477db8",
+          "0x79a5fea9",
+          "0x7b02365d",
+          "0xb63e6ac3",
+          "0xbb3bafd6",
+          "0xbed3ac50",
+          "0xd3cd4747",
+          "0xe0cdab47"
+        ]
+      },
+      {
+        "address": "0xc5cb37596e93afd350ba889971490c1b09e95180",
+        "codeHash": "0xf9927d33a3c3b24f6db81593d4317b3304809bdec1204e3ef638b7efb81a8958",
+        "selectors": [
+          "0x0eb1de1c",
+          "0x2de5aaf7",
+          "0xda14451c"
+        ]
+      },
+      {
+        "address": "0xc8ee0f37a2093ba696f371ef1c0ef7b16c823396",
+        "codeHash": "0xd57ee2e9bc763efa0ff7f553062f0076782f911c1d42bc711899f8412a9b44a0",
+        "selectors": [
+          "0x15ff9697",
+          "0x1a87412f",
+          "0x1c204971",
+          "0x2a080e45",
+          "0x3f6c854f",
+          "0x55c5f928",
+          "0x65c7e640",
+          "0x84af79f8",
+          "0x84b171cd",
+          "0xa2530b2d",
+          "0xa3bf6b83",
+          "0xa5893380",
+          "0xaf7e69dd",
+          "0xc0249c7c",
+          "0xc13d679e",
+          "0xccbf2e7d"
+        ]
+      },
+      {
+        "address": "0xcfb455427507e28224a2f6b0869d1b6a3aef81f5",
+        "codeHash": "0x7e8b17661aed2bc77397b7bf50ee9670da5befe80221cc262c342a06cd9fbb21",
+        "selectors": [
+          "0x03459459",
+          "0x07c1fdad",
+          "0x10fe9ae8",
+          "0x1b57b63d",
+          "0x217a2c7b",
+          "0x23bbe5d5",
+          "0x250664d4",
+          "0x26a4e8d2",
+          "0x31cd131e",
+          "0x32cf96ff",
+          "0x36ee008c",
+          "0x37987b52",
+          "0x43024f0c",
+          "0x4dbcca7e",
+          "0x589e4e58",
+          "0x6605bfda",
+          "0x694ca8ab",
+          "0x6ba0f545",
+          "0x6c2c13c2",
+          "0x6cb84158",
+          "0x706d9f78",
+          "0x84a91ce6",
+          "0x938d1b27",
+          "0x9d273d67",
+          "0xa4fbc18b",
+          "0xbe620a41",
+          "0xc2f73795",
+          "0xd3ab3d25",
+          "0xd3bdb70c",
+          "0xd8a5e936",
+          "0xdda575c9",
+          "0xe0024604",
+          "0xeb04d54b",
+          "0xf8aaad60",
+          "0xf920fc17",
+          "0xfa5741eb"
+        ]
+      },
+      {
+        "address": "0xd0cd1594ea719b8a360df4369d85a952ce3663b1",
+        "codeHash": "0xfeffd6c0e96fba0a121b6dbf8f1de4897a011d5d935cd4045035ffc3f0343838",
+        "selectors": [
+          "0x52ef6b2c",
+          "0x7a0ed627",
+          "0xadfca15e",
+          "0xcdffacc6"
+        ]
+      },
+      {
+        "address": "0xd218e52c8060dcd45eb0c4dfe818db7ebe119589",
+        "codeHash": "0x8bbddb13a67a987ff989093b592a4d3a06e38d5145d0f70e6977f508c49329f4",
+        "selectors": [
+          "0x01ffc9a7",
+          "0x92552b4a",
+          "0xb8b3c15a"
+        ]
+      },
+      {
+        "address": "0xde7e0a4f246edca09182272f20ac1538c500c4d4",
+        "codeHash": "0xb7b2ee03fe1169789280747e1cf9617c02495d7077066693ea1020c12a979ec6",
+        "selectors": [
+          "0x1058e0c6",
+          "0x135bdebd",
+          "0x2e1528ae",
+          "0x355b7c6a",
+          "0x39e3adf2",
+          "0x5737c566",
+          "0x695ac7c9",
+          "0x8854063a",
+          "0xa34084af",
+          "0xa5055733",
+          "0xbbccbc71",
+          "0xca5e34c5",
+          "0xd6a9de51",
+          "0xd6d47579",
+          "0xd993f833",
+          "0xf0c40cf9",
+          "0xf7e469fd"
+        ]
+      },
+      {
+        "address": "0xe22eaede9c1769671f76ba1c7717746388321d6f",
+        "codeHash": "0xf4a29bdf1fbfbe59928a6c6627d79ba45a317a2c45d620ac94f0089656823f6d",
+        "selectors": [
+          "0x0ee60fa7",
+          "0x6759b8f1",
+          "0x6f29e496",
+          "0x7fb34d54",
+          "0xbaafa0e3",
+          "0xbc4d3dd0"
+        ]
+      },
+      {
+        "address": "0xf8366c6addd2541abfdf6fea35e1997fb0ef60ea",
+        "codeHash": "0x74942e324d3e49ef79e72f7e807818cfc69aa90946b36831c3bdf78a0448a66e",
+        "selectors": [
+          "0x1f931c1c"
+        ]
+      }
+    ]
+  },
+  "limits": "First enrollment of the official SDK-addressed Base Sepolia deployment, with two-RPC agreement and previously pinned proxy code. This is a baseline of observed public code, not an independent source audit. Runtime refuses future facet route or bytecode changes; protocol storage/configuration and voucher implementations are outside this snapshot."
+}
