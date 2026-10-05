@@ -30,3 +30,7 @@ The checked source package previously passed 105 module and 71 interface checks.
 Base Sepolia is the verified testnet. Local-fork checks are separate evidence. The code rejects unsupported networks and does not establish mainnet readiness. A new seller's complete public-wallet acceptance and independent audit remain pending. The site is a development interface, not a hosted customer product.
 
 Private runtime state, keys, wallet vaults, account databases, local media and owner-specific packaging utilities are not included. Runtime wallets are generated locally, never shipped in this repository.
+
+## Publication adjustments
+
+The original source snapshot is preserved except for the public documentation allowlist in `auditor-site/server.mjs`. Internal application drafts were excluded and replaced with current technical review documents under `auditor-site/docs/`. Local runtime wallets and media are not supplied; tests can run independently of historical testnet state.
