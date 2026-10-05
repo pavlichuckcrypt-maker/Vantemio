@@ -46,7 +46,7 @@ async function marketRequest(req,res,s,fn,lane='checkout'){
   },{signal:controller.signal});}finally{res.removeListener('close',abort);}
 }
 const publicFiles={'/wallet-workspace.mjs':'wallet-workspace.mjs','/account.mjs':'account.mjs','/':'index.html','/site.css':'site.css','/site.mjs':'site.mjs','/wallet-client.mjs':'wallet-client.mjs','/wallet-discovery.mjs':'wallet-discovery.mjs','/wallet-recovery.mjs':'wallet-recovery.mjs','/i18n.mjs':'i18n.mjs','/funding.json':'funding.json'};
-const documents=['START_HERE_RU.txt','AUDIT_AND_ARCHITECTURE_RU.txt','APPLICATION_DRAFTS_RU_EN.txt','FUNDING_SHORTLIST_RU.txt','ROADMAP_AND_BUDGET_RU.txt','PUBLICATION_REGISTER_RU.txt','AUDITOR_OVERVIEW_EN.txt','MULTIUSER_ARCHITECTURE_RU_EN.txt'];
+const documents=['START_HERE_RU.txt','AUDIT_AND_ARCHITECTURE_RU.txt','PUBLICATION_REGISTER_RU.txt','AUDITOR_OVERVIEW_EN.txt','MULTIUSER_ARCHITECTURE_RU_EN.txt'];
 const evidence=listPublicEvidence(path.join(moduleRoot,'evidence'));
 const mediaHome=process.env.VIDRA_MEDIA_HOME||path.join(process.env.HOME,'Desktop/AIMmontag_Blockchain');
 const media={'/media/demo.mp4':['AIMmontag_INVESTOR_DEMO_RU.mp4','46d655c8ca302cdd3c74db5fa64ebf6b806965594b34c5ae356f065fd952e6a6'],
