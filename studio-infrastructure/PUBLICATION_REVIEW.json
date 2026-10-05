@@ -1,0 +1,70 @@
+{
+  "schema": "vantemio.publication_review/v1",
+  "review_date": "2026-10-05",
+  "scope": "Explicitly selected infrastructure source excerpts and English documentation",
+  "secret_pattern_scan": {
+    "files_checked": 9,
+    "findings": [],
+    "limitation": "Pattern checks and manual source review; not an independent security audit."
+  },
+  "isolated_tests": {
+    "passed": 17,
+    "failed": 0,
+    "external_connections": false,
+    "data": "Synthetic fixtures only"
+  },
+  "excluded": [
+    "Proprietary editing engine and production orchestration",
+    "Learning and improvement policies, prompts and matrices",
+    "Internal graph and memory data, registries, task history and media",
+    "Credentials, accounts, deployment routes and device settings",
+    "Full VidRa editor fork and binaries"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4743,
+      "sha256": "b341ffcbde18cd590b597bc5c5754245d53da6a7c17c7db9c6f6527388b45ffe"
+    },
+    {
+      "path": "studio-infrastructure/NOTICE.md",
+      "bytes": 747,
+      "sha256": "03600c14ac5b19987d9ee662a4e836702720bd874e70d6216565f5b6515c4c47"
+    },
+    {
+      "path": "studio-infrastructure/README.md",
+      "bytes": 4515,
+      "sha256": "82217386c931afb648cd4f095493dba7892785f6a640486e8f0b00ede06e6160"
+    },
+    {
+      "path": "studio-infrastructure/SOURCE_MANIFEST.json",
+      "bytes": 1798,
+      "sha256": "983a9f16186b6b613ab1ae4e283ff069b18b60afb809c1bf6fc403e6721c1c02"
+    },
+    {
+      "path": "studio-infrastructure/tests/test_public_infrastructure.py",
+      "bytes": 5968,
+      "sha256": "16a174c36a11a00622a4050496e271fdad1700a413f4f3265ac1a73eb8071cbb"
+    },
+    {
+      "path": "studio-infrastructure/vantemio_infrastructure/__init__.py",
+      "bytes": 70,
+      "sha256": "0b1d1b03dff2964866523913e41b0b6baad457f02bf3a3dc9264d5a25d57d18d"
+    },
+    {
+      "path": "studio-infrastructure/vantemio_infrastructure/memory.py",
+      "bytes": 7203,
+      "sha256": "1fc8c89b13733571fd78fb53b197dbe05f8e0d4b34f30cd6f9958245cf9dcadb"
+    },
+    {
+      "path": "studio-infrastructure/vantemio_infrastructure/vidra_reply.py",
+      "bytes": 2891,
+      "sha256": "c08ff564e3049057618a912c97432a5357e957c3ad2bd9afc00f8b8ae28c64c3"
+    },
+    {
+      "path": "studio-infrastructure/vantemio_infrastructure/wire.py",
+      "bytes": 5392,
+      "sha256": "91e82089724319dc9808c13e52f63e17879af2a3e5665bbe5f889e6c4e0b6e52"
+    }
+  ]
+}

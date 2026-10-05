@@ -1,0 +1,43 @@
+{
+  "schema": "vantemio.public_source_manifest/v1",
+  "review_date": "2026-10-05",
+  "scope": "Selected implementation excerpts, not a full production runtime",
+  "sources": [
+    {
+      "published_file": "vantemio_infrastructure/memory.py",
+      "source_module": "studio_memory.py",
+      "source_sha256": "842d0e0c95750f5681dfca6b245ca3e9db7f200ec36e076ea7f91b3e14cd2ba7",
+      "included_symbols": [
+        "__init__",
+        "_register",
+        "connection",
+        "digest",
+        "encoded",
+        "graph",
+        "observe",
+        "recall",
+        "register"
+      ],
+      "adaptation": "Selected storage methods only. Learning, policy, CLI, production discovery and capture functions excluded; included method bodies unchanged."
+    },
+    {
+      "published_file": "vantemio_infrastructure/wire.py",
+      "source_module": "queue_store_ssh.py",
+      "source_sha256": "eebab5e3b7d6b80445799edd027d0f0c949c47fb28510658ba5417a4925066f1",
+      "included_symbols": [
+        "assembled_response"
+      ],
+      "adaptation": "Selected validation body adapted. Transport callback injected; deployment commands, SSH configuration, disk cache and queue mutation excluded. Unframed responses explicitly rejected. Bounds are public sample limits, not runtime measurements."
+    },
+    {
+      "published_file": "vantemio_infrastructure/vidra_reply.py",
+      "source_module": "vidra_gateway_client.py",
+      "source_sha256": "3cd649201dff4a6a8712ab18b6bbf72db16b8de90fa1286be9d437b4f4eaa3fa",
+      "included_symbols": [
+        "_read_reply",
+        "_readline"
+      ],
+      "adaptation": "Parser method bodies unchanged. Standalone public constructor added. Credentials, token defaults, host/port configuration, connection, command dispatch and full fork excluded."
+    }
+  ]
+}
