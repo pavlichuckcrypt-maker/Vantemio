@@ -1,0 +1,41 @@
+{
+  "project": "Vantemio",
+  "scope": "Base/Boson blockchain-commerce module and required acceptance adapters",
+  "review_date": "2026-10-04",
+  "source_snapshot": "v12",
+  "source_archive_sha256": "af5eed1cb785ba59e59d65e3722c8bcb6a9147785f49f016d2cd5a1576a028ec",
+  "tests": {
+    "module": {
+      "command": "npm test",
+      "tests": 105,
+      "passed": 105,
+      "failed": 0
+    },
+    "interface": {
+      "command": "npm run test:site",
+      "tests": 71,
+      "passed": 71,
+      "failed": 0
+    },
+    "total_passed": 176,
+    "environment": "Node.js 24.19, Python 3; locked dependencies; isolated local test state",
+    "chain_writes_performed_for_this_verification": false
+  },
+  "publication_review": {
+    "credential_pattern_findings": 0,
+    "excluded": [
+      "runtime databases and wallet vaults",
+      "credentials and local operational state",
+      "private video-production engine",
+      "owner-specific packaging utilities",
+      "outdated grant and publication documents"
+    ],
+    "code_changes_from_snapshot": "None in the published source files; documentation replaced and source subset selected."
+  },
+  "limitations": [
+    "Engineering checks are not an independent security audit.",
+    "Testnet/fork reports are historical evidence, not current production availability.",
+    "No mainnet readiness, live customer product or revenue is claimed.",
+    "Full acceptance by a new external seller remains pending."
+  ]
+}
