@@ -1,0 +1,103 @@
+{
+  "schema": "vantemio.public.model_catalog/v1",
+  "snapshot_date": "2026-10-05",
+  "scope": "review_snapshot_not_runtime_configuration",
+  "authority": "station",
+  "models": [
+    {
+      "id": "qwen-27b",
+      "label": "Qwen 27B",
+      "registered_name": "Qwen3.8-27B-GSQ-RCO-IQ3_S",
+      "roles": [
+        "scene_planning",
+        "graphic_actions",
+        "bounded_semantic_repair"
+      ],
+      "execution_scope": "station_gpu",
+      "evidence_status": "recorded_local_execution"
+    },
+    {
+      "id": "qwen-coder-7b",
+      "label": "Qwen Coder 7B",
+      "registered_name": "qwen2.5-coder-7b-instruct-q4_k_m",
+      "roles": [
+        "bounded_code_assistance"
+      ],
+      "execution_scope": "station_assigned_helper",
+      "evidence_status": "configured_route"
+    },
+    {
+      "id": "qwen-vl-4b",
+      "label": "Qwen VL 4B",
+      "registered_name": "Qwen3-VL-4B-Instruct-Q4_K_M",
+      "roles": [
+        "frame_description",
+        "visual_screening"
+      ],
+      "execution_scope": "station_assigned_executor",
+      "evidence_status": "registered_specialist"
+    },
+    {
+      "id": "qwen-vl-8b",
+      "label": "Qwen VL 8B",
+      "registered_name": "qwen3-vl-8b",
+      "roles": [
+        "frame_description",
+        "visual_screening"
+      ],
+      "execution_scope": "station_assigned_executor",
+      "evidence_status": "registered_specialist"
+    },
+    {
+      "id": "gemma-visual",
+      "label": "Gemma visual model",
+      "registered_name": "gemma-4-12b-it-Q4_K_M",
+      "roles": [
+        "frame_description",
+        "visual_screening"
+      ],
+      "execution_scope": "station_assigned_executor",
+      "evidence_status": "registered_specialist"
+    },
+    {
+      "id": "qwen-tts",
+      "label": "Qwen3-TTS 1.7B",
+      "registered_name": "Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "roles": [
+        "narration_synthesis"
+      ],
+      "execution_scope": "station_assigned_executor",
+      "evidence_status": "registered_historical_execution"
+    },
+    {
+      "id": "whisper",
+      "label": "Whisper large-v3-turbo",
+      "registered_name": "whisper-large-v3-turbo",
+      "roles": [
+        "speech_transcription"
+      ],
+      "execution_scope": "station_assigned_executor",
+      "evidence_status": "registered_historical_execution"
+    },
+    {
+      "id": "stable-audio",
+      "label": "Stable Audio Open",
+      "registered_name": "stable-audio-open-1.0",
+      "roles": [
+        "sound_generation"
+      ],
+      "execution_scope": "station_assigned_executor",
+      "evidence_status": "registered_specialist"
+    },
+    {
+      "id": "clap",
+      "label": "CLAP",
+      "registered_name": "clap",
+      "roles": [
+        "audio_text_comparison"
+      ],
+      "execution_scope": "station_assigned_executor",
+      "evidence_status": "registered_specialist"
+    }
+  ]
+}

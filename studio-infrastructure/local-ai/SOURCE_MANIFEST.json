@@ -1,0 +1,28 @@
+{
+  "schema": "vantemio.public.local_ai_review_manifest/v1",
+  "date": "2026-10-05",
+  "source": [
+    {
+      "private_module_basename": "local_ai_lease.py",
+      "symbol": "validate_response_contract",
+      "extracted_symbol_sha256": "bfe7dca0d97dc4c081a5f8b7d428e0f0c743d521a6923c1709dd5f57ccd321a8",
+      "adaptations": [
+        "Normalize CRLF to LF",
+        "Add import json and standalone publication header"
+      ],
+      "production_schemas_included": false
+    }
+  ],
+  "catalog_provenance": "Curated projection of reviewed Station declarations/model cards; project model identifiers only. Roles and evidence labels are public documentation annotations, not copied runtime routing policies.",
+  "audit_wrapper": "New offline public review helper; not integrated into the private runtime.",
+  "network_calls": false,
+  "production_changes": false,
+  "files": {
+    "MODEL_CATALOG.json": "2b02cb67c15f3b0d386ac6a29cb2a78c02e77c6db0b4248125873e64a37671d9",
+    "NOTICE.md": "c02e5a4f94068b13edfc24cd01be36ee36721b25670a34e50db217a52d15e038",
+    "README.md": "91c61fe754753d0f0f96775d1714189ce10a70747e3cee48a88914fa1ce924d4",
+    "model_catalog.py": "6d0ede7307136834177ec5a672c6e5253c012baccd1064d71ac1dfae28c7fbb6",
+    "response_contract.py": "048c5a939e5d17771cca6eb656c5cd476e52b92dd47c05a74ce5ff0b9ae4c8fd",
+    "test_contracts.py": "135aea1c9d0faee8e488753897f2040dbd9e446b46ab706f600019e1001cf848"
+  }
+}

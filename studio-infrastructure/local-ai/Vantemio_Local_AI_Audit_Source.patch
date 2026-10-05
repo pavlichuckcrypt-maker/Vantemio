@@ -1,0 +1,472 @@
+--- /dev/null
++++ b/studio-infrastructure/local-ai/MODEL_CATALOG.json
+@@ -0,0 +1,103 @@
++{
++  "schema": "vantemio.public.model_catalog/v1",
++  "snapshot_date": "2026-10-05",
++  "scope": "review_snapshot_not_runtime_configuration",
++  "authority": "station",
++  "models": [
++    {
++      "id": "qwen-27b",
++      "label": "Qwen 27B",
++      "registered_name": "Qwen3.8-27B-GSQ-RCO-IQ3_S",
++      "roles": [
++        "scene_planning",
++        "graphic_actions",
++        "bounded_semantic_repair"
++      ],
++      "execution_scope": "station_gpu",
++      "evidence_status": "recorded_local_execution"
++    },
++    {
++      "id": "qwen-coder-7b",
++      "label": "Qwen Coder 7B",
++      "registered_name": "qwen2.5-coder-7b-instruct-q4_k_m",
++      "roles": [
++        "bounded_code_assistance"
++      ],
++      "execution_scope": "station_assigned_helper",
++      "evidence_status": "configured_route"
++    },
++    {
++      "id": "qwen-vl-4b",
++      "label": "Qwen VL 4B",
++      "registered_name": "Qwen3-VL-4B-Instruct-Q4_K_M",
++      "roles": [
++        "frame_description",
++        "visual_screening"
++      ],
++      "execution_scope": "station_assigned_executor",
++      "evidence_status": "registered_specialist"
++    },
++    {
++      "id": "qwen-vl-8b",
++      "label": "Qwen VL 8B",
++      "registered_name": "qwen3-vl-8b",
++      "roles": [
++        "frame_description",
++        "visual_screening"
++      ],
++      "execution_scope": "station_assigned_executor",
++      "evidence_status": "registered_specialist"
++    },
++    {
++      "id": "gemma-visual",
++      "label": "Gemma visual model",
++      "registered_name": "gemma-4-12b-it-Q4_K_M",
++      "roles": [
++        "frame_description",
++        "visual_screening"
++      ],
++      "execution_scope": "station_assigned_executor",
++      "evidence_status": "registered_specialist"
++    },
++    {
++      "id": "qwen-tts",
++      "label": "Qwen3-TTS 1.7B",
++      "registered_name": "Qwen3-TTS-12Hz-1.7B-CustomVoice",
++      "roles": [
++        "narration_synthesis"
++      ],
++      "execution_scope": "station_assigned_executor",
++      "evidence_status": "registered_historical_execution"
++    },
++    {
++      "id": "whisper",
++      "label": "Whisper large-v3-turbo",
++      "registered_name": "whisper-large-v3-turbo",
++      "roles": [
++        "speech_transcription"
++      ],
++      "execution_scope": "station_assigned_executor",
++      "evidence_status": "registered_historical_execution"
++    },
++    {
++      "id": "stable-audio",
++      "label": "Stable Audio Open",
++      "registered_name": "stable-audio-open-1.0",
++      "roles": [
++        "sound_generation"
++      ],
++      "execution_scope": "station_assigned_executor",
++      "evidence_status": "registered_specialist"
++    },
++    {
++      "id": "clap",
++      "label": "CLAP",
++      "registered_name": "clap",
++      "roles": [
++        "audio_text_comparison"
++      ],
++      "execution_scope": "station_assigned_executor",
++      "evidence_status": "registered_specialist"
++    }
++  ]
++}
+--- /dev/null
++++ b/studio-infrastructure/local-ai/NOTICE.md
+@@ -0,0 +1,7 @@
++# Source publication notice
++
++Copyright 2026 Vantemio / Vitalii Pavlichuk for original project material.
++
++Rights are reserved for the original response-validation excerpt, curated model catalog, audit wrapper, tests and documentation except as permitted by applicable law and the hosting platform's terms. No open-source license or ownership of the private studio engine is granted by this publication. This notice does not replace third-party licenses.
++
++No model weights, upstream model source, provider SDKs, production schemas, prompts, routes, credentials or runtime records are distributed. Model names identify entries in the project's reviewed configuration and are not endorsements, partnerships or independent verification of upstream model identity.
+--- /dev/null
++++ b/studio-infrastructure/local-ai/README.md
+@@ -0,0 +1,51 @@
++# Local AI technical review package
++
++This package exposes a curated model catalog and a selected existing response-validation function around Vantemio's private studio. It provides inspectable code for technical review without distributing the production engine.
++
++## Inspectable source
++
++- `response_contract.py`: the existing `validate_response_contract` function from the Station local-AI module, unchanged apart from newline normalization, with a standalone import and publication notice. It checks a bounded subset of JSON schema, including required fields, types, enum distinctions, lengths, extra fields and unsupported schema keywords.
++- `MODEL_CATALOG.json`: a curated public projection of reviewed model declarations and model cards. Only model labels, registered names, roles, execution scope and evidence status are included.
++- `model_catalog.py`: a new offline audit wrapper that validates this public snapshot. It is not the private model registry, production provider API, scheduler or model router.
++- `test_contracts.py`: isolated regression checks using synthetic values. They make no model calls or production changes.
++
++Download [the source archive](Vantemio_Local_AI_Audit_Source.zip), or inspect [the complete source patch](Vantemio_Local_AI_Audit_Source.patch). [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json) records excerpt provenance, adaptations and file hashes.
++
++## Models and evidence
++
++The catalog lists Qwen 27B, Qwen Coder 7B, Qwen VL 4B/8B, the Gemma visual model, Qwen3-TTS 1.7B, Whisper large-v3-turbo, Stable Audio Open and CLAP. Exact strings are project configuration identifiers. A declaration is not proof that a model is currently loaded or that every assigned capability is verified.
++
++`recorded_local_execution` means selected actual local calls have retained results. `configured_route` identifies a configured helper path. `registered_specialist` identifies a registered component. `registered_historical_execution` adds retained historical execution evidence. None means production readiness or current fleet-wide availability.
++
++Station owns orchestration, queues, memory and execution accounting. Registered workers remain bounded executors. The model list is a hardware-dependent baseline, not a fixed model requirement or fleet ceiling. Compatible alternatives need an adapter, resource checks, the required output format and task-specific quality validation.
++
++Video and image generation remain external. The 70–80% reduction in eligible cloud AI inference spending is a planning target, not a measured total-cost saving. See [the infrastructure description](../../docs/pitch/LOCAL_AI_INFRASTRUCTURE.md).
++
++## Run the offline checks
++
++Python 3.10 or later, standard library only:
++
++```sh
++unzip Vantemio_Local_AI_Audit_Source.zip
++cd vantemio-local-ai-audit
++python3 -m unittest -v test_contracts.py
++python3 model_catalog.py
++```
++
++Example using a synthetic response contract:
++
++```python
++from response_contract import validate_response_contract
++schema = {"type": "object", "required": ["decision"],
++          "additionalProperties": False,
++          "properties": {"decision": {"enum": ["accept", "repair"]}}}
++print(validate_response_contract({"decision": "repair"}, schema)["valid"])
++```
++
++This example schema is for review only. A structurally valid result is not evidence of factual correctness, artistic quality, authorization, rights clearance or accepted audio/video delivery. The bounded validator is not a complete JSON Schema implementation. Production callers must also bound input size and use trusted acyclic schemas.
++
++## Publication boundary
++
++The package excludes production routing, admission and resource-selection policies, model launching, hardware addresses, network transports, prompts, task context, scene and sound matrices, creative decisions, proprietary learning rules, real memory/graph contents and runtime leases or receipts. It has no inference server, generation endpoint, customer API or connection to the live studio.
++
++These excerpts support due diligence. They do not constitute an independent audit or demonstrate a runnable complete product. Private mechanisms can be reviewed through separately arranged controlled access. See [NOTICE.md](NOTICE.md).
+--- /dev/null
++++ b/studio-infrastructure/local-ai/SOURCE_MANIFEST.json
+@@ -0,0 +1,28 @@
++{
++  "schema": "vantemio.public.local_ai_review_manifest/v1",
++  "date": "2026-10-05",
++  "source": [
++    {
++      "private_module_basename": "local_ai_lease.py",
++      "symbol": "validate_response_contract",
++      "extracted_symbol_sha256": "bfe7dca0d97dc4c081a5f8b7d428e0f0c743d521a6923c1709dd5f57ccd321a8",
++      "adaptations": [
++        "Normalize CRLF to LF",
++        "Add import json and standalone publication header"
++      ],
++      "production_schemas_included": false
++    }
++  ],
++  "catalog_provenance": "Curated projection of reviewed Station declarations/model cards; project model identifiers only. Roles and evidence labels are public documentation annotations, not copied runtime routing policies.",
++  "audit_wrapper": "New offline public review helper; not integrated into the private runtime.",
++  "network_calls": false,
++  "production_changes": false,
++  "files": {
++    "MODEL_CATALOG.json": "2b02cb67c15f3b0d386ac6a29cb2a78c02e77c6db0b4248125873e64a37671d9",
++    "NOTICE.md": "c02e5a4f94068b13edfc24cd01be36ee36721b25670a34e50db217a52d15e038",
++    "README.md": "91c61fe754753d0f0f96775d1714189ce10a70747e3cee48a88914fa1ce924d4",
++    "model_catalog.py": "6d0ede7307136834177ec5a672c6e5253c012baccd1064d71ac1dfae28c7fbb6",
++    "response_contract.py": "048c5a939e5d17771cca6eb656c5cd476e52b92dd47c05a74ce5ff0b9ae4c8fd",
++    "test_contracts.py": "135aea1c9d0faee8e488753897f2040dbd9e446b46ab706f600019e1001cf848"
++  }
++}
+--- /dev/null
++++ b/studio-infrastructure/local-ai/model_catalog.py
+@@ -0,0 +1,50 @@
++"""Public audit facade over a curated model catalog, not a production router.
++
++Copyright 2026 Vantemio / Vitalii Pavlichuk. See NOTICE.md.
++"""
++from pathlib import Path
++import json
++from response_contract import validate_response_contract
++
++# Only public description fields are admitted. Operational configuration is absent.
++MODEL_SCHEMA = {
++    "type": "object", "additionalProperties": False,
++    "required": ["id", "label", "registered_name", "roles", "execution_scope", "evidence_status"],
++    "properties": {
++        "id": {"type": "string", "minLength": 1, "maxLength": 128},
++        "label": {"type": "string", "minLength": 1, "maxLength": 128},
++        "registered_name": {"type": "string", "minLength": 1, "maxLength": 256},
++        "roles": {"type": "array", "minItems": 1, "maxItems": 16, "uniqueItems": True,
++                  "items": {"type": "string", "minLength": 1, "maxLength": 128}},
++        "execution_scope": {"enum": ["station_gpu", "station_assigned_helper", "station_assigned_executor"]},
++        "evidence_status": {"enum": ["recorded_local_execution", "configured_route",
++                                      "registered_specialist", "registered_historical_execution"]},
++    },
++}
++CATALOG_SCHEMA = {
++    "type": "object", "additionalProperties": False,
++    "required": ["schema", "snapshot_date", "scope", "authority", "models"],
++    "properties": {
++        "schema": {"const": "vantemio.public.model_catalog/v1"},
++        "snapshot_date": {"type": "string", "minLength": 10, "maxLength": 10},
++        "scope": {"const": "review_snapshot_not_runtime_configuration"},
++        "authority": {"const": "station"},
++        "models": {"type": "array", "minItems": 1, "items": MODEL_SCHEMA},
++    },
++}
++
++def load_catalog(path=None):
++    path = Path(path) if path is not None else Path(__file__).with_name("MODEL_CATALOG.json")
++    value = json.loads(path.read_text(encoding="utf-8"))
++    result = validate_response_contract(value, CATALOG_SCHEMA)
++    if not result["valid"]:
++        raise ValueError("Public model catalog does not satisfy its contract")
++    ids = [model["id"] for model in value["models"]]
++    if len(ids) != len(set(ids)):
++        raise ValueError("Duplicate public model identity")
++    return value
++
++if __name__ == "__main__":
++    catalog = load_catalog()
++    print(json.dumps({"schema": catalog["schema"], "authority": catalog["authority"],
++                      "models": catalog["models"]}, indent=2))
+--- /dev/null
++++ b/studio-infrastructure/local-ai/response_contract.py
+@@ -0,0 +1,139 @@
++"""Selected existing Station response validator for isolated technical review.
++
++No production schemas, model routing, prompts, runtime or transport are included.
++Copyright 2026 Vantemio / Vitalii Pavlichuk. See NOTICE.md.
++"""
++import json
++
++def validate_response_contract(value, schema):
++    """Validate the station's bounded JSON contract, rejecting unsupported keywords.
++
++    This is not a general JSON Schema engine. Unsupported or malformed contracts
++    are explicit errors, including in optional branches that the answer omits.
++    No external references, evaluation or network retrieval is performed.
++    """
++    import math
++    types = {'object': lambda v: isinstance(v, dict),
++             'array': lambda v: isinstance(v, list),
++             'string': lambda v: isinstance(v, str),
++             'boolean': lambda v: isinstance(v, bool),
++             'null': lambda v: v is None,
++             'integer': lambda v: type(v) is int,
++             'number': lambda v: type(v) is int or type(v) is float and math.isfinite(v)}
++    annotations = {'title', 'description', '$comment', 'default', 'examples'}
++    counts = {'minItems', 'maxItems', 'minLength', 'maxLength', 'minProperties', 'maxProperties'}
++    numbers = {'minimum', 'maximum', 'exclusiveMinimum', 'exclusiveMaximum'}
++    keywords = annotations | counts | numbers | {'type', 'properties', 'required', 'items',
++        'additionalProperties', 'enum', 'const', 'uniqueItems', 'anyOf', 'allOf', 'oneOf', 'not'}
++    contract_errors = []
++
++    def check(s, path='$', depth=0):
++        if depth > 64:
++            contract_errors.append(path + ': schema nesting exceeds 64')
++            return
++        if isinstance(s, bool):
++            return
++        if not isinstance(s, dict):
++            contract_errors.append(path + ': schema must be object or boolean')
++            return
++        for k, v in s.items():
++            at = path + '/' + str(k)
++            if k not in keywords:
++                contract_errors.append(at + ': unsupported keyword')
++            elif k == 'type':
++                if not (isinstance(v, str) and v in types or
++                        isinstance(v, list) and v and all(isinstance(t, str) and t in types for t in v)):
++                    contract_errors.append(at + ': invalid type')
++            elif k == 'properties':
++                if not isinstance(v, dict):
++                    contract_errors.append(at + ': expected object')
++                else:
++                    for name, child in v.items():
++                        check(child, at + '/' + str(name), depth + 1)
++            elif k in ('items', 'additionalProperties', 'not'):
++                check(v, at, depth + 1)
++            elif k in ('allOf', 'anyOf', 'oneOf'):
++                if not isinstance(v, list) or not v:
++                    contract_errors.append(at + ': expected nonempty schema array')
++                else:
++                    for i, child in enumerate(v):
++                        check(child, at + '/' + str(i), depth + 1)
++            elif k == 'required' and not (isinstance(v, list) and all(isinstance(x, str) for x in v)):
++                contract_errors.append(at + ': expected string array')
++            elif k == 'enum' and not (isinstance(v, list) and v):
++                contract_errors.append(at + ': expected nonempty array')
++            elif k in counts and not (type(v) is int and v >= 0):
++                contract_errors.append(at + ': expected nonnegative integer')
++            elif k in numbers and not types['number'](v):
++                contract_errors.append(at + ': expected finite number')
++            elif k == 'uniqueItems' and not isinstance(v, bool):
++                contract_errors.append(at + ': expected boolean')
++
++    def equal(a, b):
++        # Python True == 1 must not turn a boolean into an allowed numeric enum.
++        if isinstance(a, bool) or isinstance(b, bool):
++            return type(a) is type(b) and a == b
++        if isinstance(a, list) and isinstance(b, list):
++            return len(a) == len(b) and all(equal(x, y) for x, y in zip(a, b))
++        if isinstance(a, dict) and isinstance(b, dict):
++            return a.keys() == b.keys() and all(equal(a[k], b[k]) for k in a)
++        return a == b
++
++    def validate(v, s, path='$', depth=0):
++        errors = []
++        def fail(keyword):
++            errors.append({'path': path, 'keyword': keyword})
++        if depth > 128:
++            fail('depth_limit')
++            return errors
++        if isinstance(s, bool):
++            if not s: fail('false_schema')
++            return errors
++        wanted = s.get('type')
++        if wanted is not None and not any(types[t](v) for t in ([wanted] if isinstance(wanted, str) else wanted)):
++            fail('type')
++            return errors
++        if type(v) is float and not math.isfinite(v): fail('finite_number')
++        if 'enum' in s and not any(equal(v, x) for x in s['enum']): fail('enum')
++        if 'const' in s and not equal(v, s['const']): fail('const')
++        for op in ('allOf', 'anyOf', 'oneOf'):
++            if op in s:
++                passed = sum(not validate(v, branch, path, depth + 1) for branch in s[op])
++                if (op == 'allOf' and passed != len(s[op]) or op == 'anyOf' and not passed or op == 'oneOf' and passed != 1): fail(op)
++        if 'not' in s and not validate(v, s['not'], path, depth + 1): fail('not')
++        if isinstance(v, dict):
++            for key in s.get('required', []):
++                if key not in v: errors.append({'path': path, 'keyword': 'required', 'missing': key})
++            for key, item in v.items():
++                child = s.get('properties', {}).get(key, s.get('additionalProperties', True))
++                errors.extend(validate(item, child, path + '/' + str(key).replace('~', '~0').replace('/', '~1'), depth + 1))
++        if isinstance(v, list):
++            if s.get('uniqueItems') and any(equal(v[i], v[j]) for i in range(len(v)) for j in range(i)):
++                fail('uniqueItems')
++            for i, item in enumerate(v):
++                errors.extend(validate(item, s.get('items', True), path + '/' + str(i), depth + 1))
++        for low, high, applies in (('minLength', 'maxLength', isinstance(v, str)),
++                                  ('minItems', 'maxItems', isinstance(v, list)),
++                                  ('minProperties', 'maxProperties', isinstance(v, dict))):
++            if applies:
++                if low in s and len(v) < s[low]: fail(low)
++                if high in s and len(v) > s[high]: fail(high)
++        if type(v) in (int, float):
++            for k, bad in (('minimum', lambda x: v < x), ('maximum', lambda x: v > x),
++                           ('exclusiveMinimum', lambda x: v <= x), ('exclusiveMaximum', lambda x: v >= x)):
++                if k in s and bad(s[k]): fail(k)
++        return errors
++
++    check(schema)
++    try:
++        json.dumps(value, allow_nan=False)
++    except (ValueError, TypeError, RecursionError):
++        return {'valid': False, 'contract_errors': contract_errors,
++                'errors': [{'path': '$', 'keyword': 'json_value'}],
++                'validator': 'station_bounded_contract/v1', 'required_missing': []}
++    errors = [] if contract_errors else validate(value, schema)
++    return {'valid': not contract_errors and not errors,
++            'contract_errors': contract_errors, 'errors': errors,
++            'validator': 'station_bounded_contract/v1',
++            'required_missing': [e['missing'] for e in errors if e.get('keyword') == 'required' and e['path'] == '$']}
++
+--- /dev/null
++++ b/studio-infrastructure/local-ai/test_contracts.py
+@@ -0,0 +1,73 @@
++import copy
++import json
++import tempfile
++import unittest
++from pathlib import Path
++from model_catalog import load_catalog, CATALOG_SCHEMA
++from response_contract import validate_response_contract as validate
++
++class AuditContracts(unittest.TestCase):
++    def test_catalog_is_consistent(self):
++        catalog = load_catalog()
++        self.assertEqual(len(catalog["models"]), 9)
++        self.assertEqual(catalog["authority"], "station")
++
++    def test_runtime_configuration_cannot_be_added_to_catalog(self):
++        catalog = load_catalog()
++        catalog["models"][0]["runtime_configuration"] = {"synthetic": True}
++        self.assertFalse(validate(catalog, CATALOG_SCHEMA)["valid"])
++
++    def test_registered_status_cannot_claim_ready(self):
++        catalog = load_catalog()
++        catalog["models"][0]["evidence_status"] = "production_ready"
++        self.assertFalse(validate(catalog, CATALOG_SCHEMA)["valid"])
++
++    def test_duplicate_model_identity_is_rejected(self):
++        catalog = load_catalog()
++        catalog["models"].append(copy.deepcopy(catalog["models"][0]))
++        with tempfile.TemporaryDirectory() as tmp:
++            path = Path(tmp) / "synthetic.json"
++            path.write_text(json.dumps(catalog))
++            with self.assertRaises(ValueError):
++                load_catalog(path)
++
++    def test_missing_result_field_is_reported(self):
++        result = validate({}, {"type": "object", "required": ["decision"]})
++        self.assertFalse(result["valid"])
++        self.assertEqual(result["required_missing"], ["decision"])
++
++    def test_boolean_cannot_impersonate_numeric_enum(self):
++        self.assertFalse(validate(True, {"enum": [1]})["valid"])
++        self.assertFalse(validate([True], {"const": [1]})["valid"])
++
++    def test_nonfinite_numbers_are_not_json_results(self):
++        for value in (float("nan"), float("inf"), {"v": float("inf")}):
++            self.assertFalse(validate(value, True)["valid"])
++
++    def test_remote_schema_reference_is_rejected(self):
++        result = validate({}, {"$ref": "https://example.invalid/schema"})
++        self.assertFalse(result["valid"])
++        self.assertTrue(result["contract_errors"])
++
++    def test_malformed_unused_schema_is_rejected(self):
++        result = validate({}, {"type": "object", "properties": {"unused": {"maxLength": -1}}})
++        self.assertFalse(result["valid"])
++        self.assertTrue(result["contract_errors"])
++
++    def test_limits_and_unknown_fields_are_enforced(self):
++        schema = {"type": "object", "additionalProperties": False,
++                  "required": ["items"], "properties": {"items": {"type": "array", "maxItems": 2,
++                  "items": {"type": "integer", "minimum": 0, "maximum": 5}}}}
++        self.assertTrue(validate({"items": [0, 5]}, schema)["valid"])
++        for value in ({"items": [6]}, {"items": [1, 2, 3]}, {"items": [True]}, {"items": [], "extra": 1}):
++            self.assertFalse(validate(value, schema)["valid"])
++
++    def test_exclusive_alternatives_are_enforced(self):
++        self.assertFalse(validate(1, {"oneOf": [{"type": "number"}, {"type": "integer"}]})["valid"])
++        self.assertTrue(validate("text", {"oneOf": [{"type": "string"}, {"type": "integer"}]})["valid"])
++
++    def test_false_schema_rejects_result(self):
++        self.assertFalse(validate("synthetic", False)["valid"])
++
++if __name__ == "__main__":
++    unittest.main()
