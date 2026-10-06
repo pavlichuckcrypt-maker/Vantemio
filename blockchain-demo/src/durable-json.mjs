@@ -10,9 +10,14 @@ export function writeDurableJSON(file,text){
     fd=fs.openSync(temporary,'wx',0o600);
     fs.writeFileSync(fd,text,'utf8');fs.fsyncSync(fd);fs.closeSync(fd);fd=undefined;
     fs.renameSync(temporary,file);
-    const parent=fs.openSync(directory,'r');try{fs.fsyncSync(parent);}finally{fs.closeSync(parent);}
+    try{
+      const parent=fs.openSync(directory,'r');try{fs.fsyncSync(parent);}finally{fs.closeSync(parent);}
+    }catch(e){
+      // Windows/SMB directory fsync may throw EPERM/EPERM-equivalent — file durability already ensured above.
+      if(e && (e.code==='EPERM' || e.code==='EINVAL' || e.code==='EBADF')){} else throw e;
+    }
   }finally{
-    if(fd!==undefined)fs.closeSync(fd);
-    if(fs.existsSync(temporary))fs.unlinkSync(temporary);
+    if(fd!==undefined)try{fs.closeSync(fd);}catch{}
+    if(fs.existsSync(temporary))try{fs.unlinkSync(temporary);}catch{}
   }
 }
