@@ -65,3 +65,9 @@ This repository publishes the Base/Boson blockchain integration module and the B
 
 Infrastructure publication reviewed: 5 October 2026. Its 17 isolated checks concern the selected excerpts and do not establish readiness of the complete studio.
 
+
+## Public Sound Matrix — development preview
+
+The [Sound Matrix package](sound-matrix/README.md) publishes selected sound-authoring contracts, semantic routing, exact timing validation and PCM cropping, with installation and Claude Code integration instructions. It is in active development; the full studio, proprietary orchestration and internal data remain private. See its model-license and integration limitations before use.
+
+Latest blockchain source changes are documented in [the development update](blockchain-demo/PUBLIC_UPDATE_20261006.md).
