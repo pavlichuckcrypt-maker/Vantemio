@@ -1,0 +1,51 @@
+{
+  "status": "in_development",
+  "source_snapshot": "2026-10-06",
+  "sources": [
+    {
+      "source": "tools/film_sound_routes.py",
+      "sha256": "8e1f5b04e71743a9b2dd1edf41dd9f1a174861a3ccd519de56257b7fd38c2574",
+      "exported_functions": [
+        "digest",
+        "_sha",
+        "generated_effect_diagnostic_tasks",
+        "motion_model_context",
+        "plan_route",
+        "routing_author_contract",
+        "routed_author_contract",
+        "compile_routed_author_answer"
+      ]
+    },
+    {
+      "source": "tools/film_station_sound.py",
+      "sha256": "f60610961f0e91e47b1eca36e2e5dc1ecd2ecadedab7711410389667c949b138",
+      "exported_functions": [
+        "source_acquisition_frames",
+        "source_acquisition_clock",
+        "source_author_contract"
+      ]
+    },
+    {
+      "source": "tools/film_scene_sound_repair_plan.py",
+      "sha256": "b55800fe19ad46f00ab98a5fbda15689aa4db33be0f82100fca4e215cf47bf4c",
+      "exported_functions": [
+        "compile_source_proposal",
+        "compile_routed_source_proposal"
+      ]
+    },
+    {
+      "source": "tools/film_audioldm_contract.py",
+      "sha256": "a51ef4616b81a5996f8f8dbab5c638065b7ba10cc24b0accde99cf9c92b9135a",
+      "export": "complete pure contract module"
+    },
+    {
+      "source": "tools/film_mmaudio_conditioning.py",
+      "sha256": "b816ccabbb2ee84f441c7ad59642c96233d0d24a5f95dabaeefeb3d828beeb18",
+      "export": "complete pure contract module"
+    }
+  ],
+  "adaptations": [
+    "Selected pure functions; package-relative imports; canonical digest replaces private wire helper.",
+    "Offline CLI added for public use; production dispatcher, private memory and learning rules excluded."
+  ]
+}
