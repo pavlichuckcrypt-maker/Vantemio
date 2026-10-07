@@ -8,6 +8,7 @@ import { ZeroAddress, VoidSigner, keccak256, getAddress } from 'ethers';
 import { ROOT } from './compile.mjs';
 import { RUNTIME, hash, save, safeProposal, executeSafe, eventArgs } from './chain.mjs';
 import { evaluate, enforce, audit, verifyAudit } from './security.mjs';
+import { emitReleaseKernelEvent, emitTransferKernelEvent } from './station-kernel-bridge.mjs';
 
 export const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 export const PROJECT=process.env.AIM_DEMO_PROJECT?path.resolve(process.env.AIM_DEMO_PROJECT):path.join(RUNTIME,'demo-studio-project');
@@ -22,7 +23,8 @@ export function initializeFixture(recipient) {
     // actual minted release's acceptance as part of restart.
     if(fs.existsSync(path.join(RUNTIME,'release-issued.marker')))throw new Error('Demo recipient changed');
   }
-  const result=spawnSync('python3',[path.join(ROOT,'scripts','prepare-fixture.py'),recipient],{encoding:'utf8',timeout:65000});
+  const py=process.platform==='win32'?'python':'python3';
+  const result=spawnSync(py,[path.join(ROOT,'scripts','prepare-fixture.py'),recipient],{encoding:'utf8',timeout:65000});
   if(result.status!==0)throw new Error('Demo fixture preparation failed: '+result.stderr.trim());
 }
 export function acceptedVideo(project=PROJECT){
@@ -31,8 +33,19 @@ export function acceptedVideo(project=PROJECT){
   if(!video.startsWith(fs.realpathSync(project)+path.sep))throw new Error('Accepted video escapes project');
   return video;
 }
+function resolveReleaseScript(){
+  const candidates=[
+    path.join(ROOT,'..','tools','blockchain_release.py'),
+    'C:\\AI\\tools\\blockchain_release.py',
+    '/Users/vixstels/AIMmontag-dev-Station-20260928/work/station/tools/blockchain_release.py',
+  ];
+  for(const p of candidates){ try{ const s=fs.statSync(p); if(s.isFile()) return p; }catch{} }
+  return candidates[0];
+}
 export function preparePassport(project=PROJECT) {
-  const result=spawnSync('python3',[path.join(ROOT,'..','tools','blockchain_release.py'),
+  const script=resolveReleaseScript();
+  const py=process.platform==='win32'?'python':'python3';
+  const result=spawnSync(py,[script,
     '--project',project,'--receipt',path.join(project,'final_acceptance.json')],{encoding:'utf8',timeout:15000});
   if(result.status!==0)throw new Error('Studio acceptance blocked: '+result.stdout.trim());
   const passport=JSON.parse(result.stdout);
@@ -54,6 +67,35 @@ export function assertReleasePassport(passport,kind,onchain){
   const metadataMatches=onchain.metadataHash===meta.metadataHash||(kind==='video'&&onchain.metadataHash==='0x'+sha(JSON.stringify(legacy)));
   if(onchain.releaseId!==hash(passport.releaseId)||!metadataMatches||onchain.termsHash!==meta.termsHash)throw new Error('Release ID is already bound to different metadata or terms');
 }
+export async function transferRelease(ctx, state, { tokenId, to, releaseId } = {}) {
+  if (!ctx.nft || !ctx.provider) throw new Error('NFT not deployed');
+  const tid = BigInt(tokenId);
+  let owner = await ctx.nft.ownerOf(tid);
+  if (owner.toLowerCase() === getAddress(to).toLowerCase()) {
+    try { emitTransferKernelEvent({ releaseId: releaseId||'', tokenId: String(tid), from: owner, to, chainId: ctx.manifest.chainId||84532, tx: null }); } catch {}
+    return { tokenId: String(tid), owner, to: getAddress(to), idempotent: true, currentOwner: owner };
+  }
+  try {
+    const { queryKernelEvents } = await import('./station-kernel-bridge.mjs');
+    const existing = queryKernelEvents({ type: 'transfer', tokenId: String(tid) });
+    if (existing.some(e => String(e.to).toLowerCase() === getAddress(to).toLowerCase())) {
+      return { tokenId: String(tid), owner, to: getAddress(to), idempotent: true, currentOwner: owner };
+    }
+  } catch {}
+  const ownerWallet = Object.values(ctx.wallets).find(w => w.address.toLowerCase() === owner.toLowerCase());
+  if (!ownerWallet) throw new Error('Owner wallet not available for transfer');
+  const nftAsOwner = new (await import('ethers')).Contract(ctx.manifest.nft, ctx.nft.interface, ownerWallet.connect(ctx.provider));
+  const receipt = ctx.transact
+    ? await ctx.transact('nft-transfer', () => nftAsOwner.transferFrom.populateTransaction(owner, getAddress(to), tid), { role: Object.entries(ctx.wallets).find(([,w])=>w.address.toLowerCase()===owner.toLowerCase())?.[0] || 'operator' })
+    : await (await nftAsOwner.transferFrom(owner, getAddress(to), tid)).wait();
+  owner = await ctx.nft.ownerOf(tid);
+  if (owner.toLowerCase() !== getAddress(to).toLowerCase()) throw new Error('Transfer receipt owner mismatch');
+  try { emitTransferKernelEvent({ releaseId: releaseId||'', tokenId: String(tid), from: ownerWallet.address, to, chainId: ctx.manifest.chainId||84532, tx: receipt.hash }); } catch {}
+  const rec = { tokenId: String(tid), from: ownerWallet.address, to: getAddress(to), owner, tx: receipt.hash, block: receipt.blockNumber, chainId: ctx.manifest.chainId||84532 };
+  state.receipts = state.receipts || []; state.receipts.push({ type: 'nft-transfer', ...rec }); save('state.json', state);
+  return rec;
+}
+
 export async function mintRelease(ctx,state,{project=PROJECT,kind='video'}={}) {
   if(ctx.assertChain)await ctx.assertChain();
   await assertRuntimeSafe(ctx);
@@ -71,7 +113,7 @@ export async function mintRelease(ctx,state,{project=PROJECT,kind='video'}={}) {
     }
     const recovered={releaseId:passport.releaseId,tokenId:token.toString(),owner:await ctx.nft.ownerOf(token),
       videoSha256:passport.videoSha256,metadataHash:onchain.metadataHash,termsHash:onchain.termsHash,chainId:ctx.manifest.chainId,status:'confirmed',recovered:true,idempotent:true};
-    state.releases.push(recovered);save('state.json',state);return recovered;
+    state.releases.push(recovered);save('state.json',state);try{emitReleaseKernelEvent({releaseId:passport.releaseId,videoHash:passport.videoSha256,metadataHash:onchain.metadataHash,termsHash:meta.termsHash,owner:await ctx.nft.ownerOf(token),tokenId:token.toString(),chainId:ctx.manifest.chainId,tx:null,idempotent:true});}catch{}return recovered;
   }
   fs.mkdirSync(path.join(RUNTIME,'metadata'),{recursive:true});
   fs.writeFileSync(path.join(RUNTIME,'metadata',sha(meta.bytes)+'.json'),meta.bytes,{flag:'w',mode:0o600});
@@ -125,5 +167,5 @@ export async function mintRelease(ctx,state,{project=PROJECT,kind='video'}={}) {
     chainId:ctx.manifest.chainId,explorer:ctx.manifest.explorer?ctx.manifest.explorer+'/tx/'+receipt.hash:null,createdAt:new Date().toISOString()};
   state.releases.push(record);state.receipts.push({type:'nft-release',tx:receipt.hash,block:receipt.blockNumber});
   save('state.json',state);fs.writeFileSync(path.join(RUNTIME,'release-issued.marker'),passport.releaseId,{mode:0o600});
-  audit('release-confirmed',{releaseId:passport.releaseId,tokenId:record.tokenId,tx:receipt.hash,owner});return record;
+  audit('release-confirmed',{releaseId:passport.releaseId,tokenId:record.tokenId,tx:receipt.hash,owner});try{emitReleaseKernelEvent({releaseId:passport.releaseId,videoHash:passport.videoSha256,metadataHash:meta.metadataHash,termsHash:meta.termsHash,owner,tokenId:record.tokenId,chainId:ctx.manifest.chainId,tx:receipt.hash,idempotent:!!record.idempotent});}catch{}return record;
 }

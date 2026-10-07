@@ -15,6 +15,7 @@ import { checkedAssetSnapshot } from './delivery.mjs';
 import { validateMarketAction } from './market-schema.mjs';
 import { createChainView } from './chain-view.mjs';
 import {runtimeIdentity} from './runtime-identity.mjs';
+import { emitDeliveryKernelEvent } from './station-kernel-bridge.mjs';
 
 const isBsc=NETWORK==='bsc-testnet';
 const isBase=NETWORK==='base-sepolia';
@@ -83,6 +84,12 @@ const server=http.createServer(async(req,res)=>{
       res.writeHead(200,{'Content-Type':verified.asset.kind==='video'?'video/mp4':'text/plain','Content-Disposition':'attachment; filename="'+path.basename(verified.file)+'"',
         'Content-Length':verified.bytes.length,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'});
       res.once('finish',()=>{verified.order.deliveredSha256=verified.asset.sha256;save('state.json',state);
+        {
+          const releaseId = verified.asset.releaseId || verified.order.listingId || null;
+          const channelId = verified.listing.channelId || verified.asset.channelId || ctx.manifest.channelId || undefined;
+          if (channelId && !String(channelId).startsWith('UC')) throw new Error('Invalid channel binding');
+          emitDeliveryKernelEvent({exchangeId:verified.order.exchangeId,assetId:verified.asset.id,assetSha256:verified.asset.sha256,releaseId,listingId:verified.listing.id,channelId,chainId:ctx.manifest.chainId||84532});
+        }
         marketEvent('delivery-confirmed','Цифровой файл выдан покупателю',{exchangeId:verified.order.exchangeId,assetSha256:verified.asset.sha256});});
       res.end(verified.bytes);return;
     }
@@ -112,8 +119,8 @@ const server=http.createServer(async(req,res)=>{
     if(req.method==='POST'&&url.pathname==='/api/action') {
       if(req.headers.origin!==origin||req.headers['x-demo-csrf']!==csrf){send(res,403,{error:'Origin or CSRF verification failed'});return;}
       const input=await body(req);
-      if(Object.keys(input).some(k=>!['action','exchangeId'].includes(k)))throw new Error('Unknown request fields');
-      const allowed=isBsc?['deploy','mint','pause','unpause']:[...(isBase?['deploy']:[]),'mint','commit','redeem','complete','cancel','refund','dispute','retract','pause','unpause'];
+        if(Object.keys(input).some(k=>!['action','exchangeId','tokenId','to','releaseId','assetId'].includes(k)))throw new Error('Unknown request fields');
+       const allowed=isBsc?['deploy','mint','pause','unpause']:[...(isBase?['deploy']:[]),'mint','transfer','commit','redeem','complete','cancel','refund','dispute','retract','pause','unpause'];
       if(!allowed.includes(input.action))throw new Error('Unknown action');
       // Serial execution prevents wallet nonce and approval races within this demo.
       const work=enqueue(async()=>{
@@ -124,7 +131,8 @@ const server=http.createServer(async(req,res)=>{
           }
           if(!ctx.nft)throw new Error('Public deployment is pending; fund the operator with testnet gas and deploy first');
           if(input.action==='mint')return await mintRelease(ctx,state);
-          if(input.action==='commit')return await commitOrder(ctx,state);
+           if(input.action==='transfer'){ if(!input.tokenId||!input.to) throw new Error('transfer requires tokenId and to'); const hint = input.releaseId || (input.assetId ? (await import('./marketplace.mjs')).market.assets.find(a=>a.id===input.assetId)?.releaseId : null) || (await (await import('./chain.mjs')).load('marketplace.json',null))?.assets?.find(a=>a.certificate?.tokenId===String(input.tokenId))?.releaseId || null; return await (await import('./releases.mjs')).transferRelease(ctx,state,{tokenId:input.tokenId,to:input.to,releaseId:hint||input.releaseId}); }
+           if(input.action==='commit')return await commitOrder(ctx,state);
           if(input.action==='refund')return await withdrawRefund(ctx,state,input.exchangeId);
           if(input.action==='pause'||input.action==='unpause'){
             const proposal=await safeProposal(ctx,ctx.manifest.nft,ctx.nft.interface.encodeFunctionData(input.action));

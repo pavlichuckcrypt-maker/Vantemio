@@ -11,6 +11,7 @@ import { validateMarketAction } from './market-schema.mjs';
 import { runIdempotent,requestMatches } from './idempotency.mjs';
 import { checkedAssetFile,verifyDelivery,createDeliveryVault } from './delivery.mjs';
 import { approveDelivery } from './commerce-policy.mjs';
+import { emitKernelEvent, emitOrderKernelEvent, emitDeliveryKernelEvent } from './station-kernel-bridge.mjs';
 import {reconcilePurchases} from './purchase-recovery.mjs';
 import {verifyAssetPublication} from './asset-publication.mjs';
 import {assertRuntimeBoson} from './boson-implementation.mjs';
@@ -18,14 +19,14 @@ import {assertRuntimeBoson} from './boson-implementation.mjs';
 export const market=load('marketplace.json',{schemaVersion:2,paused:false,assets:[],listings:[],timeline:[],requests:{}});
 const delivery=createDeliveryVault();
 function persist(){save('marketplace.json',market);}
-export function marketEvent(type,title,details={}){
+export function marketEvent(type,title,details={}){ try{emitKernelEvent({type:'market:'+type,title,...details,chainId:84532});}catch{}
   const entry={at:new Date().toISOString(),type,title,...details};market.timeline.unshift(entry);market.timeline=market.timeline.slice(0,150);
   audit('market-'+type,{title,...details});persist();
 }
 export function publicMarket(){return {schemaVersion:market.schemaVersion,paused:market.paused,
   assets:market.assets.map(({id,kind,title,sha256,quality,releaseId,certificate,createdAt})=>({id,kind,title,sha256,quality,releaseId,certificate,createdAt,
     previewUrl:kind==='video'?'/api/market/preview/'+id:null})),
-  listings:market.listings,timeline:market.timeline,deliveryPolicy:'Redeemed/completed on-chain buyer; fingerprint; 60-second single-use grant',
+  listings:market.listings,timeline:market.timeline,deliveryPolicy:'Redeemed/completed on-chain buyer; fingerprint; 60-second single-use grant',transfer:'NFT transfer via ERC721 transferFrom (owner signer) + transfer:kernel event + no-replay guard',
   commercePolicy:'Three verified EIP-712 approvals bind Base, role, target, calldata, implementation digest, nonce and expiry; final pre-broadcast verification; demo EOAs send; same-Mac custody'};}
 export async function initializeMarket(ctx,state){
   if(market.listings.some(l=>l.id==='legacy-service')){await recoverMarketPurchases(ctx,state);return;}
@@ -77,7 +78,7 @@ async function publishListing(ctx,state,input){
   const listing={id:crypto.randomUUID(),kind:input.kind,title:input.title,description:input.description,price:input.price,quantity:input.quantity,
     terms,assetId:asset?.id||null,assetSha256:asset?.sha256||null,certificate,createdAt:new Date().toISOString()};
   const result=await createMarketOffer(ctx,state,listing);
-  market.listings.unshift({...listing,...result,status:'PUBLISHED'});persist();
+  market.listings.unshift({...listing,...result,status:'PUBLISHED'});persist();try{emitKernelEvent({type:'offer',offerId:result.offerId||result.id,listingId:listing.id,kind:listing.kind,chainId:84532});}catch{}
   marketEvent('listing-confirmed','Предложение опубликовано в Boson',{listingId:listing.id,offerId:result.offerId,kind:input.kind,tx:result.tx});
   return market.listings[0];
 }
@@ -90,16 +91,24 @@ export async function handleMarketAction(ctx,state,raw){
     const verified=await verifyDelivery(ctx,state,market,input.exchangeId);
     const binding={exchangeId:input.exchangeId,assetId:verified.asset.id,sha256:verified.asset.sha256};
     market.deliveryNonce=(market.deliveryNonce||0)+1;persist();await approveDelivery(ctx,binding,market.deliveryNonce);
-    return {...delivery.issue(binding),filename:path.basename(verified.file),sha256:verified.asset.sha256};
+    const grant=delivery.issue(binding);
+    const releaseId = verified.asset.releaseId || verified.order.listingId || null;
+    const channelId = verified.listing.channelId || verified.asset.channelId || ctx.manifest.channelId || undefined;
+    if (channelId && !String(channelId).startsWith('UC')) throw new Error('Invalid channel binding');
+    // fail-closed: kernel delivery events must persist; do not swallow write/bridge failures
+    emitKernelEvent({type:'delivery:grant-issued', exchangeId:String(input.exchangeId), assetId:verified.asset.id, assetSha256:verified.asset.sha256, listingId:verified.listing.id, releaseId, channelId, chainId:ctx.manifest.chainId||84532});
+    emitDeliveryKernelEvent({exchangeId:String(input.exchangeId),assetId:verified.asset.id,assetSha256:verified.asset.sha256,releaseId,listingId:verified.listing.id,channelId,chainId:ctx.manifest.chainId||84532});
+    return {...grant,filename:path.basename(verified.file),sha256:verified.asset.sha256};
   }
   const prior=market.requests[input.idempotencyKey];
   if(requestMatches(prior,input)&&['pending','failed'].includes(prior.status)&&input.action==='buy')await recoverMarketPurchases(ctx,state);
   return runIdempotent(market.requests,input,async()=>{
     const previous=ctx.marketRequest;ctx.marketRequest={key:input.idempotencyKey,digest:hash(JSON.stringify(input)),action:input.action};
     try{
-    if(input.action==='render')return renderAsset(ctx,input);
-    if(input.action==='mint'){const asset=market.assets.find(a=>a.id===input.assetId);if(!asset)throw new Error('Unknown studio asset');return syncCertificate(ctx,state,asset);}
-    if(input.action==='list')return publishListing(ctx,state,input);
+     if(input.action==='render')return renderAsset(ctx,input);
+     if(input.action==='mint'){const asset=market.assets.find(a=>a.id===input.assetId);if(!asset)throw new Error('Unknown studio asset');return syncCertificate(ctx,state,asset);}
+     if(input.action==='transfer'){ const {transferRelease}=await import('./releases.mjs'); const s=load('state.json',{releases:[]}); const assetForRelease = input.assetId ? market.assets.find(a=>a.id===input.assetId) : null; const stateForRelease = s.releases.find(r=>String(r.tokenId)===String(input.tokenId))?.releaseId || null; const releaseHint = input.releaseId || assetForRelease?.releaseId || stateForRelease || null; const r=await transferRelease(ctx,state,{tokenId:input.tokenId,to:input.to,releaseId:releaseHint}); marketEvent('transfer', 'NFT передан', {tokenId:String(input.tokenId), to:input.to, tx:r.tx||null, releaseId: releaseHint}); return r; }
+     if(input.action==='list')return publishListing(ctx,state,input);
     if(input.action==='buy'){const listing=market.listings.find(l=>l.id===input.listingId);if(!listing)throw new Error('Unknown listing');
       const order=await commitOrder(ctx,state,listing);marketEvent('purchase-confirmed','Покупка подтверждена: Boson rNFT получен',{listingId:listing.id,exchangeId:order.exchangeId,tx:order.txs[0].tx});return order;}
     if(input.action==='pauseMarket'){const current=await ctx.nft.paused();let tx=null;

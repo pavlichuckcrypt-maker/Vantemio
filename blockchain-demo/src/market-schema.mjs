@@ -1,5 +1,5 @@
 export const KINDS=['video','digital','service','physical'];
-const shapes={render:['kind','title'],mint:['assetId'],list:['kind','title','description','price','quantity','assetId'],
+const shapes={render:['kind','title'],mint:['assetId'],transfer:['tokenId','to'],list:['kind','title','description','price','quantity','assetId'],
   buy:['listingId'],redeem:['exchangeId'],complete:['exchangeId'],cancel:['exchangeId'],refund:['exchangeId'],
   dispute:['exchangeId'],retract:['exchangeId'],delivery:['exchangeId'],pauseMarket:['paused'],withdrawSeller:[]};
 function text(v,min,max){return typeof v==='string'&&v.trim().length>=min&&v.length<=max&&!/[\u0000-\u001f\u007f]/.test(v);}
@@ -9,6 +9,8 @@ export function validateMarketAction(input){
   const fields=shapes[input.action];
   if(Object.keys(input).some(k=>!['action','idempotencyKey',...fields].includes(k)))throw new Error('Unknown marketplace request fields');
   for(const f of fields.filter(f=>!(f==='assetId'&&input.action==='list')))if(!Object.hasOwn(input,f))throw new Error('Missing '+f);
+  if(input.tokenId!==undefined&&!/^[1-9][0-9]{0,18}$/.test(String(input.tokenId)))throw new Error('Invalid tokenId');
+  if(input.to!==undefined&&!/^0x[a-fA-F0-9]{40}$/.test(input.to))throw new Error('Invalid to address');
   for(const f of ['assetId','listingId'])if(input[f]!==undefined&&!/^[a-z0-9-]{8,64}$/.test(input[f]))throw new Error('Invalid '+f);
   if(input.exchangeId!==undefined&&!/^[1-9][0-9]{0,18}$/.test(input.exchangeId))throw new Error('Invalid exchange ID');
   if(input.kind!==undefined&&!KINDS.includes(input.kind))throw new Error('Unsupported product category');

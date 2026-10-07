@@ -5,6 +5,7 @@ import { approveCommerce } from './commerce-policy.mjs';
 import {marketOfferMetadata,assertOfferMetadata} from './offer-metadata.mjs';
 import {offerAvailability} from './offer-availability.mjs';
 import {assertRuntimeBoson} from './boson-implementation.mjs';
+import { emitOrderKernelEvent, emitKernelEvent } from './station-kernel-bridge.mjs';
 
 export const EXCHANGE_STATES=['COMMITTED','REVOKED','CANCELLED','REDEEMED','COMPLETED','DISPUTED'];
 const uri = content => 'data:application/json;base64,'+Buffer.from(JSON.stringify(content)).toString('base64');
@@ -29,6 +30,7 @@ export async function initializeCommerce(ctx,state) {
     const e=eventArgs(boson,receipt,'SellerCreated');
     state.sellerId=e.sellerId.toString();state.voucher=e.voucherCloneAddress;
     state.receipts.push({type:'boson-seller',tx:receipt.hash,block:receipt.blockNumber});save('state.json',state);
+    try{ emitKernelEvent({ type:'commerce-seller', sellerId: state.sellerId, tx: receipt.hash, chainId: ctx.manifest.chainId||84532 }); }catch{}
   }
   if(!state.resolverId) {
     const receipt=await write(ctx,'resolver','boson-resolver',boson.connect(signers.resolver),'createDisputeResolver',[
@@ -37,6 +39,7 @@ export async function initializeCommerce(ctx,state) {
       [{tokenAddress:manifest.credit,tokenName:'DEMO',feeAmount:0}],[],{gasLimit:2500000}]);
     state.resolverId=eventArgs(boson,receipt,'DisputeResolverCreated').disputeResolverId.toString();
     state.receipts.push({type:'boson-resolver',tx:receipt.hash,block:receipt.blockNumber});save('state.json',state);
+    try{ emitKernelEvent({ type:'commerce-resolver', resolverId: state.resolverId, tx: receipt.hash, chainId: ctx.manifest.chainId||84532 }); }catch{}
   }
   if(!state.offerId) {
     const now=(await ctx.provider.getBlock('latest')).timestamp;
@@ -52,6 +55,7 @@ export async function initializeCommerce(ctx,state) {
       {disputeResolverId:state.resolverId,mutualizerAddress:ZeroAddress},0,parseEther('25'),{gasLimit:3500000}]);
     state.offerId=eventArgs(boson,receipt,'OfferCreated').offerId.toString();
     state.receipts.push({type:'boson-offer',tx:receipt.hash,block:receipt.blockNumber});save('state.json',state);
+    try{ emitKernelEvent({ type:'offer', offerId: state.offerId, chainId: ctx.manifest.chainId||84532, tx: receipt.hash }); }catch{}
   }
 }
 
@@ -90,7 +94,9 @@ export async function commitOrder(ctx,state,listing=null) {
     txs:[{action:'commit',tx:receipt.hash,block:receipt.blockNumber}]};
   state.orders.unshift(order); save('state.json',state);
   audit('order-committed',{exchangeId:order.exchangeId,tx:receipt.hash});
-  await refreshOrder(ctx,order);return order;
+  try{ emitOrderKernelEvent({ orderId: order.exchangeId, exchangeId: order.exchangeId, offerId, buyer: ctx.wallets.buyer.address, seller: ctx.wallets.seller.address, state: 'COMMITTED', chainId: ctx.manifest.chainId||84532, tx: receipt.hash, action: 'commit' }); }catch{}
+  await refreshOrder(ctx,order); try{ emitOrderKernelEvent({ orderId: order.exchangeId, exchangeId: order.exchangeId, offerId, buyer: ctx.wallets.buyer.address, seller: ctx.wallets.seller.address, state: order.state, chainId: ctx.manifest.chainId||84532, tx: receipt.hash, action: 'commit-verified' }); }catch{}
+  return order;
 }
 export async function refreshOrder(ctx,order,options={}) {
   const result=await ctx.boson.getExchange(order.exchangeId,options);
@@ -121,6 +127,7 @@ export async function transitionOrder(ctx,state,id,action) {
     throw new Error('Dispute retraction event mismatch');
   order.txs.push({action,tx:receipt.hash,block:receipt.blockNumber});
   await refreshOrder(ctx,order);save('state.json',state);
+  try{ emitOrderKernelEvent({ orderId: order.exchangeId, exchangeId: order.exchangeId, offerId: order.offerId, buyer: ctx.wallets.buyer.address, seller: ctx.wallets.seller.address, state: order.state, chainId: ctx.manifest.chainId||84532, tx: receipt.hash, action }); }catch{}
   audit('order-transition-confirmed',{exchangeId:order.exchangeId,action,state:order.state,tx:receipt.hash});return order;
 }
 export async function withdrawRefund(ctx,state,id) {
@@ -138,6 +145,7 @@ export async function withdrawRefund(ctx,state,id) {
   const receipt=await write(ctx,'buyer','boson-refund',contract,'withdrawFunds',[order.buyerId,[ctx.manifest.credit],[amount],{gasLimit:1500000}]);
   if(await ctx.credit.balanceOf(ctx.wallets.buyer.address)!==before+amount)throw new Error('Refund balance verification failed');
   order.refundWithdrawn=true;order.txs.push({action:'refund',tx:receipt.hash,block:receipt.blockNumber});save('state.json',state);
+  try{ emitOrderKernelEvent({ orderId: order.exchangeId, exchangeId: order.exchangeId, offerId: order.offerId, buyer: ctx.wallets.buyer.address, seller: ctx.wallets.seller.address, state: order.state, chainId: ctx.manifest.chainId||84532, tx: receipt.hash, action: 'refund' }); }catch{}
   audit('refund-confirmed',{exchangeId:order.exchangeId,tx:receipt.hash});return order;
 }
 export async function commerceSummary(ctx,state,options={}) {
@@ -168,6 +176,7 @@ export async function createMarketOffer(ctx,state,listing) {
     {disputePeriod:await ctx.boson.getMinDisputePeriod(),voucherValid:30*86400,resolutionPeriod:await ctx.boson.getMinResolutionPeriod()},
     {disputeResolverId:state.resolverId,mutualizerAddress:ZeroAddress},0,parseEther(listing.price),{gasLimit:3500000}]);
   const offerId=eventArgs(ctx.boson,receipt,'OfferCreated').offerId.toString();
+  try{ emitKernelEvent({ type:'offer', offerId, listingId: listing.id, kind: listing.kind, chainId: ctx.manifest.chainId||84532, tx: receipt.hash, metadataHash }); }catch{}
   return {offerId,metadataHash,tx:receipt.hash,block:receipt.blockNumber,
     explorer:ctx.manifest.explorer+'/tx/'+receipt.hash};
 }
@@ -181,5 +190,6 @@ export async function withdrawSeller(ctx,state){
     [state.sellerId,[ctx.manifest.credit],[amount],{gasLimit:1500000}]);
   if(await ctx.credit.balanceOf(ctx.wallets.seller.address)!==before+amount)throw new Error('Seller withdrawal balance verification failed');
   audit('seller-withdrawn',{sellerId:state.sellerId,amount:amount.toString(),tx:receipt.hash});
+  try{ emitKernelEvent({ type:'seller-withdrawn', sellerId: state.sellerId, amount: amount.toString(), chainId: ctx.manifest.chainId||84532, tx: receipt.hash }); }catch{}
   return {amount:formatEther(amount),tx:receipt.hash,explorer:ctx.manifest.explorer+'/tx/'+receipt.hash};
 }
