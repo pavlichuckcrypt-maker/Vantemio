@@ -1,0 +1,65 @@
+{
+  "need": {
+    "schema": "aim.scene_sound.source_need/v1",
+    "identity": {
+      "film_id": "fixture",
+      "scene_id": "scene-1",
+      "event": {
+        "action": "handling fabric",
+        "confidence": "high"
+      },
+      "uncertainties": [],
+      "action_window": {
+        "start_sample": 48000,
+        "end_sample": 144000,
+        "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "candidate_evidence": [
+        {
+          "measurement": {
+            "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "audio_reviews": [
+            {
+              "audit_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "window": {
+                "source_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "start_s": 0,
+                "samples": 96000,
+                "sample_rate": 48000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "task_id": "76e6220731cef8e0fc5713805635f303c805fec398c9dde700d68a6cf61c9c75",
+    "observed_event": {
+      "action": "handling fabric",
+      "confidence": "high"
+    },
+    "uncertainties": [],
+    "source_scope_id": "48a0739e647c16a351370fe91391600cbcd3f4b0cad7114e1c7053e5966ab9f9",
+    "existing_director_binding": {
+      "parent_job_id": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "author_form": {
+      "seconds": 2
+    },
+    "generation_authorized": false
+  },
+  "answer": {
+    "author": {
+      "decision": "request_source",
+      "prompt": "Soft close fabric handling and rustling.",
+      "negative": "Speech, narration, music, impacts.",
+      "reason": "Visible handling supports a soft rustling texture."
+    },
+    "routing": {
+      "role": "synchronized_motion",
+      "depth": "foreground",
+      "reason": "The sound must follow visible fabric movement.",
+      "existing_source": null
+    }
+  }
+}

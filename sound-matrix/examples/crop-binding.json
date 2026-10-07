@@ -1,0 +1,7 @@
+{
+  "source_in_sample": 0,
+  "output_samples": 96000,
+  "generated_samples_required": 96000,
+  "placement_start_sample": 48000,
+  "retime_allowed": false
+}
