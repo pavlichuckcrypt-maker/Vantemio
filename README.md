@@ -2,7 +2,15 @@
 
 Automated video production and digital-service commerce on Base.
 
-Vantemio is a proprietary software engine under active development by solo founder and developer Vitalii Pavlichuk. Video production is its first application; the broader goal is to automate the creation, validation and delivery of digital services.
+Vantemio is a proprietary software engine under active development by solo founder and product architect Vitalii Pavlichuk. Video production is its first application; the broader goal is to automate the creation, validation and delivery of digital services.
+
+## Current project documentation
+
+[Documentation index — revision 0.14](docs/project/README.md) · [Whitepaper](docs/project/whitepaper.md) · [Technical architecture](docs/project/technical.md) · [Roadmap](docs/project/roadmap.md) · [Home](docs/project/home-edition.md) · [Cloud](docs/project/cloud-edition.md)
+
+The documentation covers deployment profiles, production and audio, social integrations, licensing, privacy, data deletion, future delivery economics and investor information. Implemented components, acceptance requirements and future capabilities are distinguished explicitly. The newer [Vantemio Market fulfillment design](docs/project/market-fulfillment.md) describes quality checks, version-bound delivery, revisions and full refunds as development requirements.
+
+Website: [vantemio.com](https://vantemio.com/) · Contact: [support@vantemio.com](mailto:support@vantemio.com).
 
 ## What is being developed
 
@@ -23,7 +31,7 @@ Tasks, requests and results are recorded to support recovery and reuse. Competit
 
 Vantemio is developing local inference capacity under the Station coordinator. A quantized Qwen 27B build has already completed recorded scene/graphics planning and bounded repair steps locally. A configured Qwen Coder 7B helper on the Windows Book serves Station. Registered visual, speech and audio specialists cover frame screening, narration, transcription and sound processing. Each execution still requires readiness, resource admission and output validation.
 
-The planning target is a **70–80% reduction in cloud AI inference spending for workflows eligible for local execution**, at comparable accepted quality. This is an unvalidated target, not measured total operating savings. Hardware, electricity, maintenance, hosting, rendering, AI coding subscriptions and external video/image generation remain separate costs. Video and image generation remain external.
+The planning target is a **50–80% reduction in assistant consumption for workflows eligible for local execution**, at comparable accepted quality. This is an unvalidated target, not measured total operating savings. Hardware, electricity, maintenance, hosting, rendering, AI coding subscriptions and external video/image generation remain separate costs. Video and image generation remain external.
 
 Station owns queues, memory, registries and production authority. Book, MacBook and additional registered compute nodes act as bounded executors. The registry supports expansion beyond the three currently known machines.
 
@@ -37,7 +45,7 @@ The [local-AI review package](studio-infrastructure/local-ai/) publishes model d
 
 ## Blockchain commerce
 
-The Base integration connects accepted media versions to onchain provenance and ownership records. Boson Market connects studio-service orders and digital-asset commerce through Boson Protocol. Parts of the purchase and protected digital-delivery flow have been verified on Base Sepolia.
+The Base integration connects accepted media versions to onchain provenance and ownership records. Vantemio Market connects studio-service orders and digital-asset commerce through Boson Protocol. Parts of the purchase and protected digital-delivery flow have been verified on Base Sepolia.
 
 ## Current stage and engineering evidence
 
@@ -61,7 +69,7 @@ The longer-term goal is a service cycle that connects Boson Protocol orders to p
 - [Vantemio on X](https://x.com/vantemio)
 - [Founder on X](https://x.com/Vitalii_RWA)
 
-This repository publishes the Base/Boson blockchain integration module and the Boson marketplace demo in `blockchain-demo/`, plus selected supporting infrastructure excerpts in `studio-infrastructure/`. The AI editing and production engine remains in a private repository to protect proprietary implementation and research. Reviewers can request controlled access from the team for due diligence; the complete studio engine will not be published here. The infrastructure excerpts expose generic memory storage, dependency graph edges, response validation and selected VidRa client parsing, with Kdenlive-derived native editor automation source patch in the downloadable source package, without production policies or internal data. The small Python files under `tools/` validate accepted-media receipts and connect them to the blockchain module; they do not include AI editing, rendering or production orchestration. Runtime databases, wallet vaults, credentials and local operational data are excluded. Historical VidRa/AIMmontag identifiers are retained in the module source.
+This repository publishes the Base/Boson blockchain integration module and the Vantemio marketplace demo in `blockchain-demo/`, plus selected supporting infrastructure excerpts in `studio-infrastructure/`. The AI editing and production engine remains in a private repository to protect proprietary implementation and research. Reviewers can request controlled access from the team for due diligence; the complete studio engine will not be published here. The infrastructure excerpts expose generic memory storage, dependency graph edges, response validation and selected VidRa client parsing, with Kdenlive-derived native editor automation source patch in the downloadable source package, without production policies or internal data. The small Python files under `tools/` validate accepted-media receipts and connect them to the blockchain module; they do not include AI editing, rendering or production orchestration. Runtime databases, wallet vaults, credentials and local operational data are excluded. Historical VidRa/AIMmontag identifiers are retained in the module source.
 
 Infrastructure publication reviewed: 5 October 2026. Its 17 isolated checks concern the selected excerpts and do not establish readiness of the complete studio.
 
@@ -71,3 +79,4 @@ Infrastructure publication reviewed: 5 October 2026. Its 17 isolated checks conc
 The [Sound Matrix package](sound-matrix/README.md) publishes selected sound-authoring contracts, semantic routing, exact timing validation and PCM cropping, with installation and Claude Code integration instructions. It is in active development; the full studio, proprietary orchestration and internal data remain private. See its model-license and integration limitations before use.
 
 Latest blockchain source changes are documented in [the development update](blockchain-demo/PUBLIC_UPDATE_20261006.md).
+
