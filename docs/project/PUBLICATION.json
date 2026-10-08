@@ -1,0 +1,83 @@
+{
+  "published_at": "2026-10-08",
+  "documentation_revision": "0.14",
+  "market_design_revision": "0.1",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "2011bdbe8dc79f6b3f6016f06efcd845c8ef438802773fd00137a1ca71b73625"
+    },
+    {
+      "path": "docs/project/README.md",
+      "sha256": "55a24f5b777189ce451a201b61110d6eaee0872b29079b7cbe01d441e907dcf4"
+    },
+    {
+      "path": "docs/project/cloud-edition.md",
+      "sha256": "09b666a77bed9a24dbd092f4c5a3c5bf5d778a54bc950cf3bb3cb09dc4a7ed8a"
+    },
+    {
+      "path": "docs/project/data-deletion.md",
+      "sha256": "a98207424bdbe8cc39e6b47a050d76f400ef83b061fe1e9ac4f04a9f921df51d"
+    },
+    {
+      "path": "docs/project/editorial.md",
+      "sha256": "794c9f1ec091b7c807e5b5aafa301a0d59b566934fe26890bb5cdbbc44d7e1d5"
+    },
+    {
+      "path": "docs/project/home-edition.md",
+      "sha256": "b6d94e925a97230c0b4cc9b32cdfa64dd7831c4ae488580ab05f633fac96a8fc"
+    },
+    {
+      "path": "docs/project/integrations.md",
+      "sha256": "cb302fd62eda27f6773bcd344e0a187865e835914fe3185597e6803a8ef54de5"
+    },
+    {
+      "path": "docs/project/investors.md",
+      "sha256": "89a1a175634986769adf709ff2eb7b9a3946a3f23cdfbd17eef71fcfd5b56572"
+    },
+    {
+      "path": "docs/project/journal.md",
+      "sha256": "522a46176b49c60c822f439e12c6115103cc5af786bc247684237bc1b59104d5"
+    },
+    {
+      "path": "docs/project/licenses.md",
+      "sha256": "089a45a0eedc9adfb8a0d9d7203f25f84560ab7ba83411e1c1b3f1acef012f94"
+    },
+    {
+      "path": "docs/project/market-fulfillment.md",
+      "sha256": "918852da0f55202d9fd69606cd0ef5cd3367844afd89e44c5dfeb3bf8309bcc6"
+    },
+    {
+      "path": "docs/project/pricing.md",
+      "sha256": "0fe5a7568cf3a6ab0f736c175636dc97ea564a0c620423cf96a7b7e39ddebf37"
+    },
+    {
+      "path": "docs/project/privacy.md",
+      "sha256": "982499aebdb7ec887d2310571473cc8968b302187e1b1171ce07e85be11c2516"
+    },
+    {
+      "path": "docs/project/roadmap.md",
+      "sha256": "6775cb4d7115a3ad40a4872216cc462520971ec817c27656570859be7c9e36e9"
+    },
+    {
+      "path": "docs/project/sources.md",
+      "sha256": "acd8480d67f60d8db181331dc43033527ff89183d66a6d2839fa376edc1fe560"
+    },
+    {
+      "path": "docs/project/technical.md",
+      "sha256": "e373d5141ac5b0c0c98ebf4b0a281a9690c414c6042d5f1b1655b110a42b339b"
+    },
+    {
+      "path": "docs/project/terms.md",
+      "sha256": "74abeba8ed6212a198196b3dade567625beb2b3d995094d7da0fd30495013702"
+    },
+    {
+      "path": "docs/project/tiktok.md",
+      "sha256": "a9fb3fb6c207b0cfcc92f31b6961502a9b01dfefc78826e2646e3cf3a581dad7"
+    },
+    {
+      "path": "docs/project/whitepaper.md",
+      "sha256": "52abdd64ec220cc63923a4fb7ffe14132a53ac74c39222814a244580d5248aca"
+    }
+  ]
+}
