@@ -6,7 +6,7 @@ Vantemio is a proprietary software engine under active development by solo found
 
 ## Current project documentation
 
-[Documentation index — revision 0.14](docs/project/README.md) · [Whitepaper](docs/project/whitepaper.md) · [Technical architecture](docs/project/technical.md) · [Roadmap](docs/project/roadmap.md) · [Home](docs/project/home-edition.md) · [Cloud](docs/project/cloud-edition.md)
+[Current documentation — synchronized 8 October 2026](docs/project/README.md) · [Whitepaper](docs/project/whitepaper.md) · [Technical architecture](docs/project/technical.md) · [Roadmap](docs/project/roadmap.md) · [Home](docs/project/home-edition.md) · [Cloud](docs/project/cloud-edition.md)
 
 The documentation covers deployment profiles, production and audio, social integrations, licensing, privacy, data deletion, future delivery economics and investor information. Implemented components, acceptance requirements and future capabilities are distinguished explicitly. The newer [Vantemio Market fulfillment design](docs/project/market-fulfillment.md) describes quality checks, version-bound delivery, revisions and full refunds as development requirements.
 
@@ -31,11 +31,13 @@ Tasks, requests and results are recorded to support recovery and reuse. Competit
 
 Vantemio is developing local inference capacity under the Station coordinator. A quantized Qwen 27B build has already completed recorded scene/graphics planning and bounded repair steps locally. A configured Qwen Coder 7B helper on the Windows Book serves Station. Registered visual, speech and audio specialists cover frame screening, narration, transcription and sound processing. Each execution still requires readiness, resource admission and output validation.
 
-The planning target is a **50–80% reduction in assistant consumption for workflows eligible for local execution**, at comparable accepted quality. This is an unvalidated target, not measured total operating savings. Hardware, electricity, maintenance, hosting, rendering, AI coding subscriptions and external video/image generation remain separate costs. Video and image generation remain external.
+Vantemio aims to reduce repeated prompting and cloud-token use by combining cloud AI with local tools and reusable production knowledge. Video and image generation remain external.
 
 Station owns queues, memory, registries and production authority. Book, MacBook and additional registered compute nodes act as bounded executors. The registry supports expansion beyond the three currently known machines.
 
 The listed models are an initial hardware-dependent baseline. Deployments can replace them with compatible alternatives, including larger models on stronger equipment. New models may need adapter work and validation of task schemas, resource requirements and output quality. The engine is designed to support model substitution, with no claim of universal plug-and-play compatibility. Actual savings depend on the selected models and hardware.
+
+The current hardware request is one NVIDIA DGX Spark, included in the base resource budget. After installation, Qwen 27B, TTS speech and audio tools form a resident AI stack. Station retains orchestration and runs graphics, editing, rendering and additional development sessions; MacBook remains a development client. Additional models load as needed. The 12-month funding scenarios are **US$150,000 solo** or **US$400,000 with two developers**; both include US$50,000 for the founder.
 
 See [model roles, evidence and cost assumptions](docs/pitch/LOCAL_AI_INFRASTRUCTURE.md). The proprietary production engine and internal runtime data remain private.
 
