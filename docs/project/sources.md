@@ -1,6 +1,6 @@
 # Sources and requirement status
 
-Revision 0.14 · 7 October 2026
+Revision 0.16 · 8 October 2026
 
 Official sources were consulted during preparation on 7 October 2026. Recheck the current version before activating an integration. Links do not establish partnership or admission.
 
@@ -33,6 +33,6 @@ Official sources were consulted during preparation on 7 October 2026. Recheck th
 
 ## Vantemio-specific standards
 
-The 90-day application period, other Privacy deadlines, version-bound authorization, acceptance package, editorial criteria and roadmap stages are design requirements adopted for this documentation. They are not represented as verbatim law or identical rules on every platform. Stricter applicable requirements take priority.
+Vantemio sets retention periods, version-bound authorization rules and quality/acceptance criteria. These operate alongside mandatory law and platform requirements; stricter applicable deadlines take precedence. Implementation versions and verification results are recorded in the acceptance log.
 
-Project facts derive from the supplied package and operator clarifications. Normative requirements are not a report of passed tests.
+[PIPA](https://www.alberta.ca/personal-information-protection-act) · [PIPEDA](https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/pipeda_brief/) · [TikTok App Review](https://developers.tiktok.com/docs/en/app-review-guidelines).

@@ -1,6 +1,6 @@
 # Vantemio Cloud — client application and cloud compute
 
-Revision 0.14 · 7 October 2026
+Revision 0.16 · 2026-10-08 · Startup product specification · functions, architecture and implementation criteria.
 
 ## 1. Purpose
 
@@ -34,7 +34,7 @@ The shared system is intended to accumulate experience and improve Studio and ot
 - De-identified technical statistics and permitted reusable solutions: help diagnose failures and improve routes, tools and quality. Secrets, personal information and private content are excluded, and re-identification risk is assessed before inclusion.
 - Content or examples for model training: used only on a separately disclosed basis with necessary rights and separate explicit consent where required. Service access or OAuth is not that consent.
 
-User materials do not enter a shared training dataset by default. Social-API data remains subject to platform restrictions; customer consent does not override them. Before enabling training, define purposes, dataset versions, recipients, retention, withdrawal and actual deletion capabilities. Removal from an already trained model is not promised without a supported mechanism.
+User materials do not enter a shared training dataset by default. Social-API data remains subject to platform restrictions; customer consent does not override them. Before enabling training, define purposes, dataset versions, recipients, retention, withdrawal and actual deletion capabilities. Before training, approve data-deletion procedures, withdrawal mechanisms and limitations of the selected model.
 
 ## 5. Connections and control
 
@@ -46,7 +46,7 @@ The client shows queue state, progress, outcome, cost and available cancellation
 
 Cloud must not rely on the founder’s personal computer to serve everyone. Launch requires dedicated infrastructure sized for the intended workload. Tests cover simultaneous active jobs, queues, VRAM/RAM, rendering, delivery, storage, isolation, recovery and cost.
 
-Release terms define quotas, concurrency, project sizes, priority, overages and support. User capacity, unlimited usage and SLA commitments are not established before testing. One logical core supports an expandable resource fleet.
+Release terms define quotas, concurrency, project sizes, priority, overages and support. Capacity, usage limits and SLA are defined from workload tests. One logical core supports an expandable resource fleet.
 
 ## 7. Funding and stage
 
@@ -55,3 +55,17 @@ Cloud deployment and load testing are planned after investment or other sufficie
 Cloud is a development direction. This page does not announce pricing, an available installer, a launch date or guaranteed capacity. Cloud terms, processor/country information, retention, access, billing and support rules are published before user onboarding.
 
 [Home](home-edition.md) · [Technical documentation](technical.md) · [Packages](pricing.md) · [Privacy](privacy.md) · [Roadmap](roadmap.md)
+
+## Local generation and a private customer installation
+
+Local image and video generation can replace an external generator when resources, licences and agreed quality permit. Options include local production with a cloud assistant, or a fully private On-premises installation with local AI orchestration. An agency or company with its own servers receives a configuration defined through assessment and acceptance.
+
+With a cloud assistant, agreed context still reaches an external provider. A fully private profile requires all necessary components to run locally, with no hidden cloud fallback. Local model selection, generation quality and concurrency are defined by the hardware profile and validated during installation acceptance.
+
+[Local deployment profiles](home-edition.md).
+
+### A fully autonomous enterprise AI cluster
+
+A company or agency with a powerful private server or cluster can also host the principal high-capability model that interprets tasks, plans production and controls Vantemio tools. Supporting models, image/video generators, memory, editing, audio, rendering and quality checks also run locally. This profile needs no external cloud AI, cloud assistant or external generation for the production workflow: the customer infrastructure performs the entire process.
+
+Self-hosting requires capable models with available weights or contractual on-premises rights. Large GPU capacity alone does not allow installation of a closed model offered only through another provider’s cloud. Supported models, adapters, quality and tasks are recorded in the compatibility matrix and validated at acceptance. The customer cluster is assessed as a separate deployment project and is outside Vantemio’s own initial compute-worker budget.

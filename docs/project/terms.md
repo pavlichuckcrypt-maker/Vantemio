@@ -1,6 +1,6 @@
 # Vantemio Terms of Use
 
-Revision 0.14 · 7 October 2026
+Revision 0.16 · 8 October 2026
 
 ## 1. Operator and scope
 
@@ -62,7 +62,7 @@ Informational material reflects its stated stage and may change. Future features
 
 ## 10. Law, language and amendments
 
-These terms contemplate Alberta law and applicable Canadian federal law while preserving mandatory user rights and the authority of competent regulators. This clause does not impose arbitration or remove mandatory consumer protection in an applicable jurisdiction.
+These terms are governed by Alberta law and applicable Canadian federal law while preserving mandatory user rights and the authority of competent regulators. This clause does not impose arbitration or remove mandatory consumer protection in an applicable jurisdiction.
 
 The Russian, English, Spanish, Portuguese and French texts are intended to be equivalent. The operator will clarify discrepancies; translation does not restrict mandatory rights. Separate agreements identify their contract language.
 

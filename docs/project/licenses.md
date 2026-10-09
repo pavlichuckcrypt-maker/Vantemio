@@ -1,6 +1,6 @@
 # Commercial-use policy for models and materials
 
-Revision 0.14 · 7 October 2026 · Mandatory Vantemio standard
+Revision 0.16 · 8 October 2026 · Mandatory Vantemio standard
 
 ## 1. Commercial-production rule
 

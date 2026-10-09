@@ -1,6 +1,6 @@
 # Editorial policy for Vantemio official channels
 
-Revision 0.14 · 7 October 2026 · Production and publishing standard
+Revision 0.16 · 8 October 2026 · Production and publishing standard
 
 ## 1. Purpose
 

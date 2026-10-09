@@ -1,50 +1,55 @@
-# Vantemio social integrations
+# Your brand. Connected.
 
-Revision 0.14 · 7 October 2026 · Connection and expansion rules
+0.16 · 2026-10-08 · Startup product specification · functions, architecture and implementation criteria.
 
-## 1. Scope
+## 1. One direction across your channels
 
-The first production scenario serves Vantemio's official channels. Future Home-user and external-creator connections have separate permissions, data and admission stages; they are not represented as an already open service. Each platform has a separate record: purpose, account, permissions, actions, limits, verification state and policy-review date. Simultaneous support for every platform is not promised.
+Vantemio is building a connected workflow for content, publishing and brand development. Set your audience, tone and visual style once. The Social module will turn that direction into a content plan, working with Studio to prepare videos, images and posts for each channel.
 
-| Platform / group | Role | Planning status |
-|---|---|---|
-| YouTube | Official-channel videos, Shorts and analytics | Channel connected, including automated publishing; primary development scenario |
-| TikTok | Short-form material and audience | Separate assessment of a permitted publishing route |
-| Instagram / Facebook | Video formats and brand presence | Candidates; API and monetization assessed per account |
-| Threads / X / LinkedIn / Pinterest | Additional distribution and communication | Candidates, not represented as connected |
-| Twitch and other live platforms | Live media | Separate future scenario |
-| Other platforms and services | Expansion based on value and permitted access | Registry remains open to additional adapters |
+**The goal: spend more time on your brand and less time moving files between services.**
 
-This is a scope map, not verified API capability coverage for every candidate. Access, cost and brand value determine priority.
+| Your work | What the integration will bring together |
+|---|---|
+| Plan content | Topics, channel formats and a shared publishing calendar |
+| Produce | Scripts, editing, voice and visual assets from Studio |
+| Publish | Connected accounts, captions, scheduling and publication links |
+| Learn | Platform analytics alongside production time and costs |
+| Improve | Results that inform the next content plan |
 
-## 2. Adapter admission
+Our first working scenario is Vantemio's own YouTube channel, with automated publishing connected. Additional channels and customer connections are being developed in stages. The directory above shows the API options behind that expansion.
 
-Before activation, record the account owner, application and mode, minimum scopes, access checks, formats, quotas, consent mode, publishing statuses, revocation, deletion and available analytics. Monetization is assessed separately by country, account type and program.
+## 2. Connect the channels you use
 
-Scheduling requires a platform-permitted mode and owner authority. Account creation, API access, advertising, payout activation and publication are separate operations. A general “connected” label does not replace them.
+You choose which accounts to connect and what Vantemio may do with them. The planned workflow keeps each brand's style, content calendar and review preferences together. Your team can review content before publication and disconnect an account when needed.
+
+Each platform offers different formats and permissions. We are building adapters around those official APIs: video publishing, posts, community messages, advertising and live media, where supported. The directory lists the available capabilities and access requirements for each service.
 
 ## 3. YouTube
 
-Official-channel acceptance must establish OAuth, destination, exact media version, metadata, visibility, external ID and processing outcome. Current [YouTube API policies](https://developers.google.com/youtube/terms/developer-policies) apply; users retain control over published data. [videos.insert](https://developers.google.com/youtube/v3/docs/videos/insert) describes upload restrictions, including unverified projects. Connection alone does not establish a required audit.
+**From a finished video to the next content decision.** The YouTube workflow brings the video, title, description, thumbnail and publishing settings into one process. Vantemio's own channel is the first development scenario for automated publishing.
 
-Publication evidence is separate from [YouTube monetization](https://support.google.com/youtube/answer/1311392). Originality and value receive editorial review; mass-produced repetitive content is not treated as guaranteed income.
+For future customer connections, the workflow is designed around your channel and your choices: authorize access, review the final material, choose visibility and track processing through to a published link. Videos and Shorts can share a brand direction while keeping their own formats.
 
-YouTube API metrics retain their original meaning, source and period; they must not be replaced by a proprietary score or prohibited derived metrics. Internal Studio costs and platform metrics are shown separately. Storage, refresh and deletion follow the selected API’s rules.
+YouTube analytics will help identify which topics and formats deserve another episode. Platform metrics remain clearly labelled; production costs are shown separately, so you can understand both audience response and the work behind each video.
+
+API access depends on Google's project requirements. Channel monetization follows YouTube's own eligibility and content rules. [YouTube upload documentation](https://developers.google.com/youtube/v3/docs/videos/insert) · [YouTube API policies](https://developers.google.com/youtube/terms/developer-policies).
 
 ## 4. TikTok
 
-The [Content Sharing Guidelines](https://developers.tiktok.com/docs/en/content-sharing-guidelines) exclude Direct Post clients intended only to upload to developer or team accounts. The owned-channel operating model must therefore not be described as automatically eligible for that application. A permitted route is established before automation is promised.
+**Prepare, preview and share short-form content in your brand's style.** TikTok is part of the planned creator workflow: select the connected account, preview the video, choose who can see it, adjust interaction settings and confirm publication.
 
-If a genuine external product is developed, its separate contract includes preview, current creator information, visibility selection without a default, interaction settings, required disclosures and consent. App Review and Direct Post audit are tracked separately. Binding consent to a media version is a Vantemio engineering requirement.
+Public Direct Post access requires TikTok review. TikTok does not approve this route for tools used only to upload to the developer's own or team accounts. Vantemio's customer publishing feature must meet the creator-facing requirements before it launches.
 
-Unknown transfer outcomes require remote-operation reconciliation before retry. This mechanism applies to owned channels and future customer scenarios; tests are listed in the [technical document](technical.md).
+[Explore the TikTok publishing workflow](tiktok.md).
 
-## 5. State accounting
+## 5. A clear view of every publication
 
-Feature states distinguish unassessed, designed, configured, tested, platform-permitted, operational within agreed scope and suspended. Not every platform requires the same reviews. Calendar dates must not automatically advance status.
+The publishing workflow is designed to show what is ready, what needs your review, what is being processed and what is already live. A published item links back to the platform. If a transfer is interrupted, the system should check its status before sending again, helping prevent duplicate posts.
 
-Policy changes record their source, date and affected actions. If an action is no longer permitted, new transfers stop; generated assets and history follow applicable retention rules.
+You stay in control of account access and publishing choices. [Manage connections and data deletion](data-deletion.md) · [How the system works](technical.md).
 
-## TikTok detailed contract
+## 6. See Vantemio use Vantemio
 
-[User workflow, scopes, consent, data and admission](tiktok.md) · [Data deletion and disconnection](data-deletion.md).
+Our own channels will demonstrate the complete cycle as modules are connected: plan, produce, publish, measure and improve. Follow the development through real content and visible results, starting with YouTube and expanding to the next platforms.
+
+[Apply to test Vantemio](https://vantemio.com/en/apply/).

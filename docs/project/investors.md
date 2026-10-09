@@ -1,60 +1,93 @@
 # Investors and partners
 
-Revision 0.14 · 7 October 2026 · Informational material
+0.17 · 2026-10-08 · Startup product specification · functions, architecture and implementation criteria.
 
-## Next stage: repeatable Vantemio media production
+We are raising early funding to develop and launch Vantemio. The first stage brings Studio to repeatable production by connecting scripts, graphics, voice, editing, review and recovery. Official brand channels are the first application and demonstration. Demand and economic validation are part of the funded work, not a prerequisite for an investor conversation.
 
-Vantemio connects content creation, permitted publishing and analysis of the brand's official channels. Support for the next stage targets repeatability, recovery and measured cost per accepted output. This is bounded, verifiable work, not a promise to complete the whole platform simultaneously.
+## Twelve-month funding plan · 8 October 2026 revision
 
-The first economic goal is self-sustaining official media production. This package does not establish revenue, monetization admission, signed advertising contracts or an audit. The official YouTube channel is connected, including automated publishing; reproducible outcomes and economics form part of acceptance.
+Two alternative scenarios are provided. The team scenario includes the solo scenario; the totals must not be added together.
 
-## Applicant and participation
+| Allocation | Solo development, USD | With two developers, USD |
+|---|---:|---:|
+| Development, resources, marketing and equipment | 100,000 | 100,000 |
+| Founder compensation for 12 months | 50,000 | 50,000 |
+| Two developers: 2 × 10,000 × 12 months | — | 240,000 |
+| Additional team-scenario reserve | — | 10,000 |
+| **Total request** | **150,000** | **400,000** |
 
-Vitalii Pavlichuk operates the project as an individual in Alberta, Canada. Incorporation is not claimed. Each program requires a separate assessment of applicant type, territory, stage, eligible expenses, output rights and reporting. A plan to incorporate does not establish current eligibility.
+The base US$100,000 covers AI tools and integration, compute, hosting, storage, monitoring, testing, initial marketing and equipment. It already includes NVIDIA DGX Spark at a **US$6,950 budget allowance before tax and shipping**; this is not added on top of US$150,000 or US$400,000. Tax, shipping and associated costs are allocated within the agreed budget during detailed planning. The other base allocations total US$93,050 before that breakdown.
 
-Grants, infrastructure credits, technical collaboration and future investment discussions are considered. This document does not offer securities, equity in an existing corporation or guaranteed returns. A funding instrument is determined separately before accepting funds.
+US$50,000 is separate compensation for the founder’s work on the project over the year. The team scenario adds two developers: core and AI integration; product, cloud and APIs. US$10,000 per person per month is a compensation planning assumption. Hiring terms and mandatory employer costs are assessed within the US$400,000 envelope; the additional reserve is US$10,000.
 
-## Scope A: official media production
+Funding is released across development, validation and pilot stages. Each grant application defines its eligible work and expenses; the total project request is not automatically the amount requested from one programme. Cash and equipment contributions are recorded separately, without funding the same item twice. Subscription and service prices are determined separately.
 
-| Work | Deliverable | Criterion |
-|---|---|---|
-| Studio + YouTube | Traceable accepted media | Brief, versions, rights, review, external ID and status |
-| Recovery | Interruption scenarios | No blind replay of completed actions |
-| Measurement | Time-and-cost report | Failed attempts and human work included |
-| Editorial process | Calendar and quality rules | Accepted publications and correction history |
-| Documentation | RU/EN/ES/PT/FR and redacted evidence | Public claims match supporting material |
+## Local AI worker: NVIDIA DGX Spark
 
-The proposed planning window for scope A is 12 weeks after agreement and resourcing; it is not an approved contract. Weeks 1–2: baseline and criteria; 3–6: repeatable outputs; 7–9: recovery and accounting; 10–12: final evidence package. Output count and funding amount are fixed in the budget before submission.
+The procurement plan specifies NVIDIA DGX Spark with **128 GB shared CPU/GPU memory and a 4 TB SSD**. Its **US$6,950 budget allowance before tax and shipping** is included in the base US$100,000.
 
-## Scope B: separate commerce integration
+Once DGX Spark is connected, the core local AI stack runs continuously: **Qwen 27B as the main model, with TTS speech and audio tools running in parallel**. Both models stay loaded between jobs, avoiding a full reload of the core stack for every video. Additional models load and release memory as tasks require. Qwen can be replaced with a stronger compatible model while preserving the production workflow. Station orchestrates jobs and handles graphics, editing, rendering and development in parallel.
 
-The Base/Boson direction forms a separate package: a test order, output version, acceptance and delivery with recovery. A blockchain mention does not turn general video-production costs into an eligible ecosystem project. Open-output and applicant requirements are checked for the actual program.
+[NVIDIA DGX Spark specifications](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) · [Project budget](investors.md).
 
-## Funding calculation
+The minimum hardware support for this stage is one DGX Spark, funded through investment or supplied to the project as equipment. Relieving Station will also allow additional development sessions there, moving part of parallel development off the MacBook. Local AI, visual production and development will each have assigned compute resources.
 
-| Category | Calculation basis |
-|---|---|
-| Development | Tasks × hours × agreed rate |
-| Verification | Scenario and run counts × review labour |
-| Cloud assistant | Access type, volume, cache and retries |
-| Media generation | Provider, assets, attempts and price |
-| Infrastructure | Storage, delivery, compute and monitoring |
-| Legal review | Defined scope and provider quote |
+## Milestones after funding
 
-Amount, currency and own contribution are not approved: the source material lacks a sufficient cost estimate. Submission requires a total budget, period, contributors, rate sources and acceptance criteria. An incomplete estimate is not presented as a finished funding application. Non-cash credits are separated from required cash funding.
+Months 1–4: integrated internal prototype — repeatable production, quality, recovery and measurements.
 
-## Infrastructure and evidence
+Months 4–6: limited external MVP — connections, account isolation, job tracking and delivery.
 
-The source package identifies Cloudflare, including D1 and Turnstile, as the website infrastructure, consistent with Privacy. Cloudflare program participation is a separate prospect, not an awarded benefit. Provider names do not imply partnership.
+Months 6–9: limited cloud beta — load tests, limits, monitoring and initial acquisition experiments.
 
-Review materials: [whitepaper](whitepaper.md), [architecture](technical.md), [roadmap](roadmap.md), [public repository](https://github.com/pavlichuckcrypt-maker/Vantemio). Private code and production information are shared only within an agreed scope. The public package excludes secrets and internal infrastructure details.
+Months 9–12: reliability and initial expansion — feedback, improved execution and broader permitted publishing.
 
-Contact: [support@vantemio.com](mailto:support@vantemio.com).
+These are planning windows subject to validation. Base/Boson services have their own quality, delivery and settlement acceptance. The stage covers Studio, required infrastructure and pilots. CRM, marketing and the multi-provider Market have separate development stages.
 
-## Individual Home delivery
+## First external user and demand validation
 
-The product plan includes the installable [Vantemio Home](home-edition.md) edition, through subscription or individual-use licensing. It is a further delivery direction for the shared engine; pricing and validated demand are not yet established.
+After the official-channel workflow is established, the first external pilot targets a creator or small brand team seeking repeatable video production from its own materials. The value to test is fewer manual handoffs, retained context and controlled revisions. Willingness to pay is tested through separately agreed pilots.
 
-## Cloud infrastructure
+Planned revenue sources include official channels, Home/Cloud subscriptions or licensing, implementation and support, and Market services and transactions. Customer prices and commission rates are not set. This is an early-stage product; the commercial model will develop alongside pilots.
 
-Planned [Vantemio Cloud](cloud-edition.md) connects a laptop client to one logical cloud core; Vantemio infrastructure runs AI and heavy workloads. Home AI-station requirements do not apply to the client. Deployment and load tests depend on sufficient funding. Shared operational experience improves modules while projects, credentials and user data remain isolated; content training is not automatic.
+## Vantemio / Alberta, Canada
+
+Vitalii Pavlichuk operates the project as an individual in Alberta, Canada. Funding terms and necessary organizational steps are agreed before funds are accepted. The public material covers the request, uses and milestones. Detailed estimates, supplier quotations, code rights, participation terms and private technical review are shared with investors within an agreed scope.
+
+[Studio](technical.md) · [Home](home-edition.md) · [Cloud](cloud-edition.md) · [Roadmap](roadmap.md) · [GitHub](https://github.com/pavlichuckcrypt-maker/Vantemio)
+
+[support@vantemio.com](mailto:support@vantemio.com)
+
+## Long term: a full marketplace
+
+Vantemio Market on Boson Protocol is planned as an independent multi-provider marketplace for digital services, downloadable goods and physical products, including clothing and other permitted categories. Market targets a complete catalog, commerce workflows and support for buyers and sellers.
+
+Stages: Studio services and digital delivery → third-party seller accounts and storefronts → catalog, search, product variants, inventory and orders → physical goods, logistics, tracking, returns and support. Seller and category checks, listing rules, verified-order reviews, buyer protection and disputes form part of the plan.
+
+Services require output acceptance; digital goods require version, licence and access verification; physical goods require specification, packing, delivery, condition and return processes. Personal addresses and documents stay off-chain. Each stage needs its own terms, integrations, resources and applicable-rule review. The current round funds near-term development; the complete marketplace needs a separate scaling plan.
+
+## Local generation and a private customer installation
+
+Local image and video generation can replace an external generator when resources, licences and agreed quality permit. Options include local production with a cloud assistant, or a fully private On-premises installation with local AI orchestration. An agency or company with its own servers receives a configuration defined through assessment and acceptance.
+
+With a cloud assistant, agreed context still reaches an external provider. A fully private profile requires all necessary components to run locally, with no hidden cloud fallback. Local model selection, generation quality and concurrency are defined by the hardware profile and validated during installation acceptance.
+
+[Local deployment profiles](home-edition.md).
+
+### A fully autonomous enterprise AI cluster
+
+A company or agency with a powerful private server or cluster can also host the principal high-capability model that interprets tasks, plans production and controls Vantemio tools. Supporting models, image/video generators, memory, editing, audio, rendering and quality checks also run locally. This profile needs no external cloud AI, cloud assistant or external generation for the production workflow: the customer infrastructure performs the entire process.
+
+Self-hosting requires capable models with available weights or contractual on-premises rights. Large GPU capacity alone does not allow installation of a closed model offered only through another provider’s cloud. Supported models, adapters, quality and tasks are recorded in the compatibility matrix and validated at acceptance. The customer cluster is assessed as a separate deployment project and is outside Vantemio’s own initial compute-worker budget.
+
+### Deployment choice and product priority
+
+Vantemio develops one engine with local, hybrid, cloud and private enterprise deployment options. Creators and small teams need a clear workflow and suitable hardware; agencies need customer-data control, repeatability and approvals; enterprises need control of their own environment. Selection depends on quality, total cost, workload and access rules, not mandatory dependence on one cloud or GPU class.
+
+The shared production workflow and replaceable model adapters are validated first; distinct delivery profiles follow. Fully local operation does not require a fixed amount of GPU memory: capacity depends on selected models and concurrency. A large server does not replace quality, compatibility and licence checks. Cloud capacity remains available for authorized tasks, never as a hidden dependency of a private profile.
+
+Cloud AI and local/hybrid execution are developing in parallel. 
+
+[Microsoft — hybrid intelligence](https://news.microsoft.com/source/emea/2026/10/building-windows-for-hybrid-intelligence/) · [AWS — deployment choice](https://aws.amazon.com/blogs/security/enabling-ai-sovereignty-on-aws/) · [Anthropic — cloud infrastructure](https://www.anthropic.com/news/anthropic-amazon-compute).
+
+[Grant project and acceptance criteria](grants.md).

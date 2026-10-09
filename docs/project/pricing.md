@@ -1,6 +1,6 @@
 # Economics and future delivery options
 
-Revision 0.14 · 7 October 2026 · Planning model, not an active price list
+Revision 0.16 · 2026-10-08 · Startup product specification · functions, architecture and implementation criteria.
 
 ## 1. First commercial scenario
 
@@ -12,7 +12,7 @@ Each period separates accrued income, received payments and costs. Cash coverage
 
 Studio tools, the cloud assistant, external media generation, storage, delivery and human work are separate cost categories. Any included future-service allowance must define its unit, provider, limit, retries, overage and payer.
 
-Generator subscriptions are required only for agreed generation. External subscriptions, API credits, advertising, equipment and taxes are not included without an explicit contractual statement. Unlimited usage and all future modules are not promised.
+Generator subscriptions are required only for agreed generation. External subscriptions, API credits, advertising, equipment and taxes are not included without an explicit contractual statement. 
 
 ## 3. Proposed post-pilot packages
 
@@ -28,28 +28,38 @@ These retained product hypotheses are not compute-fleet limits. Monthly prices a
 
 ## 4. Deployment and licence
 
-The retained planning assumption is USD 20,000 for an agreed licence package plus USD 5,000–20,000 for implementation, totalling USD 25,000–40,000 before external costs. Basic implementation is indicatively USD 5,000, extended USD 10,000–15,000 and custom from USD 20,000; complex scope can exceed that range. These are the owner's prior planning assumptions, not proof of product readiness or a purchase offer.
-
-A contract must define version, term and installations, usage rights, source files, updates, support, acceptance, termination and refunds. Exclusive-rights transfer is not automatic.
+Implementation starts with a review of tasks, infrastructure and required integrations. Delivery scope, licensing, installation, compatibility checks, onboarding and support are then agreed. Pricing is not published yet; a proposal follows scope definition. The contract specifies the version, usage rights, updates, acceptance, termination and refunds. Exclusive rights are not transferred automatically.
 
 ## 5. Turnover model
 
-An alternative to fixed licensing is setup plus 1–2% of an agreed turnover base. This is not a percentage of the customer's entire business. Define the base, refunds, taxes, currency, period and infrastructure cost limits. A USD 10,000 base produces an arithmetic fee of USD 100–200, not a revenue forecast. Automatic collection is not represented as operational.
+A share of agreed turnover may be considered as an alternative to a fixed licence. The contract defines the calculation base, exclusions, refunds, taxes, reporting period and infrastructure costs. Rates have not been set. 
 
 ## 6. Market and Donations
 
-Market retains proposed Vantemio fees of 1.5%, or 1% for volume, and one-time onboarding of USD 10–20; commercial pricing is not approved. Protocol fees, gas, conversion, taxes and disputes are separate. As an illustration, if a protocol fee is 0.5%, a USD 100 exchange at a 1.5% Vantemio fee has a USD 2 total fee and USD 98 seller proceeds before other costs. This is conditional arithmetic, not a verified current Boson rate.
+Market is planned with separate terms for transaction support and seller onboarding. Before an order, Vantemio fees and applicable protocol, network, conversion, tax and dispute costs will be disclosed. Rates and onboarding prices are not published yet.
 
-Before launch, assess whether fees cover support, participant checks, storage and disputes. Competitor fee comparisons do not replace that assessment. Donations pricing and payment rules are separate; this document does not open fund collection.
-
-All numerical examples above use USD; Canadian expense and tax accounting is agreed separately. [Terms](terms.md) · [Contact](mailto:support@vantemio.com).
+Launch requires validated fulfilment, quality checks, delivery, refunds and a sustainable support model. Donations will have its own payment terms; this document does not open fundraising. [Terms](terms.md) · [Contact](mailto:support@vantemio.com).
 
 ## 7. Vantemio Home
 
-A planned installable edition for individual and home use, intended for subscription or licensed delivery. This is separate from Enterprise; the USD 20,000 enterprise-licence planning assumption is not the Home price. Pricing, term, activation, updates and included modules are defined before release. [Hardware and Home scope](home-edition.md).
+A planned installable edition for individual and home use, delivered through a subscription or licence. Home and Enterprise have separate terms. Modules, term, activation, updates and support will be disclosed before release; pricing is not published yet. [Hardware and Home scope](home-edition.md).
 
 At or near the minimum, Home requires an AI station and at least one additional laptop or PC for editing, Blender, graphics and rendering. One powerful station is sufficient when the necessary resources remain after loading AI models. Two, three, five or more additional devices can execute jobs through the single coordinator’s shared registry.
 
 ## 8. Vantemio Cloud
 
 Planned [Vantemio Cloud](cloud-edition.md) connects a laptop client to one logical cloud core; Vantemio infrastructure runs AI and heavy workloads. Home AI-station requirements do not apply to the client. Deployment and load tests depend on sufficient funding. Shared operational experience improves modules while projects, credentials and user data remain isolated; content training is not automatic.
+
+## Local generation and a private customer installation
+
+Local image and video generation can replace an external generator when resources, licences and agreed quality permit. Options include local production with a cloud assistant, or a fully private On-premises installation with local AI orchestration. An agency or company with its own servers receives a configuration defined through assessment and acceptance.
+
+With a cloud assistant, agreed context still reaches an external provider. A fully private profile requires all necessary components to run locally, with no hidden cloud fallback. Local model selection, generation quality and concurrency are defined by the hardware profile and validated during installation acceptance.
+
+[Local deployment profiles](home-edition.md).
+
+### A fully autonomous enterprise AI cluster
+
+A company or agency with a powerful private server or cluster can also host the principal high-capability model that interprets tasks, plans production and controls Vantemio tools. Supporting models, image/video generators, memory, editing, audio, rendering and quality checks also run locally. This profile needs no external cloud AI, cloud assistant or external generation for the production workflow: the customer infrastructure performs the entire process.
+
+Self-hosting requires capable models with available weights or contractual on-premises rights. Large GPU capacity alone does not allow installation of a closed model offered only through another provider’s cloud. Supported models, adapters, quality and tasks are recorded in the compatibility matrix and validated at acceptance. The customer cluster is assessed as a separate deployment project and is outside Vantemio’s own initial compute-worker budget.

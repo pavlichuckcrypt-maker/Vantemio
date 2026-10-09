@@ -1,6 +1,6 @@
 # Vantemio Journal
 
-Revision 0.14 · 7 October 2026 · Editorial material and documentation history
+Revision 0.16 · 2026-10-08 · Startup product specification · functions, architecture and implementation criteria.
 
 ## Documentation changes
 

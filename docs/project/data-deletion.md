@@ -1,6 +1,6 @@
 # Account disconnection and data deletion
 
-Revision 0.14 · 7 October 2026
+Revision 0.16 · 8 October 2026
 
 ## 1. Submitting a request
 

@@ -1,12 +1,12 @@
 # TikTok integration and publishing control
 
-Revision 0.14 · 7 October 2026
+Revision 0.16 · 8 October 2026
 
-## 1. Purpose and status
+## 1. Purpose and requirements
 
-Vantemio Studio creates original media. The planned user-facing TikTok connector lets a creator connect their account and send a selected output with control over settings. Public connection is in development. This page defines requirements; it does not claim production admission or a completed audit.
+This document defines the TikTok user-connector requirements. Creators connect their accounts, select Studio media, review settings and authorize a post. The workflow covers OAuth, preview, creator authorization, transfer, status tracking and disconnection.
 
-Official Vantemio media operations and a future external-creator product are separate scenarios. Direct Post is not intended for an application serving only developer or team accounts. An external connector needs a genuine user purpose; changing the description does not create that product. [Content Sharing Guidelines](https://developers.tiktok.com/docs/en/content-sharing-guidelines).
+The connector serves external creators and teams managing their own content. Vantemio official-channel production remains a separate use case. Direct Post use must satisfy TikTok rules, including the restriction on utilities serving only developer or team accounts. [Content Sharing Guidelines](https://developers.tiktok.com/docs/en/content-sharing-guidelines).
 
 ## 2. Connection and permissions
 
@@ -48,6 +48,6 @@ Retention, recipients and rights are covered in [Privacy](privacy.md); requests 
 
 An application must demonstrate a genuine completed workflow, not only website copy. Initial review preparation includes a Sandbox demonstration, product/scope explanations and accessible Terms/Privacy. Name, icon, domain and actual screens must match. [App Review Guidelines](https://developers.tiktok.com/docs/en/app-review-guidelines).
 
-App Review and Direct Post Audit are tracked separately; unaudited clients have visibility restrictions. Public launch follows the permissions actually granted. Documentation is not proof of TikTok approval. [Direct Post getting started](https://developers.tiktok.com/docs/en/content-posting-api-get-started).
+Public release admission includes App Review and the API-client audit required to lift Direct Post restrictions. The submission package contains a functioning user workflow, product/scope explanations, screen demonstration, Terms/Privacy links and domain verification. Operations and visibility follow the permissions granted. [Direct Post](https://developers.tiktok.com/docs/en/content-posting-api-get-started).
 
 [Terms](terms.md) · [Privacy](privacy.md) · [Data deletion](data-deletion.md) · [Technical documentation](technical.md)

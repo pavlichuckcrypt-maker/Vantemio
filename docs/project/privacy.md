@@ -1,12 +1,14 @@
 # Vantemio Privacy Policy
 
-Revision 0.14 · 7 October 2026
+Revision 0.16 · 8 October 2026
 
 ## 1. Operator and scope
 
 Vitalii Pavlichuk is responsible for Vantemio and personal information, operating as an individual in Alberta, Canada. For processing, access, correction, deletion and overseas-provider enquiries: [support@vantemio.com](mailto:support@vantemio.com), subject “Privacy”.
 
-This policy covers vantemio.com, enquiries, the application form and processing associated with Vantemio's official channels. New features, including client accounts, CRM and voice references, receive a processing notice before collection. Vantemio does not request social-network passwords through the form.
+This policy covers vantemio.com, account sign-in, correspondence, applications and processing for Vantemio official channels. Authentication data and retention are described in the account sign-in section. Connected product features use the purposes and separate user authorizations described below.
+
+The operator applies Alberta PIPA to processing within its scope and PIPEDA to applicable commercial interprovincial and international personal-information flows. Mandatory user rights under applicable law remain protected. [PIPA](https://www.alberta.ca/personal-information-protection-act) · [PIPEDA](https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/pipeda_brief/).
 
 ## 2. Categories and purposes
 
@@ -65,7 +67,7 @@ Requests are handled within applicable statutory periods. A refusal or necessary
 
 The official YouTube channel uses permissions necessary for connected publishing and analysis features. The [Google Privacy Policy](https://policies.google.com/privacy) and YouTube rules apply. Google access may be revoked in [permission settings](https://security.google.com/settings/security/permissions); contact the operator about Vantemio-held data. Revoking access and removing an existing publication are separate actions.
 
-Public TikTok-user connection is in development. Actual permissions, categories and recipients are disclosed before launch. Application consent does not replace OAuth or required publication confirmation.
+TikTok connection requires disclosure of permissions, data categories and recipients before authorization. OAuth establishes the connection; posting requires the prescribed creator confirmation.
 
 YouTube deletion covers all associated user API data, not only tokens. A deletion request, connection removal or consent revocation through Vantemio triggers deletion without undue delay and within 7 calendar days; token revocation is communicated to Google immediately. For revocation through Google settings, Vantemio also adopts a stricter internal maximum of 7 days from revocation, with regular authorization checks. This internal standard does not replace the distinct deadlines in [YouTube API policies](https://developers.google.com/youtube/terms/developer-policies). The general 30-day target does not apply to these records.
 
@@ -85,7 +87,7 @@ The current policy is available on the website. Material changes to purposes and
 
 ## 10. Future TikTok-connector data
 
-Before public launch, this section is a connection standard, not a claim of current user TikTok-token collection. Connection processes account identity, permissions and tokens; transfer processes selected video, caption, settings, creator confirmation, `publish_id` and status. Necessary information goes to TikTok and storage/delivery providers within the operation. Advertising and model training need a separate basis.
+This section defines processing when the TikTok connector is connected. Connection processes account identity, permissions and tokens; transfer processes selected video, caption, settings, creator confirmation, `publish_id` and status. Necessary information goes to TikTok and storage/delivery providers within the operation. Advertising and model training need a separate basis.
 
 A temporary copy without confirmed transfer authorization is deleted within 24 hours of creation. Delivery copies are deleted within 24 hours after cancellation or completed transfer. For every started transfer, the delivery-copy lifetime is capped at 7 days from the first attempt. If no final outcome is established by then, the operation closes as unresolved; the copy is then deleted, the operator notified and automatic retry remains prohibited. A minimal authorization/outcome record is retained for up to 90 days after closing the operation, including an unresolved outcome, unless shorter platform rules require earlier deletion. The source Studio project has a separate agreed retention period and is not a temporary delivery copy.
 
@@ -96,3 +98,11 @@ Token refresh does not extend consent to new purposes. Revocation stops new acti
 Cloud envisages transferring the task, selected assets, settings, permitted account information and results to an isolated workspace in the shared core. Actual providers, countries, retention and access are disclosed before launch. Different customers’ projects and tokens do not become public.
 
 Permitted de-identified technical statistics may improve tools after assessing re-identification risk. Personal content and social-API data are not used for training by default. Such use requires a separately disclosed basis, necessary rights and consent, and compliance with platform restrictions. Declining optional training participation does not remove paid core functionality. Website applications remain excluded from training. [Cloud scope](cloud-edition.md).
+
+## Account sign-in
+
+When account sign-in is available, Google authentication uses your Google account identifier to recognise your account; the server checks the identity token and email verification status. We do not request access to Gmail, Drive or YouTube for sign-in. Wallet sign-in records the public wallet address and verifies a one-time message. We never request your recovery phrase or private key. Authentication data is not used to train content-generation models.
+
+A secure, HttpOnly session cookie lasts up to 12 hours; the server stores a hash of its random token. Sign-in challenges expire after five minutes and can be used once. Expired challenges and sessions are removed during subsequent authentication activity. Account identity records remain until deletion is requested. Signing out revokes the current session. Deleting an account removes its sign-in identity and all its sessions; separate applications and immutable blockchain records are handled as described in the data-deletion policy.
+
+To prevent repeated unsuccessful sign-ins, we keep a keyed hash of the source IP and a consecutive-failure counter. Four failed identity checks in a row block new sign-ins for four hours. A successful sign-in clears the counter. The sign-in database does not store the raw IP for this purpose. Expired block records are removed on the next check; earlier failures remain until a successful sign-in or a completed block.
