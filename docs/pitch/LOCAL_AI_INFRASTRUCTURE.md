@@ -37,6 +37,6 @@ Video and image generation remain external. Customer generation is planned to us
 
 ## Capacity development
 
-The current Station uses an RTX 5070 Ti. The funding plan includes upgrading it to at least 96 GB system RAM and adding a 4 TB SSD. A separate RTX 5090 workstation with 128 GB RAM and a 4 TB SSD is an optional funding expansion, subject to workload measurements and quotations. Additional hardware would remain a bounded worker under Station.
+The current Station uses an RTX 5070 Ti. The next hardware purchase is one NVIDIA DGX Spark with 128 GB shared CPU/GPU memory and a 4 TB SSD, budgeted at US$6,950 before tax and delivery within the US$100,000 base resources. After installation, Qwen 27B, TTS speech and audio tools remain loaded on Spark between jobs. Additional models load on demand; the main model can be upgraded. Station retains orchestration and handles graphics, editing, rendering and additional development sessions in parallel. This also relieves the MacBook. The complete funding scenarios are US$150,000 solo and US$400,000 with two developers over 12 months. See [current investor document](../project/investors.md).
 
 This document publishes a high-level architecture description. Private prompts, production policies, model endpoints, credentials, runtime databases and proprietary editing logic remain excluded.
