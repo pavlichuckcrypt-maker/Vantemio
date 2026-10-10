@@ -59,3 +59,7 @@ Full generation, listening review, ducking, multitrack mixing and native editor 
 ## Public code license
 
 The original code in this folder is MIT licensed; see LICENSE. That permission applies to this selected public package only. The proprietary Vantemio engine remains private. Third-party models and media have their own licenses.
+
+## 9 October 2026 interface update
+
+The selected interfaces now preserve exact rational project rates (for example, `30000/1001`) and reject inexact sample boundaries and guessed decimal-rate substitutions. Source generation handles do not extend the action or permit retiming. The library tests exercise an isolated real PCM crop and refusal to overwrite an existing output. This is a development-source export, not Station runtime qualification.

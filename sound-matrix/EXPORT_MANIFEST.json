@@ -1,10 +1,10 @@
 {
   "status": "in_development",
-  "source_snapshot": "2026-10-06",
+  "source_snapshot": "2026-10-09",
   "sources": [
     {
       "source": "tools/film_sound_routes.py",
-      "sha256": "8e1f5b04e71743a9b2dd1edf41dd9f1a174861a3ccd519de56257b7fd38c2574",
+      "sha256": "ce708bfdf9f05168468a4582cd22fb5aef6d72d68e8a03e6d7e0247077ed6d6c",
       "exported_functions": [
         "digest",
         "_sha",
@@ -18,7 +18,7 @@
     },
     {
       "source": "tools/film_station_sound.py",
-      "sha256": "f60610961f0e91e47b1eca36e2e5dc1ecd2ecadedab7711410389667c949b138",
+      "sha256": "d20a4fe6520aad4b4ad8871d467abec9864a9d0fa47dac5ffba4a285d56aab64",
       "exported_functions": [
         "source_acquisition_frames",
         "source_acquisition_clock",
@@ -27,7 +27,7 @@
     },
     {
       "source": "tools/film_scene_sound_repair_plan.py",
-      "sha256": "b55800fe19ad46f00ab98a5fbda15689aa4db33be0f82100fca4e215cf47bf4c",
+      "sha256": "831c434e5ab8d205e76f9cff89a495fcd36dc562775f908ba7a1f7678032565e",
       "exported_functions": [
         "compile_source_proposal",
         "compile_routed_source_proposal"
@@ -35,17 +35,29 @@
     },
     {
       "source": "tools/film_audioldm_contract.py",
-      "sha256": "a51ef4616b81a5996f8f8dbab5c638065b7ba10cc24b0accde99cf9c92b9135a",
+      "sha256": "11921688f933cabe661eb41597f2ec8e5f2c4feffe90198a992ecf8c292e67ab",
       "export": "complete pure contract module"
     },
     {
       "source": "tools/film_mmaudio_conditioning.py",
-      "sha256": "b816ccabbb2ee84f441c7ad59642c96233d0d24a5f95dabaeefeb3d828beeb18",
+      "sha256": "b6c1c7dc9978027740d77490231b55fca95bf5a937c1273cc234c7e5c1ecc92d",
       "export": "complete pure contract module"
+    },
+    {
+      "source": "tools/film_action_binding_check.py",
+      "sha256": "c4dc20f391e59fbb6a4ce69b1119f291a39ecfa0f1b6850bc118998a08cb629e",
+      "exported_functions": [
+        "project_rate",
+        "frame_sample",
+        "sample_frame"
+      ]
     }
   ],
   "adaptations": [
     "Selected pure functions; package-relative imports; canonical digest replaces private wire helper.",
-    "Offline CLI added for public use; production dispatcher, private memory and learning rules excluded."
-  ]
+    "Offline CLI added for public use; production dispatcher, private memory and learning rules excluded.",
+    "Rational clock helpers and exact sample conversion exported; private execution, dispatch, memory and learning policy remain excluded."
+  ],
+  "source_role": "MacBook development-source candidate; execution authority remains Station",
+  "production_acceptance": false
 }
