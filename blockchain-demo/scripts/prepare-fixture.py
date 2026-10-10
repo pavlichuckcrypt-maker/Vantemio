@@ -7,7 +7,10 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT.parent / "tools"))
+for _p in [ROOT.parent / "tools", Path("C:/AI/tools"), ROOT.parent.parent / "tools"]:
+    if _p.exists():
+        sys.path.insert(0, str(_p))
+        break
 import editorial_gate
 from blockchain_release import file_sha256, prepare_release
 
