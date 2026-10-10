@@ -206,6 +206,32 @@ const server=http.createServer(async(req,res)=>{
     res.writeHead(code,{'Content-Type':'video/mp4','Content-Length':end-start+1,'Accept-Ranges':'bytes',...(code===206?{'Content-Range':`bytes ${start}-${end}/${size}`}:{})});
     res.end(bytes.subarray(start,end+1));return;
   }
+  // --- Stream crypto donations ---
+  if(url.pathname.startsWith('/api/donations/')){
+    globalThis.__donationService ??= (await import('./donations.mjs')).createDonationService({ accounts, users });
+    const donationService = globalThis.__donationService;
+    let reqBody = null;
+    let authCtx = null;
+    const authRequired = (url.pathname === '/api/donations/creator/profile' && req.method === 'POST')
+      || (url.pathname === '/api/donations/obs/token' && req.method === 'POST');
+    const authOptional = url.pathname === '/api/donations/history' && req.method === 'GET';
+    if(req.method === 'POST'){
+      if(req.headers.origin && req.headers.origin !== origin) throw new ServiceError('Foreign origin',403);
+      if(authRequired && req.headers['x-vidra-csrf'] !== csrf) throw new ServiceError('Origin/CSRF required',403);
+      reqBody = await body(req, 8192);
+    }
+    if(authRequired || authOptional){
+      try { authCtx = await accountAuth(req); } catch(e){ if(authRequired) throw e; }
+      if(authCtx && reqBody) reqBody._auth = authCtx;
+      if(authCtx && !reqBody) reqBody = { _auth: authCtx };
+    } else if(req.method === 'POST' && !reqBody){
+      reqBody = await body(req, 8192);
+    }
+    // For verify, allow _testViews injection only in test; enforce no donor-supplied treasury override beyond trusted resolution
+    const result = await donationService.handle(req, url, reqBody ?? {});
+    reply(res,200,result);
+    return;
+  }
   reply(res,404,{error:'Not found'});
 }catch(e){if(res.headersSent)res.destroy();else{const status=e instanceof ServiceError?e.status:400;if(status===429||status===503)res.setHeader('Retry-After','5');reply(res,status,{error:e.message});}}finally{active--;}});
 server.requestTimeout=10000;server.headersTimeout=10000;server.keepAliveTimeout=5000;server.maxHeadersCount=64;
