@@ -76,10 +76,22 @@ export function emitVantemioBindingKernelEvent({ releaseId, tokenId, exchangeId,
   return emitKernelEvent({ type: 'vantemio-binding', releaseId, tokenId: String(tokenId), exchangeId: String(exchangeId), offerId: offerId ? String(offerId) : undefined, channelId: String(channelId), artifact: String(artifact||releaseId), chainId });
 }
 
-export function emitDeliveryKernelEvent({ exchangeId, assetId, assetSha256, releaseId, listingId, channelId, chainId=84532 }) {
+export function emitDeliveryKernelEvent({ exchangeId, assetId, assetSha256, releaseId, listingId, channelId, chainId=84532, originalRequestIdentity, original_request_identity }) {
   // Delivery lineage for same task/release/artifact — reuses existing order + asset, no new contract/queue
   if (!exchangeId || !assetId || !assetSha256) throw new Error('delivery event requires exchangeId, assetId, assetSha256');
-  return emitKernelEvent({ type: 'delivery', exchangeId: String(exchangeId), assetId: String(assetId), assetSha256: String(assetSha256), releaseId: releaseId ? String(releaseId) : undefined, listingId: listingId ? String(listingId) : undefined, channelId: channelId ? String(channelId) : undefined, chainId });
+  const hasCamel = originalRequestIdentity !== undefined && originalRequestIdentity !== null && String(originalRequestIdentity) !== '';
+  const hasSnake = original_request_identity !== undefined && original_request_identity !== null && String(original_request_identity) !== '';
+  if (hasCamel && hasSnake && String(originalRequestIdentity) !== String(original_request_identity)) throw new Error('Conflicting original request identities');
+  let orig;
+  if (hasCamel) orig = String(originalRequestIdentity);
+  else if (hasSnake) orig = String(original_request_identity);
+  // preserve original identity, do not invent; missing stays pending, conflict already rejected
+  if (orig !== undefined && orig !== '') {
+    if (!/^[a-zA-Z0-9-]{16,80}$/.test(orig)) throw new Error('Invalid originalRequestIdentity');
+  } else {
+    orig = undefined;
+  }
+  return emitKernelEvent({ type: 'delivery', exchangeId: String(exchangeId), assetId: String(assetId), assetSha256: String(assetSha256), releaseId: releaseId ? String(releaseId) : undefined, listingId: listingId ? String(listingId) : undefined, channelId: channelId ? String(channelId) : undefined, chainId, ...(orig !== undefined ? { originalRequestIdentity: orig, original_request_identity: orig } : {}) });
 }
 
 // Query/status via Station durable — no parallel registry, paginated discovery (fleet rule)

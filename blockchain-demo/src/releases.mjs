@@ -96,6 +96,60 @@ export async function transferRelease(ctx, state, { tokenId, to, releaseId } = {
   return rec;
 }
 
+const OWNER_PREVIEW_CHANNEL='UCRaLhEqioMqmM9rhjWAqThg';
+const OWNER_PREVIEW_PROFILE=path.resolve(ROOT,'..','youtube_release_monitor_agent','channels','vantemio.json');
+
+export function assertOwnerPreviewMintAllowed(ctx,project,passport,expectedChannel) {
+  // Only admission metadata is read. No wallet material, signing or broadcast.
+  // Conflicting/missing public source identity cannot become a release bypass.
+  const sources=[passport,ctx.marketRequest];
+  for(const name of ['project_manifest.json','receipt.json']) {
+    const file=path.join(project,name);
+    if(!fs.existsSync(file))continue;
+    let source;
+    try {source=JSON.parse(fs.readFileSync(file,'utf8'));}
+    catch {throw new Error('NFT source lineage unreadable; release held');}
+    if(!source||typeof source!=='object'||Array.isArray(source))throw new Error('NFT source lineage invalid; release held');
+    sources.push(source);
+  }
+  const channels=[];
+  for(const source of sources) {
+    if(source==null)continue;
+    if(typeof source!=='object'||Array.isArray(source))throw new Error('NFT source lineage invalid; release held');
+    for(const key of ['channel_id','channelId','youtube_channel_id']) {
+      if(!Object.hasOwn(source,key))continue;
+      const channel=source[key];
+      if(typeof channel!=='string'||!/^UC[A-Za-z0-9_-]{22}$/.test(channel))throw new Error('NFT channel identity invalid; release held');
+      channels.push(channel);
+    }
+  }
+  const distinct=[...new Set(channels)];
+  if(distinct.length>1)throw new Error('NFT channel lineage conflict; release held');
+  if(expectedChannel!==undefined&&expectedChannel!==(distinct[0]??null))throw new Error('NFT channel changed before execution; release held');
+  if(!distinct.length) {
+    // Legacy isolated Hardhat fixtures do not establish a public channel.
+    // Their marker cannot authorize the same unbound media on a public chain.
+    if(ctx.manifest?.chainId!==31337||ctx.manifest?.publicTransactions!==false)
+      throw new Error('Public NFT release requires original channel lineage; release held');
+    return null;
+  }
+  if(distinct[0]!==OWNER_PREVIEW_CHANNEL)return distinct[0];
+  let profile;
+  try {profile=JSON.parse(fs.readFileSync(OWNER_PREVIEW_PROFILE,'utf8'));}
+  catch {throw new Error('Current owner preview policy unreadable; NFT release held');}
+  if(!profile||profile.channel_id!==OWNER_PREVIEW_CHANNEL||!profile.owner_review_gate
+      ||typeof profile.owner_review_gate!=='object'||Array.isArray(profile.owner_review_gate))
+    throw new Error('Current owner preview policy invalid; NFT release held');
+  // A supplied passport/ctx boolean does not override the Station-owned hold.
+  // Later exact-artifact approval still has to use the existing trusted path;
+  // this change does not create an approval verifier or relax Safe controls.
+  if(profile.enabled!==true||profile.owner_review_gate.required!==false
+      ||profile.owner_review_gate.tokenizationAuthorized!==true)
+    throw new Error('Owner preview required before NFT mint/tokenization; release held');
+  return distinct[0];
+}
+
+
 export async function mintRelease(ctx,state,{project=PROJECT,kind='video'}={}) {
   if(ctx.assertChain)await ctx.assertChain();
   await assertRuntimeSafe(ctx);
@@ -115,6 +169,7 @@ export async function mintRelease(ctx,state,{project=PROJECT,kind='video'}={}) {
       videoSha256:passport.videoSha256,metadataHash:onchain.metadataHash,termsHash:onchain.termsHash,chainId:ctx.manifest.chainId,status:'confirmed',recovered:true,idempotent:true};
     state.releases.push(recovered);save('state.json',state);try{emitReleaseKernelEvent({releaseId:passport.releaseId,videoHash:passport.videoSha256,metadataHash:onchain.metadataHash,termsHash:meta.termsHash,owner:await ctx.nft.ownerOf(token),tokenId:token.toString(),chainId:ctx.manifest.chainId,tx:null,idempotent:true});}catch{}return recovered;
   }
+  const previewChannel=assertOwnerPreviewMintAllowed(ctx,project,passport);
   fs.mkdirSync(path.join(RUNTIME,'metadata'),{recursive:true});
   fs.writeFileSync(path.join(RUNTIME,'metadata',sha(meta.bytes)+'.json'),meta.bytes,{flag:'w',mode:0o600});
   const now=(await ctx.provider.getBlock('latest')).timestamp;
@@ -153,6 +208,7 @@ export async function mintRelease(ctx,state,{project=PROJECT,kind='video'}={}) {
   state.checks=evaluate(evidence);save('state.json',state);enforce(state.checks);
   const current=preparePassport(project);
   if(JSON.stringify(current)!==JSON.stringify(passport) || await ctx.nft.paused())throw new Error('Passport or pause changed before execution');
+  assertOwnerPreviewMintAllowed(ctx,project,current,previewChannel);
   audit('release-approved',{operationDigest:proposal.digest,passed:15,signatures:3,nonce:proposal.nonce.toString()});
   const receipt=await executeSafe(ctx,proposal);
   const event=eventArgs(ctx.nft,receipt,'ReleaseCertified');
