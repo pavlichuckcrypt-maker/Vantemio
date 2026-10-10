@@ -82,3 +82,7 @@ The [Sound Matrix package](sound-matrix/README.md) publishes selected sound-auth
 
 Latest blockchain source changes are documented in [the development update](blockchain-demo/PUBLIC_UPDATE_20261006.md).
 
+
+## Current source update
+
+See [9 October 2026 source scope and limitations](docs/SOURCE_UPDATE_20261009.md). The full proprietary Studio and current kernel source remain in the private repository.
