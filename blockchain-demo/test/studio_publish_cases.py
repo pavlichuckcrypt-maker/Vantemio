@@ -1,11 +1,16 @@
 import io
 import json
 import hashlib
+import sys
 from types import SimpleNamespace
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch, Mock
+for _pp in [Path(__file__).resolve().parents[2] / 'tools', Path('C:/AI/tools'), Path('/Users/vixstels/AIMmontag-dev-Station-20260928/work/station/tools')]:
+    if _pp.exists():
+        sys.path.insert(0, str(_pp))
+        break
 import studio_adapter_cases as fixtures
 import blockchain_publish as publisher
 
