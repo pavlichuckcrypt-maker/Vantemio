@@ -1,12 +1,6 @@
 # Vantemio documentation
 
-Synchronized with vantemio.com on 8 October 2026. Current funding: US$150,000 solo / US$400,000 team over 12 months; DGX Spark is included in base resources.
-
-## Languages
-
-[English](https://vantemio.com/en/docs/) · [Русский](https://vantemio.com/ru/docs/) · [Español](https://vantemio.com/es/docs/) · [Português](https://vantemio.com/pt/docs/) · [Français](https://vantemio.com/fr/docs/)
-
-## Documents
+Synchronized from the current English website source on 9 October 2026. Individual documents retain their own revision and status.
 
 - [Vantemio Cloud — client application and cloud compute](cloud-edition.md)
 - [Account disconnection and data deletion](data-deletion.md)
@@ -18,6 +12,7 @@ Synchronized with vantemio.com on 8 October 2026. Current funding: US$150,000 so
 - [Investors and partners](investors.md)
 - [Vantemio Journal](journal.md)
 - [Commercial-use policy for models and materials](licenses.md)
+- [Vantemio Market — service fulfillment design](market-fulfillment.md)
 - [Vantemio Market](market.md)
 - [Economics and future delivery options](pricing.md)
 - [Vantemio Privacy Policy](privacy.md)
@@ -27,5 +22,3 @@ Synchronized with vantemio.com on 8 October 2026. Current funding: US$150,000 so
 - [Vantemio Terms of Use](terms.md)
 - [TikTok integration and publishing control](tiktok.md)
 - [Vantemio](whitepaper.md)
-
-[Website document bundle](https://vantemio.com/downloads/vantemio-documents.zip) · [Presentation](../pitch/Vantemio_Presentation_2026-10-05.pdf)

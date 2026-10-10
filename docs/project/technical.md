@@ -1,6 +1,6 @@
 # Vantemio technical documentation
 
-Revision 0.17 · 2026-10-08 · Startup product specification · functions, architecture and implementation criteria.
+Revision 0.19 · 2026-10-09 · Startup product specification · functions, architecture and implementation criteria.
 
 ## From a brief to reviewed video
 
@@ -184,3 +184,19 @@ Once DGX Spark is connected, the core local AI stack runs continuously: **Qwen 2
 The target is to develop code, serve local AI and produce visual assets concurrently on resources assigned to those tasks. Compatibility, concurrent load and executor recovery are checked before switching existing jobs; completed work is preserved without replay.
 
 [NVIDIA DGX Spark](https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/) · [NVIDIA — vLLM](https://build.nvidia.com/spark/vllm/instructions) · [NVIDIA — ARM64 porting guide](https://docs.nvidia.com/dgx/dgx-spark-porting-guide/dgx-spark-porting-guide.pdf)
+
+## Open participation in Vantemio development
+
+The project welcomes voluntary initiatives and proposals. Early participation is driven by enthusiasm. Development is funded by the founder; grants and investment have not been secured.
+
+Lifetime free access is intended for core-team contributors who maintain agreed contributions through a previously agreed full release. A one-off task, a few weeks or one month alone does not earn this benefit. Role, period, scope, outputs, release scope and eligibility criteria are recorded in writing before the main contribution period.
+
+Participants may decline tasks, agree on a break or leave without penalty. Leaving before meeting the conditions does not automatically grant access; access already granted after fulfilling the conditions remains after a later departure. New features cannot automatically move the agreed benefit milestone.
+
+Paid roles depend on funding and revenue. Mandatory rights remain protected. Full rules covering informed participation, changed plans, rights to outputs and data appear in [section 14 of the terms of use](https://vantemio.com/en/terms/#14-voluntary-participation-in-the-project). [Participation page and application](https://vantemio.com/en/join/).
+
+### Contribution records and future payments
+
+When project revenue, grants or investment provide a sufficient budget, we plan salaries for contributors continuing in paid roles or one-off payments for earlier contributions. Accepted results will be recorded to support agreement on compensation. Payment type, amount and timing will be agreed separately, taking the budget and funding conditions into account. These payments are additional to lifetime access earned under the participation rules.
+
+Agreed tasks, completed stages, accepted results and contribution confirmations are recorded in correspondence or project records. Participants can obtain their own contribution record and request corrections. When a budget is allocated, the parties agree in writing which results a one-off payment recognizes, its amount and due date, or the terms of a paid role. Payments required by applicable law remain due regardless of future funding.

@@ -1,6 +1,6 @@
 # Vantemio Privacy Policy
 
-Revision 0.16 · 8 October 2026
+Revision 0.18 · 9 October 2026
 
 ## 1. Operator and scope
 
@@ -106,3 +106,25 @@ When account sign-in is available, Google authentication uses your Google accoun
 A secure, HttpOnly session cookie lasts up to 12 hours; the server stores a hash of its random token. Sign-in challenges expire after five minutes and can be used once. Expired challenges and sessions are removed during subsequent authentication activity. Account identity records remain until deletion is requested. Signing out revokes the current session. Deleting an account removes its sign-in identity and all its sessions; separate applications and immutable blockchain records are handled as described in the data-deletion policy.
 
 To prevent repeated unsuccessful sign-ins, we keep a keyed hash of the source IP and a consecutive-failure counter. Four failed identity checks in a row block new sign-ins for four hours. A successful sign-in clears the counter. The sign-in database does not store the raw IP for this purpose. Expired block records are removed on the next check; earlier failures remain until a successful sign-in or a completed block.
+
+## Application to help build Vantemio
+
+The “Help build Vantemio” page collects your name, contact email, chosen role, skills, experience, proposed contribution, motivation and preferred language. Social profiles, portfolio and availability are optional. The application is linked to your internal account identifier and sign-in provider; wallet sign-in also records the public wallet address. You enter your contact email yourself; Google sign-in does not automatically verify that address.
+
+The purpose is to get acquainted, review potential participation and contact you individually about your application. The project operator reviews applications. Visitors cannot access them; answers are not published or used for advertising or AI training. Cloudflare D1 stores the application and Turnstile protects submission. Your browser stores only a random request identifier and a digest for retry protection, for up to 24 hours.
+
+This separate application has a review period of 365 days from submission or the operator’s latest status change. Expired applications are excluded from review and deleted during form-data cleanup. The operator also performs cleanup when reviewing applications. To withdraw, correct or request deletion, contact [support@vantemio.com](mailto:support@vantemio.com) with your application number. If collaboration follows, its documents and processing periods are agreed separately.
+
+Deleting the sign-in account revokes sessions and removes the application’s link to that account. Deleting the application itself requires a separate request to the operator. The 90-day period above applies to pilot applications and does not replace this contribution-application period.
+
+## Vantemio Community on Discourse
+
+Vantemio Community is hosted by Discourse (CDCK). Participation uses a separate Discourse ID account and follows the provider’s adulthood requirements. The provider handles sign-in data under its [user terms](https://www.discourse.org/user-terms) and [privacy policy](https://www.discourse.org/privacy).
+
+Community data includes profile names, email, preferences, posts, replies, reactions, uploads, moderation reports and technical information needed to operate and protect the forum. Public profiles and discussions are visible to others and may be indexed by search engines. Share only information and materials you are comfortable making public. Personal messages and restricted categories have separate access controls; the operator and provider may access what is necessary for support, moderation and legal obligations.
+
+The operator uses this information for discussion, community administration, notifications, reports and abuse prevention. Vantemio does not use community messages to train its own models without a separately disclosed basis and required permissions. Discourse may use automated analysis for security and abuse detection under its policies. Notification preferences are available in forum profiles.
+
+Public discussions are retained to preserve useful context until deletion, anonymization or community closure. The 90-day pilot-application and 365-day contributor-application periods apply to those separate forms. Forum profile or content deletion and anonymization can be requested through available community settings or support@vantemio.com. Requests are reviewed considering the author’s rights, other participants and mandatory requirements; provider backups follow the provider’s terms. Discourse ID is managed separately with the provider.
+
+Hosting and processing may take place outside Canada. The operator identified at the start of this policy is responsible for Vantemio community rules and requests. Team applications remain private and are not automatically published in the forum.

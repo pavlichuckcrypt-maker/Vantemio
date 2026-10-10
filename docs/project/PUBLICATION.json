@@ -1,92 +1,89 @@
 {
-  "synchronized": "2026-10-08",
-  "source": "https://vantemio.com/",
-  "release": "spark-resident-v46",
-  "language": "en",
-  "otherLanguages": "https://vantemio.com/downloads/vantemio-documents.zip",
+  "published_at": "2026-10-09",
+  "scope": "current English product documentation; source synchronization only",
   "files": [
     {
-      "path": "pricing.md",
-      "sha256": "362eeeb31d136cdfa85b52a8038111cde9ed33ee0592dc0ef3676fee10c2212f"
+      "path": "docs/project/README.md",
+      "sha256": "d28856fdc0fe8efbabe8cc7e3709e0284ab7274817b3fa3da22ba601fab7b540"
     },
     {
-      "path": "editorial.md",
-      "sha256": "2481600f21ad68a382d66f763559689066945a3d4c2c6a91887092967282b293"
-    },
-    {
-      "path": "tiktok.md",
-      "sha256": "e801e5339e8a90f835fe507818bdd0899560d9167a93dbbe8406ec56ec32e488"
-    },
-    {
-      "path": "home-studio-hardware.md",
-      "sha256": "8d583be8d1d9ac45820187e74d43cb5936d977550aafcc4e68f32a694d6a13ac"
-    },
-    {
-      "path": "sources.md",
-      "sha256": "2ef3a278e8588cf7127479461b6ee0f7a57281a77faba09522e09cf18ff05e85"
-    },
-    {
-      "path": "integrations.md",
-      "sha256": "8e930761556be4639adccc45fea88a12b7f340eb5e41651811b5c0562734bb83"
-    },
-    {
-      "path": "market-fulfillment.md",
-      "sha256": "918852da0f55202d9fd69606cd0ef5cd3367844afd89e44c5dfeb3bf8309bcc6"
-    },
-    {
-      "path": "privacy.md",
-      "sha256": "ecd3e6f26686fa3c6dbf93415fd748eca7752ebfca5f84b08ec7b94d3d15e54a"
-    },
-    {
-      "path": "licenses.md",
-      "sha256": "06771a1cd302e7568f7e737cceb5f985b432c3e9ded565df19d0814ef65b7d78"
-    },
-    {
-      "path": "data-deletion.md",
-      "sha256": "1523d9eee90139731a391b450e81d1475c52d8b1cdda0810488094e9e989717b"
-    },
-    {
-      "path": "README.md",
-      "sha256": "d2952674752f42592713606cba01e3402d2002ef055701ebcd50e1cae5f3d554"
-    },
-    {
-      "path": "journal.md",
-      "sha256": "7266f9a04ff38e159ea9b9b0fdf30717e0075a18235ccaa77e408b8038cb64d8"
-    },
-    {
-      "path": "cloud-edition.md",
+      "path": "docs/project/cloud-edition.md",
       "sha256": "4b5878d47495c3447c5ed6cd952c11223135c233f32c41d82e3e2cf12c5b8e98"
     },
     {
-      "path": "roadmap.md",
-      "sha256": "31ef761953a18f19d60eeff3808e568ad19e47454b5242a9956ecce819976b70"
+      "path": "docs/project/data-deletion.md",
+      "sha256": "1523d9eee90139731a391b450e81d1475c52d8b1cdda0810488094e9e989717b"
     },
     {
-      "path": "terms.md",
-      "sha256": "b17b51542d46a0e5ce38d3717f4b3fa7b86f3ff3ca86da261a4a795658e51bef"
+      "path": "docs/project/editorial.md",
+      "sha256": "2481600f21ad68a382d66f763559689066945a3d4c2c6a91887092967282b293"
     },
     {
-      "path": "technical.md",
-      "sha256": "64bf65cb9d69f68fc868f238f5da16ebeb2e9f9753198cf048a6bb71efd98fec"
-    },
-    {
-      "path": "home-edition.md",
-      "sha256": "8d583be8d1d9ac45820187e74d43cb5936d977550aafcc4e68f32a694d6a13ac"
-    },
-    {
-      "path": "grants.md",
+      "path": "docs/project/grants.md",
       "sha256": "760b7406bd0f397cbf5dcc7af777895af455fbf81847bf7e5ba26e77337a22f1"
     },
     {
-      "path": "market.md",
-      "sha256": "40e307c0c842912661b0bdad67b47c2dcd5716702e5817442a62ee09e1fee250"
+      "path": "docs/project/home-edition.md",
+      "sha256": "8d583be8d1d9ac45820187e74d43cb5936d977550aafcc4e68f32a694d6a13ac"
     },
     {
-      "path": "investors.md",
+      "path": "docs/project/home-studio-hardware.md",
+      "sha256": "8d583be8d1d9ac45820187e74d43cb5936d977550aafcc4e68f32a694d6a13ac"
+    },
+    {
+      "path": "docs/project/integrations.md",
+      "sha256": "8e930761556be4639adccc45fea88a12b7f340eb5e41651811b5c0562734bb83"
+    },
+    {
+      "path": "docs/project/investors.md",
       "sha256": "fece5fd028aaa28ff893f5ab4305f4fac8dfe3b9929343878ee93248e40214b9"
     },
     {
-      "path": "whitepaper.md",
+      "path": "docs/project/journal.md",
+      "sha256": "7266f9a04ff38e159ea9b9b0fdf30717e0075a18235ccaa77e408b8038cb64d8"
+    },
+    {
+      "path": "docs/project/licenses.md",
+      "sha256": "06771a1cd302e7568f7e737cceb5f985b432c3e9ded565df19d0814ef65b7d78"
+    },
+    {
+      "path": "docs/project/market-fulfillment.md",
+      "sha256": "918852da0f55202d9fd69606cd0ef5cd3367844afd89e44c5dfeb3bf8309bcc6"
+    },
+    {
+      "path": "docs/project/market.md",
+      "sha256": "40e307c0c842912661b0bdad67b47c2dcd5716702e5817442a62ee09e1fee250"
+    },
+    {
+      "path": "docs/project/pricing.md",
+      "sha256": "362eeeb31d136cdfa85b52a8038111cde9ed33ee0592dc0ef3676fee10c2212f"
+    },
+    {
+      "path": "docs/project/privacy.md",
+      "sha256": "fad8b8182581474d1dd0e5f2d590b828c179c45221fea3bec059aa333eba2287"
+    },
+    {
+      "path": "docs/project/roadmap.md",
+      "sha256": "31ef761953a18f19d60eeff3808e568ad19e47454b5242a9956ecce819976b70"
+    },
+    {
+      "path": "docs/project/sources.md",
+      "sha256": "2ef3a278e8588cf7127479461b6ee0f7a57281a77faba09522e09cf18ff05e85"
+    },
+    {
+      "path": "docs/project/technical.md",
+      "sha256": "527b677710d0af23e7994d521ce03a56e98f629f720939165afc743ad5e7f285"
+    },
+    {
+      "path": "docs/project/terms.md",
+      "sha256": "3a034d98d0bbab7db83589c2dde03d9274495ef8d70e719ec242e1096d5a995f"
+    },
+    {
+      "path": "docs/project/tiktok.md",
+      "sha256": "e801e5339e8a90f835fe507818bdd0899560d9167a93dbbe8406ec56ec32e488"
+    },
+    {
+      "path": "docs/project/whitepaper.md",
       "sha256": "983fa303865bb8449f341239c223973c018bb37367a94496f68f4b48a9c478ee"
     }
   ]
